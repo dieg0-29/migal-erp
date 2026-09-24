@@ -13,6 +13,5 @@ La primera liberación del ERP abarcará la configuración y puesta en marcha de
 
 **3. Exclusiones**
 Para garantizar la viabilidad del producto mínimo, quedan excluidos de esta fase:
-
 * **Facturación Electrónica Integrada:** No se implementará la localización peruana de Odoo para comprobantes de pago de la SUNAT. El sistema "KeyFacil" se mantendrá operando en paralelo y de forma aislada para la emisión exclusiva de facturas y boletas electrónicas.
 * **Integración de API de WhatsApp:** No se automatizará la lectura, respuesta ni captura de pedidos por WhatsApp. Este seguirá operando únicamente como un canal de comunicación externo.

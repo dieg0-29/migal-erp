@@ -1,0 +1,65 @@
+# Comparación de sistemas ERP
+
+## 1. Fuentes consultadas
+
+| ERP | Fuente oficial / URL | Sección o título | Fecha | Tipo de evidencia |
+| --- | --- | --- | --- | --- |
+| **StarSoft** | [https://www.starsoft.com.pe/servicios.php](https://www.starsoft.com.pe/servicios.php?utm_source=gemini) | Servicios de alto valor | 12/09/2026 | Comercial |
+| **StarSoft** | [https://www.starsoft.com.pe/guia_servicios/PDFGUIA/8.pdf](https://www.google.com/search?q=https://www.starsoft.com.pe/guia_servicios/PDFGUIA/8.pdf&utm_source=gemini) | Guía Digital de los Servicios de Asistencia y Soporte de STARSOFT (SLA) | 12/09/2026 | Soporte / comercial |
+| **StarSoft** | [https://starsoftweb.com/apisintegracion/](https://starsoftweb.com/apisintegracion/?utm_source=gemini) | API's de Integración Starsoft Gold Edition | 12/09/2026 | Arquitectura / despliegue / integración |
+| **StarSoft** | [https://drive.google.com/file/d/12rfmfBAaJTh8t1m89gRotjZvjOyxHyM0/view](https://www.google.com/search?q=https://drive.google.com/file/d/12rfmfBAaJTh8t1m89gRotjZvjOyxHyM0/view&utm_source=gemini) | Guía de Uso API'S CONTABLES | 12/09/2026 | Arquitectura / integración |
+| **StarSoft** | [https://www.starsoft.com.pe/producto-portales-web.php](https://www.starsoft.com.pe/producto-portales-web.php?utm_source=gemini) | Aplicativos móviles y Portales Web | 12/09/2026 | Arquitectura / despliegue |
+| **StarSoft** | [https://es.scribd.com/document/703400765/REQUERIMIENTOS-TECNICOS-para-instalar-STARSOFT-2023](https://es.scribd.com/document/703400765/REQUERIMIENTOS-TECNICOS-para-instalar-STARSOFT-2023?utm_source=gemini) | Requerimientos para instalar STARSOFT | 12/09/2026 | Despliegue |
+| **StarSoft** | [https://starsoftweb.com/apisintegracion/Help](https://starsoftweb.com/apisintegracion/Help?utm_source=gemini) | Página de ayuda de API Web STARSOFT | 12/09/2026 | Integración |
+| **StarSoft** | [https://www.starsoft.com.pe/productos.php](https://www.starsoft.com.pe/productos.php?utm_source=gemini) | Módulos especializados y servicios digitales | 12/09/2026 | Arquitectura / integración |
+| **StarSoft** | [https://www.starsoft.com.pe/MANUAL](https://www.google.com/search?q=https://www.starsoft.com.pe/MANUAL&utm_source=gemini) DE RCE SIRE.pdf | GUIA DEL RCE - SUNAT | 12/09/2026 | Integración |
+| **Odoo 18** | [https://www.odoo.com/documentation/18.0/developer/tutorials/server_framework_101/01_architecture.html](https://www.odoo.com/documentation/18.0/developer/tutorials/server_framework_101/01_architecture.html?utm_source=gemini) | Chapter 1: Architecture Overview | 12/09/2026 | Arquitectura |
+| **Odoo 18** | [https://www.odoo.com/documentation/18.0/administration/on_premise/deploy.html](https://www.google.com/search?q=https://www.odoo.com/documentation/18.0/administration/on_premise/deploy.html&utm_source=gemini) | System configuration | 12/09/2026 | Despliegue / operación / seguridad |
+| **Odoo 18** | [https://www.odoo.com/documentation/18.0/developer/reference/external_api.html](https://www.odoo.com/documentation/18.0/developer/reference/external_api.html?utm_source=gemini) | External API | 12/09/2026 | Integración / extensibilidad |
+| **Odoo 18** | [https://www.odoo.com/documentation/18.0/applications/finance/fiscal_localizations/peru.html](https://www.google.com/search?q=https://www.odoo.com/documentation/18.0/applications/finance/fiscal_localizations/peru.html&utm_source=gemini) | Peru Fiscal localization | 12/09/2026 | Localización / contexto peruano |
+| **DYNAMICS 365** | [https://learn.microsoft.com/en-us/dynamics365/business-central/](https://learn.microsoft.com/en-us/dynamics365/business-central/?utm_source=gemini) | Microsoft Dynamics 365 Business Central documentation | 12/09/2026 | Integración / arquitectura |
+| **DYNAMICS 365** | [https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/architecture-overview](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/architecture-overview?utm_source=gemini) | Finance and operations application architecture | 12/09/2026 | Arquitectura |
+| **DYNAMICS 365** | [https://learn.microsoft.com/en-us/dynamics365/guidance/reference-architectures/](https://learn.microsoft.com/en-us/dynamics365/guidance/reference-architectures/?utm_source=gemini) | Dynamics 365 reference architectures | 12/09/2026 | Arquitectura |
+
+## 2. Matriz comparativa
+
+
+
+| Criterio | STAR SOFT | ODOO | DYNAMICS 365 |
+| --- | --- | --- | --- |
+| **Modelo de despliegue** | Híbrido / distribuido Cliente-servidor Componentes web/cloud. | Cloud y on-premise. Opciones: Odoo Online, Odoo.sh e instalación local. | SaaS en la nube gestionado por Microsoft (Azure). La suscripción proporciona uno o múltiples entornos en la nube listos para operar. |
+| **Estructura/capas publicadas** | ND. DB: MS SQL Server 2022. OS: WINDOWS SERVER 2022. CERTIFICADO DE FIRMA DIGITAL. | Arquitectura de 3 capas: presentación, lógica de negocio y datos. Diseño modular. HTML5, JavaScript y CSS en presentación; Python en lógica de negocio; PostgreSQL como base de datos. | Arquitectura conceptual dividida en: Suscripción, Tenant, Identidad (Entra ID), Portal de administración (LCS/M365 Admin Center) y DevOps. Base de datos: Azure SQL Database. Identidad: Microsoft Entra ID. Infraestructura: Azure Storage y redes de Azure. Gestión: Azure DevOps. |
+| **Tecnologías / dependencias** | ND | ND | ND |
+| **Extensibilidad** | ND | Extensible mediante módulos. Permite desarrollar módulos propios y utilizar módulos adicionales del ecosistema. | Uso intensivo de Azure DevOps para el desarrollo de extensiones, control de versiones de código e integración de procesos de negocio (BPM). Integra funcionalidades de finanzas, ventas, compras, inventario, almacenes y analítica. |
+| **Mecanismos de integración** | API'S contables documentadas. | API externa para acceder a modelos y datos. Odoo 18 documenta integración mediante XML-RPC. | Patrón Saga con Dataverse, sincronización de datos con solicitud-respuesta asíncrona, exportaciones programadas e integración híbrida. |
+| **Operación y actualizaciones** | Actualización 24x7 y la necesidad de backups para reinstalaciones. | Procedimientos oficiales de actualización y despliegue. En instalación propia, la administración y actualización del servidor recaen en el operador. | Ciclo de vida orquestado íntegramente por Microsoft Dynamics Lifecycle Services (LCS) con topologías para desarrollo, pruebas y producción. |
+| **Identidad/seguridad divulgada** | ND | Control mediante usuarios, grupos, permisos/ACL, reglas de registros y restricciones de campos. HTTPS recomendado para despliegues públicos. | Gestión de identidades, control de accesos y protección centralizada exclusivamente mediante el inquilino (Tenant) de Microsoft Entra ID. |
+| **Ecosistema y soporte** | Gold Edition, PYMES/Access Edition, Contabilidad, Planillas, Costos, Ventas, E-Commerce, Portales Web, APP STARSOFT Servicios y Facturación Electrónica. STARSOFT posee Soporte Digital UX. | Odoo Online, Odoo.sh, documentación oficial, partners y comunidad. Amplio ecosistema de módulos y extensiones. | Gestión de incidentes integrada a través de soporte en la nube con Azure DevOps. Soluciones y extensiones de terceros disponibles vía Microsoft AppSource. Integración con ecosistema de Microsoft. |
+| **Localización/contexto peruano** | Producto orientado al contexto peruano, con funcionalidades y procesos vinculados al entorno tributario peruano, incluyendo SUNAT, RCE/SIRE y emisión electrónica. | Localización oficial para Perú: contabilidad, SUNAT, facturación electrónica y reportes peruanos, mediante módulos l10n_pe y relacionados. | Cumplimiento normativo y tributario (SUNAT, PLE, facturación electrónica) gestionado a través de localizaciones desarrolladas por Partners autorizados. |
+| **Transparencia de documentación** | ND: mala documentación, fragmentada y desactualizada. | Alta: documentación técnica oficial pública sobre arquitectura, desarrollo, despliegue, API, seguridad y localización. | Arquitecturas de referencia, topologías y guías de implementación publicadas de manera abierta y estructurada en el repositorio de Microsoft Learn. |
+
+## 3. Evidencia, interpretación y límites
+
+
+
+| Hallazgo | Evidencia verificable | Interpretación del equipo | Supuesto o dato pendiente |
+| --- | --- | --- | --- |
+| **STARSOFT presenta orientación al mercado peruano** | Funcionalidades y procesos vinculados al entorno tributario peruano, incluyendo SUNAT, RCE/SIRE y emisión electrónica. | El ERP tendrá una buena integración con el sistema tributario lo que reducirá la dificultad de implementarlo. | Necesitamos conocer cómo se realiza la integración y que funcionalidades específicas están integradas. |
+| **Odoo cuenta con localización fiscal para Perú** | Localización oficial para Perú: contabilidad, SUNAT, facturación electrónica y reportes peruanos, mediante módulos l10n_pe y relacionados. | Odoo cuenta con módulos que permitirán la integración con el sistema tributario del Perú y permitirá una más fácil implementación. | Validar que cubra los procedimientos tributarios utilizados por el negocio. |
+| **Odoo dispone de extensibilidad mediante módulos** | Extensible mediante módulos. Permite desarrollar módulos propios y utilizar módulos adicionales del ecosistema. | Odoo permitirá la integración gradual del negocio implementando solo las funcionalidades necesarias y permitiendo personalización. | Identificar los módulos que serán usados y las funcionalidades no soportadas por módulos estándar. |
+| **Dynamics 365 integra funciones empresariales y ecosistema** | Integra funcionalidades de finanzas, ventas, compras, inventario, almacenes y analítica. | Tiene un ecosistema completo que permite el trabajo integrado en las diferentes funcionalidades del ERP. | Validar qué funcionalidades y licenciamiento serían necesarios para el caso del negocio. |
+| **Dynamics 365 presenta una arquitectura multicapa** | Base de datos: Azure SQL Database. Identidad: Microsoft Entra ID. Infraestructura: Azure Storage y redes de Azure. Gestión: Azure DevOps. | Hace fuerte uso del cloud computing y presenta una arquitectura compleja y completa. | Determinar si ese nivel arquitectónico resulta necesario para el tamaño y alcance del negocio. |
+| **La documentación técnica disponible es desigual entre los ERP** | Se tiene una buena documentación técnica de Dynamics 365 y de Odoo, la documentación de Starsoft es pobre. | Odoo posee la mayor transparencia para trabajar, seguido por Dynamics 365 y finalmente Starsoft es poco claro y escaso en su documentación. | Confirmar la información necesaria para trabajar la implementación en el negocio. |
+
+### 4. Perfil arquitectónico preliminar de la empresa
+
+
+
+| Condición del caso | Evidencia o supuesto | Implicancia arquitectónica | Qué falta validar |
+| --- | --- | --- | --- |
+| **Tamaño y complejidad organizacional / Número y distribución de sedes** | Ferre & Inversiones MIGAL es una empresa comercial con dos propietarios y dos trabajadores. Una tienda y dos almacenes. | Importan las capacidades modulares y la implementación paulatina, se busca baja complejidad. La solución seleccionada debe permitir gestionar inventario y operaciones desde múltiples ubicaciones. | Comparar costos y esfuerzo de implementación de cada alternativa. Validar los requerimientos de funcionalidad y disponibilidad para las ubicaciones. |
+| **Conectividad y continuidad** | La empresa dispone de Internet y equipos informáticos en el local principal. | Las alternativas con despliegue cloud/web permiten centralizar el acceso al ERP sin requerir necesariamente infraestructura de servidores propia en la empresa. | Evaluar la conectividad de los almacenes y mecanismos de contingencia. |
+| **Capacidad interna de TI** | No existe un equipo interno dedicado a administrar infraestructura ERP. | Las modalidades administradas en la nube reducen la necesidad de mantener infraestructura propia. | Determinar quién administra usuarios, configuración, soporte y relación con el proveedor. |
+| **Sistemas existentes e integración** | Se usa Keyfacil y procesos mediante WhatsApp, llamadas y registros físicos. | No existe una fuerte necesidad de integración actualmente, pero se debe considerar la migración. | Verificar la viabilidad de integrar con Keyfacil o de reemplazarlo. |
+| **Localización y soporte en Perú** | La empresa opera en Perú. | Se requiere que el ERP esté localizado a Perú y que se pueda encontrar soporte cuando necesario. | Validar funcionalmente los requerimientos SUNAT específicos de Ferre & Inversiones MIGAL. |
+| **Presupuesto y ritmo de implementación** | No ha sido establecido. Supuesto: Presupuesto bajo e implementación gradual. | Se requiere tener una implementación progresiva con costos razonablemente bajos, que entregue valor desde sus inicios. | Obtener cotizaciones de licencias, implementación, soporte, migración y personalización. |
