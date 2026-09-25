@@ -2,6 +2,10 @@
 
 Este repositorio contiene la documentación arquitectónica para la implementación de un sistema ERP basado en Odoo 18 para la empresa ferretera Ferre & Inversiones MIGAL. El propósito del proyecto es centralizar la gestión de inventarios y ventas, eliminando la dependencia de registros informales y cálculos mentales, para lograr la trazabilidad de las operaciones diarias y facilitar la toma de decisiones basada en datos precisos.
 
+## Problema de Integración
+
+Actualmente, Ferre & Inversiones MIGAL sufre de una desconexión operativa y falta de trazabilidad. Los procesos dependen de la memoria de los dueños (precios variables, registro de compras mental) y de canales no centralizados (pedidos por WhatsApp sin horario fijo). Aunque utilizan Keyfacil para algunas facturaciones electrónicas, el registro de ventas físicas en papel,  el manejo de créditos y cobranzas manual (cuadernos) genera un desorden en el almacén físico, dificulta la gestión de entregas y crea un vacío de información sobre las ganancias reales y la valoración del inventario.
+
 ## Alcance
 
 **1. Objetivo General**
