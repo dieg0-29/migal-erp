@@ -1,20 +1,20 @@
-# ADR 000: Adopcion de Odoo V18 Community
+# ADR 001: Adopcion de Odoo V18 Community
 
 ## 1. Metadatos
-* **Fecha:** [25/09/2026]
-* **Estado:** [Propuesto]
-* **Autores:** [Gabriel Martinez A.]
+* **Fecha:** 25/09/2026
+* **Estado:** Propuesto
+* **Autores:** Gabriel Martinez A.
 
 ## 2. Contexto y Problema
 Despues de la decision de tomar Odoo como el ERP a ser implementado nos encontramos con la necesidad de especificar la version de Odoo a usarse, para esto se tiene que considerar las funciones, integraciones y limitaciones de cada una de las versiones de Odoo comunity.
 
 ## 3. Restricciones de la Empresa (Drivers)
-Ejemplos: presupuesto, falta de personal TI, necesidad de acceso multi-local, conectividad limitada, etc.]
+Ejemplos: presupuesto, falta de personal TI, necesidad de acceso multi-local, conectividad limitada, etc.
 * Presupuesto: El presupuesto de la empresa es bajo, motivo por el cual se esta considerando el uso de la version comunity de Odoo.
 * Falta de personal de TI: La falta de personal de TI dedicado significa que se necesita hacer uso de modulos y codigo ya desarrollado que requiera la menor cantidad de trabajo extra para funcionar.
 
 ## 4. Opciones Consideradas
-| categoría | odoo 18 | odoo 19 | odoo 20 |
+| categoría | Odoo 18 | Odoo 19 | Odoo 20 |
 |---|---|---|---|
 | **compatibilidad de contabilidad externa** | Tiene alta disponibilidad de módulos OCA como account-financial-tools [1]. | Tiene módulos disponibles como om_account_accountant y account_usability [2]. | Los módulos de terceros requieren tiempo de migración comunitaria tras su lanzamiento [3]. |
 | **localización fiscal** | Incluye paquetes base y soporte para Peppol PINT [4]. | Simplifica el mapeo de impuestos según secuencias de posición fiscal [5]. | Carece de integraciones locales inmediatas al depender de la migración externa [3]. |
