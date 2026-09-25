@@ -1,4 +1,4 @@
-# ADR 001: Adopcion de Odoo V18 Community
+# ADR 002: Adopcion de Odoo V18 Community
 
 ## 1. Metadatos
 * **Fecha:** 25/09/2026
