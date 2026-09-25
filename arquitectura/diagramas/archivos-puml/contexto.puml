@@ -1,0 +1,20 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Diagrama de Contexto (Nivel 1) - Ferre & Inversiones MIGAL
+
+Person(cliente, "Cliente", "Solicita productos vía canales externos")
+Person(prop, "Propietarios", "Registran ventas y gestionan compras")
+Person(alm, "Personal de Almacén", "Visualiza órdenes y prepara mercadería")
+
+System_Ext(whatsapp, "WhatsApp", "Canal de comunicación para ventas informales")
+System(odoo, "ERP Odoo 18", "Centraliza inventario, ventas internas y contabilidad básica")
+System_Ext(keyfacil, "KeyFacil", "Plataforma SUNAT para facturación electrónica")
+
+Rel(cliente, whatsapp, "Realiza pedidos y envía pagos", "Mensaje")
+Rel(prop, whatsapp, "Revisa pedidos", "App Móvil")
+Rel(prop, odoo, "Registra ventas y controla stock", "App Web")
+Rel(alm, odoo, "Verifica salidas de almacén", "App Web")
+Rel(prop, keyfacil, "Digita datos para facturación", "App Web")
+Rel(keyfacil, cliente, "Emite comprobante fiscal", "PDF")
+@enduml

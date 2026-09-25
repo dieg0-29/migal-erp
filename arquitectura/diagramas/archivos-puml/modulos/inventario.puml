@@ -1,0 +1,50 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Diagrama de Componentes (Nivel 3) - Gestión de Inventario
+
+' Actores del Flujo
+Person(operario, "Operario de Almacén", "Crea recepciones manuales y prepara pedidos")
+Person(jefe, "Jefe de Almacén", "Supervisa el kardex y autoriza validaciones")
+
+' Contenedores Externos que interactúan con Inventario
+Container(sales_mod, "Módulo de Ventas", "Contenedor Python", "Gestiona confirmaciones de pedidos comerciales")
+Container(pos_mod, "Módulo POS", "Contenedor Python", "Agrupa transacciones de venta rápida en mostrador")
+Container(acc_mod, "Módulo de Contabilidad", "Terceros / Python", "Centraliza cuentas de valoración y variación de existencias")
+
+' Límite del Contenedor Principal: MÓDULO DE INVENTARIO
+Container_Boundary(inv_app, "Módulo de Inventario (Contenedor Python)") {
+    
+    Component(stock_picking, "Modelo: stock.picking", "ORM Python", "Cabecera de movimientos: Gestiona recepciones manuales directas, ajustes y guías de salida consolidadas")
+    
+    Component(stock_move, "Modelo: stock.move", "ORM Python", "Líneas de detalle: Calcula cantidades a mover e invoca la actualización física y contable")
+    
+    Component(stock_quant, "Modelo: stock.quant", "ORM Python", "Kardex centralizado: Mantiene el conteo exacto del stock físico y previsto en tiempo real")
+}
+
+ContainerDb(db, "Base de Datos Core", "PostgreSQL", "Almacena inmutablemente el historial de movimientos")
+
+' --- RELACIONES DEL FLUJO PRINCIPAL Y ALTERNATIVOS ---
+
+' Flujo Principal: Ingreso Manual y Ajuste
+Rel(operario, stock_picking, "1. Crea recepción manual o ajuste directo", "GUI Web")
+Rel(jefe, stock_picking, "3. Valida y bloquea el documento", "GUI Web")
+Rel(jefe, stock_quant, "4. Consulta reporte de movimientos (Kardex)", "GUI Web")
+
+' Flujos Alternativos (Desencadenantes desde otros módulos)
+Rel(sales_mod, stock_picking, "Alt 1: Genera guía de salida automática al confirmar pedido", "API Interna")
+Rel(pos_mod, stock_picking, "Alt 2: Genera guía de salida consolidada al cerrar sesión de caja", "API Interna")
+
+' Lógica Interna del Inventario (ORM)
+Rel(stock_picking, stock_move, "Desglosa operaciones en")
+Rel(stock_move, stock_quant, "Actualiza sumando/restando unidades físicas")
+
+' Integración Contable (Automatización)
+Rel(stock_move, acc_mod, "5. Dispara apunte de débito/crédito por variación de existencias", "API Interna")
+
+' Persistencia
+Rel(stock_picking, db, "Persiste")
+Rel(stock_move, db, "Persiste")
+Rel(stock_quant, db, "Persiste")
+
+@enduml
