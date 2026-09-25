@@ -1,0 +1,57 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Diagrama de Contenedores (Nivel 2) - Arquitectura ERP MIGAL
+
+' Definición de Actores
+Person(cliente, "Cliente", "Solicita productos por canales externos")
+Person(prop, "Propietarios", "Registran ventas, operan el POS y gestionan facturación")
+Person(alm, "Personal de Almacén", "Prepara y despacha la mercadería física")
+
+' Sistemas Externos
+System_Ext(whatsapp, "WhatsApp", "Canal de comunicación para ventas")
+System_Ext(keyfacil, "KeyFacil", "Plataforma SUNAT (Facturación electrónica)")
+
+' Límite del Sistema Odoo
+System_Boundary(odoo_sys, "Infraestructura ERP Odoo 18") {
+    
+    Container(web_client, "Cliente Web Odoo", "HTML5, JavaScript, CSS", "Proporciona la interfaz de usuario centralizada")
+    
+    ' Módulos de Lógica de Negocio
+    Container(pos_mod, "Punto de Venta (POS)", "Módulo Python", "Gestiona ventas rápidas de mostrador físico")
+    Container(sales_mod, "Ventas", "Módulo Python", "Gestiona órdenes manuales provenientes de WhatsApp")
+    Container(inv_mod, "Inventario", "Módulo Python", "Controla el stock distribuido (1 Tienda, 2 Almacenes)")
+    Container(acc_mod, "Accounting Community", "Módulo de Terceros (Python)", "Centraliza ingresos y valoración de existencias")
+    
+    ' Base de datos única
+    ContainerDb(db, "Base de Datos Core", "PostgreSQL", "Almacena transacciones, catálogo de productos y usuarios")
+}
+
+' Relaciones Externas y de Actores
+Rel(cliente, whatsapp, "Realiza pedidos y pagos", "Mensaje")
+Rel(prop, whatsapp, "Revisa pedidos remotos", "App Móvil")
+Rel(prop, keyfacil, "Digita RUC y montos", "App Web (HTTPS)")
+Rel(keyfacil, cliente, "Envía boleta/factura", "PDF")
+
+' Relaciones hacia el Frontend
+Rel(prop, web_client, "Registra ventas y administra", "HTTPS")
+Rel(alm, web_client, "Visualiza salidas de stock", "HTTPS")
+
+' Relaciones Internas (Frontend a Lógica)
+Rel(web_client, pos_mod, "Llamadas a la API interna", "JSON/RPC")
+Rel(web_client, sales_mod, "Llamadas a la API interna", "JSON/RPC")
+Rel(web_client, inv_mod, "Llamadas a la API interna", "JSON/RPC")
+
+' Relaciones entre Módulos (Eventos de Negocio)
+Rel(pos_mod, inv_mod, "Detona descuento de stock físico")
+Rel(sales_mod, inv_mod, "Detona reserva de mercadería")
+Rel(pos_mod, acc_mod, "Genera asiento de ingreso de caja")
+Rel(sales_mod, acc_mod, "Genera cuenta por cobrar")
+
+' Relaciones a Base de Datos
+Rel(pos_mod, db, "Lee/Escribe transacciones", "SQL")
+Rel(sales_mod, db, "Lee/Escribe órdenes", "SQL")
+Rel(inv_mod, db, "Lee/Escribe movimientos", "SQL")
+Rel(acc_mod, db, "Lee/Escribe asientos", "SQL")
+
+@enduml
