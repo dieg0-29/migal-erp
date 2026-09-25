@@ -6,7 +6,7 @@ Para plasmar la arquitectura del sistema ERP de Ferre & Inversiones MIGAL, se ha
 
 Ofrece la visión más general del sistema. Define los límites arquitectónicos del ERP Odoo 18 y cómo este interactúa con los usuarios clave y los sistemas externos.
 
-![diagrama-contexto](imagenes-diagramas\contexto.png)
+![diagrama-contexto](imagenes-diagramas/contexto.png)
 
 ---
 
@@ -14,7 +14,7 @@ Ofrece la visión más general del sistema. Define los límites arquitectónicos
 
 Expone la infraestructura técnica subyacente. Se visualiza el cliente web, la base de datos centralizada en PostgreSQL, y los contenedores lógicos en Python correspondientes a los módulos seleccionados
 
-![diagrama-contexto](imagenes-diagramas\contenedores.png)
+![diagrama-contenedores](imagenes-diagramas/contenedores.png)
 
 ---
 
@@ -26,10 +26,10 @@ Profundiza en los contenedores específicos para revelar los componentes interno
 
 Representa la orquestación técnica dentro de los módulos comerciales. Muestra cómo la transición de estado de un pedido desencadena automáticamente operaciones en el inventario y en la contabilidad general, y cómo se gestiona el flujo alternativo de quiebre de stock.
 
-![diagrama-contexto](imagenes-diagramas\ventas.png)
+![componentes-ventas](imagenes-diagramas/ventas.png)
 
 ### 3.2. Gestión de Inventario Centralizada
 
 Ilustra cómo el sistema centraliza los movimientos de mercadería provenientes de recepciones manuales, ventas mayoristas y consolidaciones de mostrador (POS), garantizando la integridad de los datos físicos y su correspondiente valoración financiera.
 
-![diagrama-contexto](imagenes-diagramas\inventario.png)
+![componentes-inventario](imagenes-diagramas/.png)
