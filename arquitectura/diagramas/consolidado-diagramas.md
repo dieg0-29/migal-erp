@@ -32,4 +32,4 @@ Representa la orquestación técnica dentro de los módulos comerciales. Muestra
 
 Ilustra cómo el sistema centraliza los movimientos de mercadería provenientes de recepciones manuales, ventas mayoristas y consolidaciones de mostrador (POS), garantizando la integridad de los datos físicos y su correspondiente valoración financiera.
 
-![componentes-inventario](imagenes-diagramas/.png)
+![componentes-inventario](imagenes-diagramas/inventario.png)
