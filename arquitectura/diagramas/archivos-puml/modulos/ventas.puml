@@ -1,37 +1,48 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Diagrama de Componentes (Nivel 3) - Odoo 18 Módulo de Ventas
+title Diagrama de Componentes (Nivel 3) - Gestión de Ventas
 
-Container_Boundary(sales_app, "Módulo de Ventas (Contenedor Python)") {
-    
-    Component(sale_controller, "Controlador Web de Ventas", "Controlador Python", "Recibe las peticiones HTTP del usuario (crear orden, confirmar)")
-    
-    Component(sale_order, "Modelo: Sale.Order", "ORM Python", "Representa la cabecera de la Orden de Venta. Gestiona el estado (Borrador -> Confirmado)")
-    
-    Component(sale_order_line, "Modelo: Sale.Order.Line", "ORM Python", "Representa el detalle de los productos a vender y sus cantidades")
-    
-    Component(action_confirm, "Servicio: action_confirm()", "Método Python", "Lógica de negocio que aprueba la venta y detona la comunicación externa")
-    
-    Rel(sale_controller, sale_order, "Llama métodos CRUD en")
-    Rel(sale_order, sale_order_line, "Contiene 1..N")
-    Rel(sale_order, action_confirm, "Ejecuta al confirmar")
+' Actores ajustados a la realidad de MIGAL
+Person(prop, "Propietario", "Atiende WhatsApp, opera el POS y digita en KeyFacil")
+Person(alm, "Operario de Almacén", "Prepara mercadería y valida guías de salida")
+
+' Sistemas Externos (Fuera del ecosistema Odoo)
+System_Ext(whatsapp, "WhatsApp", "Canal principal de pedidos remotos")
+System_Ext(keyfacil, "KeyFacil", "Plataforma para emisión de comprobantes SUNAT")
+
+' Contenedores Comerciales
+Container_Boundary(sales_app, "Módulos Comerciales (Contenedor Python)") {
+    Component(sale_order, "Modelo: sale.order", "ORM Python", "Cabecera del Pedido de Venta. Transiciona de Presupuesto a Confirmado")
+    Component(action_confirm, "Servicio: action_confirm()", "Método Python", "Lógica central. Aprueba la venta y orquesta las conexiones internas")
+    Component(pos_session, "Modelo: pos.session", "ORM Python", "Agrupa transacciones rápidas de mostrador hasta el cierre de caja")
 }
 
+' Contenedor de Inventario
 Container_Boundary(inv_app, "Módulo de Inventario (Contenedor Python)") {
-    Component(stock_picking, "Modelo: Stock.Picking", "ORM Python", "Representa la orden de salida (Albarán) para el almacenero")
-    Component(stock_move, "Modelo: Stock.Move", "ORM Python", "Representa la reserva física de una cantidad específica en el almacén")
+    Component(stock_picking, "Modelo: stock.picking", "ORM Python", "Guía de Salida. Caso MTO: Queda 'Esperando' hasta que el Propietario reabastezca manualmente")
 }
 
-ContainerDb(db, "Base de Datos Core", "PostgreSQL", "Almacena los registros relacionales")
+' Contenedor de Contabilidad
+Container_Boundary(acc_app, "Contabilidad Terceros (Contenedor Python)") {
+    Component(account_move, "Modelo: account.move", "ORM Python", "Asientos contables automáticos (Ingresos, Caja, CxC)")
+}
 
-' Relaciones Inter-componentes (El corazón del ERP)
-Rel(action_confirm, stock_picking, "Crea automáticamente orden de salida vía API interna")
-Rel(sale_order_line, stock_move, "Genera la reserva de mercancía por cada línea de venta")
+' Flujo de Pedidos (WhatsApp)
+Rel(whatsapp, prop, "1. Envía pedido y voucher", "Mensaje")
+Rel(prop, sale_order, "2. Transcribe orden remota", "App Web")
+Rel(sale_order, action_confirm, "3. Ejecuta confirmación")
 
-' Relaciones a Base de Datos
-Rel(sale_order, db, "Persiste datos vía ORM")
-Rel(sale_order_line, db, "Persiste datos vía ORM")
-Rel(stock_picking, db, "Persiste datos vía ORM")
+' Flujo de Punto de Venta (Físico)
+Rel(prop, pos_session, "Venta y cobro en mostrador", "App Web")
+Rel(pos_session, stock_picking, "Genera salida consolidada (al cerrar sesión)", "API Interna")
+Rel(pos_session, account_move, "Genera asiento de caja", "API Interna")
 
+' Orquestación Interna y Despacho
+Rel(action_confirm, stock_picking, "4. Crea Guía de Salida (Reserva de stock)", "API Interna")
+Rel(action_confirm, account_move, "Genera asiento de Cuentas por Cobrar/Ingreso", "API Interna")
+Rel(alm, stock_picking, "5. Prepara mercadería y valida salida", "App Web")
+
+' Desconexión Fiscal (La solución manual)
+Rel(prop, keyfacil, "6. Ingresa a emitir Boleta/Factura legal", "Transcripción Manual")
 @enduml
