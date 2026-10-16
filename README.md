@@ -1,39 +1,145 @@
-# ERP Ferre & Inversiones MIGAL - Grupo 1
+# ERP Ferre & Inversiones MIGAL — Grupo 1
 
-Este repositorio contiene la documentación arquitectónica para la implementación de un sistema ERP basado en Odoo 18 para la empresa ferretera Ferre & Inversiones MIGAL. El propósito del proyecto es centralizar la gestión de inventarios y ventas, eliminando la dependencia de registros informales y cálculos mentales, para lograr la trazabilidad de las operaciones diarias y facilitar la toma de decisiones basada en datos precisos.
+Repositorio acumulativo del proyecto de **GE703 · Sistemas Integrados Empresariales** aplicado a **Ferre & Inversiones MIGAL**. El objetivo es construir y validar progresivamente una arquitectura empresarial integrada que conecte procesos, datos, aplicaciones, controles y evidencia verificable.
 
-## Problema de Integración
+## Sobre la empresa
 
-Actualmente, Ferre & Inversiones MIGAL sufre de una desconexión operativa y falta de trazabilidad. Los procesos dependen de la memoria de los dueños (precios variables, registro de compras mental) y de canales no centralizados (pedidos por WhatsApp sin horario fijo). Aunque utilizan Keyfacil para algunas facturaciones electrónicas, el registro de ventas físicas en papel,  el manejo de créditos y cobranzas manual (cuadernos) genera un desorden en el almacén físico, dificulta la gestión de entregas y crea un vacío de información sobre las ganancias reales y la valoración del inventario.
+Ferre & Inversiones MIGAL es una empresa del sector retail ferretero. Su operación combina atención en tienda con pedidos y consultas por WhatsApp o llamadas, y actualmente mantiene distintos registros manuales o no integrados para inventario, precios, ventas a crédito y seguimiento operativo.
 
-## Alcance
+La descripción detallada del negocio, productos, operación actual y sistemas utilizados se encuentra en:
 
-**1. Objetivo General**
-El proyecto comprende el diseño de una arquitectura ERP, utilizando Odoo 18, para la empresa de venta al por menor Ferre & Inversiones MIGAL. El objetivo es centralizar y estructurar los procesos operativos de almacén, abastecimiento, ventas y contabilidad básica, transformando el modelo actual basado en cálculo mental y registros físicos informales en un flujo de datos integrado que brinde información precisa para la toma de decisiones.
+- [`arquitectura/base/contexto-empresa.md`](arquitectura/base/contexto-empresa.md)
 
-**2. Límites del Sistema**
+## Problema de integración
 
-* **Gestión de Almacén:** Control de inventario sincronizado y centralizado que cubra las ubicaciones físicas de la empresa, es decir, la tienda y los dos almacenes. Se automatizarán las alertas de reposición de stock hacia los proveedores, reemplazando el cálculo mental.
-* **Gestión de Ventas Internas (Punto de Venta - POS):** Módulo POS de Odoo para el registro formal de las ventas diarias que no requieran emisión de comprobantes fiscales.
-* **Ingreso Manual de Pedidos Externos:** Las ventas cerradas a través de llamadas o mensajes de WhatsApp serán registradas manualmente por los propietarios en el ERP como órdenes de venta para asegurar la correcta rebaja del inventario.
+El proyecto parte de una problemática central: existen procesos e información distribuidos entre registros manuales, conocimiento de los propietarios y sistemas externos, lo que dificulta mantener trazabilidad y una visión consistente de la operación.
 
-**3. Exclusiones**
+La arquitectura propuesta se desarrolla de forma incremental y actualmente toma **Odoo 18 Community** como plataforma ERP base, mientras **KeyFacil** continúa como sistema externo para facturación electrónica y **WhatsApp** como canal externo de comunicación.
 
-* **Facturación Electrónica Integrada:** No se implementará la localización peruana de Odoo para comprobantes de pago de la SUNAT. El sistema "KeyFacil" se mantendrá operando en paralelo y de forma aislada para la emisión exclusiva de facturas y boletas electrónicas.
-* **Integración de API de WhatsApp:** No se automatizará la lectura, respuesta ni captura de pedidos por WhatsApp. Este seguirá operando únicamente como un canal de comunicación externo.
+Las decisiones y sus fundamentos se documentan en:
+
+- [`arquitectura/base/comparacion-erp.md`](arquitectura/base/comparacion-erp.md)
+- [`arquitectura/decisiones/`](arquitectura/decisiones/)
+- [`arquitectura/vistas/`](arquitectura/vistas/)
+
+## Alcance hasta el Examen Parcial
+
+Hasta el parcial, el repositorio cubre cuatro incrementos principales:
+
+1. **Arquitectura ERP base:** contexto empresarial, comparación de alternativas, decisiones arquitectónicas y vistas C4.
+2. **Macroprocesos:** Order to Cash (O2C), Procure to Pay (P2P) y su relación con inventario.
+3. **Gestión comercial y CRM:** cuenta, contacto, canal, lead, oportunidad, cotización y decisiones comerciales.
+4. **Integración parcial:** consolidación de los incrementos anteriores para el Examen Parcial.
+
+El proyecto continúa evolucionando durante el curso. La presencia de un artefacto en el repositorio puede representar análisis, diseño, propuesta, configuración, prueba o evidencia; no implica necesariamente una implementación productiva.
+
+## Documentación principal
+
+| Área | Ubicación | Contenido |
+|---|---|---|
+| Contexto y arquitectura base | [`arquitectura/base/`](arquitectura/base/) | Empresa, comparación ERP, riesgos y fundamentos |
+| Decisiones | [`arquitectura/decisiones/`](arquitectura/decisiones/) | ADR y decisiones arquitectónicas |
+| Vistas | [`arquitectura/vistas/`](arquitectura/vistas/) | Diagramas C4, fuentes editables y renders |
+| Procesos | [`procesos/`](procesos/) | O2C, P2P, inventario y comercial/CRM |
+| Producto | [`producto/`](producto/) | Backlog y artefactos de implementación |
+| Fuentes | [`fuentes/`](fuentes/) | Bibliografía, uso de IA, licencias y evidencia |
+| Datos | `datos/` | Maestros, calidad, trazabilidad y datos de prueba |
+| Pruebas | `pruebas/` | Casos, resultados, evidencias e incidencias |
+| Entregas | `entregas/` | Snapshots de PC1, avances, PC2 y EP |
+
+El `README.md` funciona como punto de entrada. La información detallada debe mantenerse en los documentos de cada área para evitar duplicidad y conservar una sola fuente de verdad por tema.
+
+## Estructura del repositorio hasta el parcial
+
+```text
+migal-erp/
+├── README.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── .gitignore
+│
+├── arquitectura/
+│   ├── base/
+│   ├── decisiones/
+│   ├── vistas/
+│   ├── integraciones/
+│   └── versiones/
+│
+├── procesos/
+│   ├── mapa-nivel-1/
+│   ├── o2c/
+│   ├── p2p/
+│   ├── inventario/
+│   └── comercial-crm/
+│
+├── datos/
+├── producto/
+├── pruebas/
+├── fuentes/
+└── entregas/
+```
+
+## Diagramas
+
+Las vistas C4 separan el archivo editable del resultado generado:
+
+```text
+arquitectura/vistas/c4/
+├── fuentes/
+│   ├── contexto.puml
+│   ├── contenedores.puml
+│   └── componentes/
+└── render/
+    ├── contexto.png
+    ├── contenedores.png
+    └── componentes/
+```
+
+Cuando se modifica un archivo fuente, debe actualizarse también su render correspondiente.
+
+## Contribución
+
+El trabajo colaborativo se realiza mediante ramas y Pull Requests. No se recomienda trabajar directamente sobre `main`.
+
+```text
+main
+  ↑
+Pull Request
+  ↑
+rama de trabajo
+```
+
+Las convenciones de ramas, commits, Pull Requests, revisión, validación y actualización del changelog se encuentran en:
+
+- [`CONTRIBUTING.md`](CONTRIBUTING.md)
+
+## Trazabilidad y evidencia
+
+Las decisiones relevantes deben distinguir, cuando corresponda:
+
+- **hecho o evidencia verificada**;
+- **interpretación del equipo**;
+- **supuesto**;
+- **vacío o pendiente de validación**.
+
+Los cambios relevantes en la evolución del proyecto se registran en:
+
+- [`CHANGELOG.md`](CHANGELOG.md)
 
 ## Integrantes
 
-Equipo de trabajo conformado para el curso GE703 - Sistemas Integrados Empresariales:
+| Integrante | Rol de trabajo |
+|---|---|
+| Alejandro César Flores Marcos | Facilitación |
+| Brenda Nicole Mirano Flores | Producto |
+| César Emmerson Joaquín Palomino | Procesos |
+| Diego Alonso Pinedo Aponte | Arquitectura |
+| Gabriel Gibson Martínez Arista | Datos |
+| Luis Rodrigo Núñez Príncipe | Validación |
 
-* **Alejandro Cesar Flores Marcos** - Facilitador
+Los roles organizan el trabajo, pero las contribuciones deben quedar verificables mediante commits, Pull Requests, revisiones, modelos, fuentes, pruebas o validaciones.
 
-* **Brenda Nicole Mirano Flores** - Producto
+## Licencia
 
-* **César Emmerson Joaquin Palomino** - Procesos
-
-* **Diego Alonso Pinedo Aponte** - Arquitectura
-
-* **Gabriel Gibson Martinez Arista** - Datos
-
-* **Luis Rodrigo Nuñez Principe** - Validación
+Consultar [`LICENSE`](LICENSE).
