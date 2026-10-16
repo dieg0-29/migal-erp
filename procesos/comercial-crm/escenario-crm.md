@@ -21,10 +21,10 @@ Los canales de captación identificados en el negocio son (ver detalle de cuenta
 
 ## 2. Diagrama del Proceso Comercial (BPMN)
 
-- **Archivo fuente editable:** [`fuentes/Ferre & Inversiones MIGAL.bpm`](fuentes/Ferre%20&%20Inversiones%20MIGAL.bpm)
+- **Archivo fuente editable:** [`fuentes/flujo-comercial.bpm`](fuentes/flujo-comercial.bpm)
 - **Render del diagrama:**
 
-![Diagrama BPMN del Proceso Comercial](render/Ferre%20&%20Inversiones%20MIGAL.png)
+![Diagrama BPMN del Proceso Comercial](render/flujo-comercial.png)
 
 ---
 
