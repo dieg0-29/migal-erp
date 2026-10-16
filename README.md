@@ -43,7 +43,8 @@ El proyecto continúa evolucionando durante el curso. La presencia de un artefac
 | Procesos | [`procesos/`](procesos/) | O2C, P2P, inventario y comercial/CRM |
 | Producto | [`producto/`](producto/) | Backlog y artefactos de implementación |
 | Fuentes | [`fuentes/`](fuentes/) | Bibliografía, uso de IA, licencias y evidencia |
-| Datos | `datos/` | Maestros, calidad, trazabilidad y datos de prueba |
+| Seguridad y autorización | [`arquitectura/seguridad/`](arquitectura/seguridad/) | Modelo D09 de permisos y segregación de funciones |
+| Datos | [`datos/`](datos/) | Maestros, calidad, trazabilidad y datos de prueba |
 | Pruebas | `pruebas/` | Casos, resultados, evidencias e incidencias |
 | Entregas | `entregas/` | Snapshots de PC1, avances, PC2 y EP |
 
@@ -64,6 +65,7 @@ migal-erp/
 │   ├── decisiones/
 │   ├── vistas/
 │   ├── integraciones/
+│   ├── seguridad/
 │   └── versiones/
 │
 ├── procesos/
@@ -74,6 +76,13 @@ migal-erp/
 │   └── comercial-crm/
 │
 ├── datos/
+│   ├── maestros/
+│   ├── transaccionales/
+│   ├── diccionario/
+│   ├── calidad/
+│   ├── trazabilidad/
+│   ├── privacidad/
+│   └── pruebas/
 ├── producto/
 ├── pruebas/
 ├── fuentes/
