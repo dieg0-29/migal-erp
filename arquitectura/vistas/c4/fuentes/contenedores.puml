@@ -13,13 +13,13 @@ System_Ext(keyfacil, "KeyFacil", "Comprobante electrónico SUNAT")
 System_Boundary(odoo_sys, "Odoo 18 Community (instancia única)") {
     Container(web, "Cliente web Odoo", "JavaScript / OWL", "Interfaz única para todos los usuarios")
 
-    Boundary(crm_b, "Dominio CRM · contexto comercial (alcance PC2)") {
+    Boundary(crm_b, "Dominio CRM") {
         Container(crm_mod, "CRM", "Módulo crm", "Leads, oportunidades, etapas, probabilidad, actividades y motivos de pérdida")
         Container(utm_mod, "Marketing / UTM", "Módulo utm", "Campaña, fuente (referido maestro) y medio (WhatsApp, teléfono, presencial)")
         Container(contact_mod, "Contactos", "Módulo contacts (res.partner)", "Cuenta (cliente/obra) y contactos (dueño, maestro, receptor)")
     }
 
-    Boundary(erp_b, "Dominio ERP · compromiso y ejecución") {
+    Boundary(erp_b, "Dominio ERP") {
         Container(sales_mod, "Ventas", "Módulos sale + sale_crm", "Cotización (borrador/enviada) ligada a la oportunidad; pedido confirmado")
         Container(pos_mod, "Punto de Venta", "Módulo point_of_sale", "Venta rápida de mostrador (PC1)")
         Container(inv_mod, "Inventario", "Módulo stock", "Stock en tienda y 2 almacenes; consulta de disponibilidad")
