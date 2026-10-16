@@ -135,7 +135,7 @@ En el TO-BE pueden definirse responsabilidades funcionales, pero deben mapearse 
 
 > Matriz asociada en formato Excel: [`reglas_negocio.xlsx`](reglas_negocio.xlsx)
 
-Este catálogo unifica las directrices operativas que gobiernan el Escenario A (`marketing → cotización`) en Ferre & Inversiones MIGAL antes de la generación del pedido[cite: 15].
+Este catálogo unifica las directrices operativas que gobiernan el Escenario A (`marketing → cotización`) en Ferre & Inversiones MIGAL antes de la generación del pedido.
 
 | ID | Regla de Negocio | Etapa (D01/D03) | Motivo de negocio (Por qué) | Sistema (Validador) | Control (CT) | ¿Qué pasa si se viola? (Consecuencia) | Responsable / Rol |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -170,4 +170,4 @@ Este catálogo unifica las directrices operativas que gobiernan el Escenario A (
 
 ## 11. Análisis del Impacto del Sistema
 
-**Cómo inciden el ERP y CRM en la operación:** El establecimiento de estas reglas demuestra que la operación de Ferre & Inversiones MIGAL requiere de controles que no pueden sostenerse únicamente en la memoria[cite: 15]. Reglas como la `RN-03` evidencian que extraer los precios desde una base de datos central (ERP) mitiga el riesgo de cotizar a pérdida debido a la volatilidad de los materiales de construcción[cite: 15]. Por su parte, la aplicación de la `RN-02` (seguimiento) y `RN-04` (versionado) en un entorno CRM permite formalizar la gestión comercial con maestros de obra y cuentas clave, pasando de acuerdos verbales informales a historiales documentados y trazables, lo cual otorga visibilidad estructurada al esfuerzo de ventas previo a la confirmación de cualquier pedido[cite: 15].
+**Cómo inciden el ERP y CRM en la operación:** El establecimiento de estas reglas demuestra que la operación de Ferre & Inversiones MIGAL requiere de controles que no pueden sostenerse únicamente en la memoria. Reglas como la `RN-03` evidencian que extraer los precios desde una base de datos central (ERP) mitiga el riesgo de cotizar a pérdida debido a la volatilidad de los materiales de construcción. Por su parte, la aplicación de la `RN-02` (seguimiento) y `RN-04` (versionado) en un entorno CRM permite formalizar la gestión comercial con maestros de obra y cuentas clave, pasando de acuerdos verbales informales a historiales documentados y trazables, lo cual otorga visibilidad estructurada al esfuerzo de ventas previo a la confirmación de cualquier pedido.
