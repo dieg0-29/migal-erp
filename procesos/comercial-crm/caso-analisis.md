@@ -2,8 +2,8 @@
 
 **Proyecto:** Ferre & Inversiones MIGAL  
 **Incremento:** PC2 v2.1  
-**Responsable:** Diego Alonso Pinedo Aponte (P6)  
-**Alcance:** CRM previo al pedido confirmado (hasta la diapositiva 12 de la sesión 6)  
+**Responsable:** Diego Alonso Pinedo Aponte
+**Alcance:** CRM previo al pedido confirmado
 **Datos:** simulados `[SIM]`, tomados del [catálogo sintético CRM](../../datos/pruebas/catalogos-crm-sinteticos-v2.xlsx); no ejecutados en Odoo.
 
 ## 1. Propósito
@@ -34,8 +34,8 @@ Las reglas aplicadas provienen del [catálogo RN/EXC](decisiones-comerciales.md#
 | Objeto CRM | Valor del catálogo | Rol en el caso |
 |---|---|---|
 | Cuenta | `CLI-SIM-001 · Cliente Obra Alfa` (Obra) | Responsable económico |
-| Contacto decisor | `CON-SIM-001 · Responsable Alfa` | Dueño de obra: aprueba y paga |
-| Contacto operativo | `CON-SIM-002 · Maestro Alfa` | Maestro de obra: envía la lista |
+| Contacto decisor | `CON-SIM-001 · Responsable` | Dueño de obra: aprueba y paga |
+| Contacto operativo | `CON-SIM-002 · Maestro` | Maestro de obra: envía la lista |
 | Dirección | `DIR-SIM-001 · Obra Alfa` (San Martín de Porres) | Contexto de destino, no orden de entrega |
 | Fuente | Referido maestro | `[E]` |
 | Canal | WhatsApp | `[SIM]` supuesto del recorrido |
@@ -56,7 +56,7 @@ La suma no incluye impuestos, flete ni descuentos y no se presenta como total fi
 
 | Paso | Etapa | Qué ocurre | Quién |
 |---|---|---|---|
-| 1 | Lead | El maestro Alfa envía la lista; se busca la cuenta existente y se registra la interacción. | Quien atiende |
+| 1 | Lead | El maestro envía la lista; se busca la cuenta existente y se registra la interacción. | Quien atiende |
 | 2 | Calificación | Obra activa, lista concreta y decisor identificado → probabilidad Alta. Se vinculan ambos contactos con su rol y la dirección de obra. | Quien atiende |
 | 3 | Cotización | Se prepara V01 con precio de lista, sin ajustes (`RN-03`). | Propietaria |
 | 4 | Promesa | Si el cliente pide fecha, se registra como **pendiente de comprobación** con responsable; no se mueve stock (`RN-05`). | Propietaria |
