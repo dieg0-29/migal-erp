@@ -8,7 +8,7 @@
 
 ## Declaración de uso
 
-Durante la preparación de la documentación del proyecto se ha declarado el uso de **Perplexity**, **ChatGPT** y **Gemini** como herramientas de apoyo para la búsqueda preliminar de referencias, la comprensión de conceptos, la comparación de alternativas de software y la revisión de redacción. El archivo histórico de declaración de IA del repositorio registra estas finalidades de manera colectiva. Asimismo, la contribución documental de D09 y D10 registra apoyo de ChatGPT para convertir documentos Word a Markdown y revisar enlaces y tablas.
+Durante la preparación de la documentación del proyecto se ha declarado el uso de **Perplexity**, **ChatGPT**, **Gemini** y **Claude** como herramientas de apoyo para la búsqueda preliminar de referencias, la comprensión de conceptos, la comparación de alternativas de software y la revisión de redacción. El archivo histórico de declaración de IA del repositorio registra estas finalidades de manera colectiva. Asimismo, la contribución documental de D09 y D10 registra apoyo de ChatGPT para convertir documentos Word a Markdown y revisar enlaces y tablas.
 
 Estas herramientas cumplen una función de **asistencia**: no constituyen una fuente primaria sobre Ferre & Inversiones MIGAL, ni sustituyen la evidencia aportada por los responsables del levantamiento, las decisiones humanas o las pruebas de una eventual implementación. La declaración documental disponible acredita los usos mencionados, pero no permite asignar cada herramienta o actividad a todos los integrantes individualmente.
 
@@ -19,6 +19,7 @@ Estas herramientas cumplen una función de **asistencia**: no constituyen una fu
 | Exploración de referencias y antecedentes | Perplexity; ChatGPT; Gemini | Apoyo para identificar conceptos, alternativas y materiales de consulta; las afirmaciones relevantes deben remitirse a las fuentes originales. |
 | Explicación y comparación de opciones técnicas | ChatGPT; Gemini | Orientación para comprender arquitectura, módulos y opciones ERP; las decisiones quedan fundamentadas en documentos y revisión del equipo. |
 | Revisión de redacción y organización documental | ChatGPT; Gemini | Apoyo en claridad, cohesión, estructuración y reformulación; el texto incorporado debe mantener el significado de las fuentes del proyecto. |
+| Alineación de arquitectura y caso de análisis | Claude | Apoyo para contrastar los entregables con la rúbrica, actualizar las vistas C4 con el CRM, plantear el caso de análisis y retirar marcas de citas; el contenido se revisó contra el catálogo sintético, los ADR y las fuentes FN-01/FN-02. Aporte de Diego Pinedo. |
 | Conversión y preparación de documentos D09 y D10 | ChatGPT | Transformación de Word a Markdown y organización de tablas y referencias, registrada en la declaración versionada y en el [PR #18](https://github.com/dieg0-29/migal-erp/pull/18). Estos artefactos corresponden a continuidad documental, no al alcance funcional evaluable de PC2. |
 
 La preparación de este registro y de los documentos de licencias y criterios de aceptación también recibió asistencia de ChatGPT. El contenido se organizó a partir de la rúbrica suministrada y del inventario de ramas y archivos del repositorio; su publicación requiere revisión de los responsables académicos.
