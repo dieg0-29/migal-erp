@@ -19,7 +19,9 @@ ID es texto estable; no representa posición de fila. Fecha/hora de eventos debe
 | Dirección.nombre_obra / ubicacion | Contexto y referencia, texto | Si aplica | Quien coordina |
 | Producto.id_producto / unidad_medida | Material y unidad de cotización | Cada línea de catálogo | Propietarios/Datos |
 | Oportunidad.id_oportunidad | Identidad comercial, texto | Al calificar interés | Atención |
-| Oportunidad.canal / fuente | Medio de interacción / procedencia | Al conocerlos; indicar pendiente | Atención |
+| Oportunidad.canal | Medio de la interacción: Presencial, WhatsApp, Teléfono | En cada interacción | Atención |
+| Oportunidad.fuente | Procedencia: Referido maestro, Referido cliente, Cliente frecuente, Directo | Al conocerla; indicar pendiente | Atención |
+| Oportunidad.campana | Iniciativa que causó la consulta: `CAM-01` a `CAM-04` o vacío (ver catálogo en `cuenta-contacto-canales.md` §5.3) | Solo si el cliente la menciona o es evidente | Atención |
 | Oportunidad.necesidad / responsable | Qué se busca / quién sigue | Mientras esté abierta | Atención |
 | Oportunidad.probabilidad | Baja/Media/Alta | Si se utiliza escala | Responsable comercial |
 | Oportunidad.proxima_accion / fecha | Acción y momento previsto | Oportunidad abierta con seguimiento | Responsable comercial |
@@ -41,6 +43,6 @@ Pedido: referencia de cotización aceptada, cantidades, condiciones y estado. En
 
 ## Diferencias respecto al catálogo recibido
 
-El Excel dispone de 25 entradas en `Diccionario_CRM` y columnas adicionales de contexto. Este documento organiza sus conceptos y propone separar canal/fuente; no afirma que existan columnas de interacción, correlación o canal separado en el libro. El mapeo de campos y relaciones a Odoo queda pendiente de revisión. No editar simultáneamente definiciones divergentes: un cambio debe registrarse aquí y en el catálogo si se adopta.
+El Excel dispone de 25 entradas en `Diccionario_CRM` y columnas adicionales de contexto. Este documento organiza sus conceptos y propone separar canal, fuente y campaña (la columna `origen` del Excel mezcla los tres); no afirma que existan columnas de interacción, correlación o canal separado en el libro. El mapeo de campos y relaciones a Odoo queda pendiente de revisión. No editar simultáneamente definiciones divergentes: un cambio debe registrarse aquí y en el catálogo si se adopta.
 
 Referencias: [catálogo](../pruebas/README.md), [maestros de clientes](../maestros/clientes.md), [precios](../maestros/precios.md), [linaje](../trazabilidad/identificadores-y-linaje.md), [fuentes](../../fuentes/fuentes-negocio.md).

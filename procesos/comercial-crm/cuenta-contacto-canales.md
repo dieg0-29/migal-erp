@@ -111,6 +111,34 @@ Por ello:
 
 No se propone inventar campañas para llenar el CRM.
 
+### 5.3. Catálogo de campañas
+
+`[TO-BE]` Para MIGAL, una **campaña** es una iniciativa identificable, con nombre, periodo, objetivo y responsable, que puede motivar una consulta o reforzar la relación con clientes y maestros. Se modela como un catálogo corto; la mayoría de oportunidades no tendrá campaña.
+
+| ID | Campaña | Objetivo | Periodo | Responsable | Clasificación |
+|---|---|---|---|---|---|
+| `CAM-01` | Material promocional de Progresol en la tienda | Captación asociada al cemento | Según campaña del proveedor | Propietarios / Progresol | `[E][AS-IS]` `[FN-02]` |
+| `CAM-02` | Actividad comunitaria difundida por estados de WhatsApp (aniversario, chocolatada) | Relación con la comunidad | Fecha de la actividad | Propietarios | `[E][AS-IS]` `[FN-02]` |
+| `CAM-03` | Fidelización navideña: canastas de víveres y sorteo de herramientas para maestros y clientes | Fidelización y referidos | Diciembre | Propietarios | `[E][AS-IS]` (confirmado por el equipo, 16/10/2026) |
+| `CAM-04` | Volanteo en zonas cercanas | Captación geográfica y medición de cobertura de reparto | Por definir | Propietarios | `[S][TO-BE]` propuesta, no práctica actual |
+
+`[I]` `CAM-04` se mantiene como propuesta porque permitiría conocer desde qué zonas llegan los clientes y apoyar la definición de un radio de reparto, que hoy no existe formalmente.
+
+### 5.4. Canal, fuente y campaña: regla de registro
+
+| Concepto | Pregunta que responde | Valores | ¿Obligatorio? |
+|---|---|---|---|
+| Canal | ¿Por dónde llegó la interacción? | Presencial, WhatsApp, Teléfono | Sí, en cada interacción |
+| Fuente | ¿Quién o qué trajo al cliente? | Referido maestro, Referido cliente, Cliente frecuente, Directo | Al conocerla |
+| Campaña | ¿Qué iniciativa de MIGAL lo motivó directamente? | `CAM-01` a `CAM-04` o vacío | Solo si el cliente la menciona o la relación es evidente |
+
+`[TO-BE]` Reglas:
+
+- La campaña se registra solo cuando **causó** la consulta, no cuando solo la **favoreció**. Ejemplo: un maestro que recibió una canasta navideña (`CAM-03`) trae en enero a un cliente nuevo → fuente: *Referido maestro*; campaña: vacía. La canasta fortaleció la relación, pero no originó la consulta.
+- Si un cliente dice que llegó por el material de Progresol en tienda, se registra `CAM-01`.
+- El envío de mensajes promocionales por una campaña requiere consentimiento promocional (ver sección 7 y [`tratamiento-datos.md`](../../datos/privacidad/tratamiento-datos.md)).
+- `[ND]` No existe control del presupuesto ni del retorno de las campañas; registrar la campaña es el primer paso para medirlo.
+
 ## 6. Seguimiento comercial
 
 `[E][AS-IS]` Actualmente no existe un mecanismo uniforme para recordar qué cotizaciones requieren seguimiento. `[FN-02]`
