@@ -29,6 +29,8 @@ Las reglas aplicadas provienen del [catálogo RN/EXC](decisiones-comerciales.md#
 
 ## 3. Escenario normal — Lista de obra referida por maestro
 
+El caso distingue los tres conceptos de origen: canal (WhatsApp), fuente (referido maestro) y campaña (ninguna). Si el maestro hubiera recibido la canasta navideña `CAM-03`, la campaña seguiría vacía: la canasta favorece la relación, pero no causa la consulta.
+
 ### 3.1. Datos
 
 | Objeto CRM | Valor del catálogo | Rol en el caso |
@@ -39,6 +41,7 @@ Las reglas aplicadas provienen del [catálogo RN/EXC](decisiones-comerciales.md#
 | Dirección | `DIR-SIM-001 · Obra Alfa` (San Martín de Porres) | Contexto de destino, no orden de entrega |
 | Fuente | Referido maestro | `[E]` |
 | Canal | WhatsApp | `[SIM]` supuesto del recorrido |
+| Campaña | Ninguna: el cliente llegó por referencia del maestro, no por una iniciativa de MIGAL | Ver [catálogo de campañas](cuenta-contacto-canales.md#53-catálogo-de-campañas) |
 | Oportunidad | `OPP-SIM-001 · Lista completa para obra` · probabilidad **Alta** · responsable **Propietaria** | Resultado: **Abierta** |
 | Cotización | `COT-SIM-001-V01` · estado *En revisión* · comprobante previsto *Por definir* | — |
 | Próxima acción | Confirmar aprobación del responsable · 17/10/2026 · Propietaria | `RN-02` |
@@ -90,6 +93,7 @@ La suma no incluye impuestos, flete ni descuentos y no se presenta como total fi
 | Cuenta | `CLI-SIM-002 · Cliente Obra Beta` (Obra) |
 | Contacto decisor | `CON-SIM-003 · Responsable Beta` (dueño de obra) |
 | Contacto operativo | `CON-SIM-004 · Maestro Beta` (maestro de obra) |
+| Canal / fuente / campaña | WhatsApp / no registrada `[ND]` / ninguna |
 | Oportunidad | `OPP-SIM-002 · Cemento y fierro para avance de obra` · probabilidad **Alta** · competencia **Sí** · responsable **Dueño** |
 | Decisión | `DEC-SIM-001` · Descuento · *Cliente comunica mejor precio de competencia* · **Ajuste autorizado** · Dueño · 16/10/2026 |
 | Resultado | **Ganada parcial** · motivo: *Precio de competencia en fierro* |
