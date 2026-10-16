@@ -1,0 +1,152 @@
+# Cuenta, contacto, canales y contexto comercial del cliente
+
+**Proyecto:** Ferre & Inversiones MIGAL  
+**Curso:** GE703 · Sistemas Integrados Empresariales  
+**Incremento:** PC2 v2.1  
+**Alcance:** contexto CRM previo al pedido confirmado
+
+## 1. Propósito
+
+Definir qué contexto mínimo necesita conservar MIGAL para reconocer al cliente, comprender quién participa en una compra, recuperar el historial comercial y dar seguimiento a una oportunidad sin depender exclusivamente de la memoria de los propietarios o de conversaciones dispersas.
+
+Este documento **no diseña un modelo físico de datos**. Adapta al caso MIGAL los conceptos de cuenta, contacto, canal, consentimiento y dirección presentados en la sesión 6 y en los catálogos docentes.
+
+## 2. Situación actual de MIGAL
+
+### 2.1. Identificación del cliente
+
+- `[E][AS-IS]` En una cotización puede registrarse el nombre del cliente, pero no siempre se hace. En algunos casos la nota contiene principalmente productos, cantidades y precios. `[FN-01][FN-02]`
+- `[E][AS-IS]` Información como nombre de la obra, dirección, responsables o antecedentes de atención puede permanecer en la memoria de los propietarios o en conversaciones de WhatsApp. `[FN-02]`
+- `[E][AS-IS]` Los clientes habituales o aquellos que requieren coordinación frecuente suelen guardarse como contactos; sin embargo, no existe una nomenclatura estándar que permita reconocer rápidamente a qué cliente u obra pertenece cada número. `[FN-02]`
+- `[E][AS-IS]` Históricamente, los celulares usados para el negocio han mezclado información comercial y personal. Los propietarios vienen intentando separar ambos usos. `[FN-02]`
+
+### 2.2. Cliente responsable y maestro de obra
+
+`[E][AS-IS]` En una venta para obra pueden intervenir al menos dos actores:
+
+- **Cliente responsable / dueño de obra:** normalmente paga o autoriza la compra y debe conocer el costo de los materiales.
+- **Maestro de obra:** puede preparar la lista, recomendar productos, negociar condiciones, coordinar requerimientos y recibir materiales.
+
+En algunos casos el dueño delega casi completamente la adquisición al maestro de obra. Por ello, la relación no debe modelarse suponiendo que siempre existe un único interlocutor. `[FN-01][FN-02]`
+
+## 3. Propuesta de organización en CRM
+
+### 3.1. Cuenta
+
+`[TO-BE]` La **cuenta** representa al cliente responsable de la relación comercial. Puede ser una persona natural, una empresa o el responsable económico de una obra.
+
+Información mínima propuesta:
+
+| Información | Propósito de uso | Actualización propuesta |
+|---|---|---|
+| Identificador interno | Evitar confundir clientes con nombres similares | Se asigna una vez |
+| Nombre / razón social | Reconocer al cliente | Cuando el cliente comunica un cambio |
+| Tipo de cliente | Distinguir atención minorista y compras vinculadas a obra | Cuando cambia el contexto principal |
+| DNI/RUC, si corresponde | Apoyar identificación y futura condición de comprobante | Solo cuando sea necesario para la operación |
+| Responsable comercial | Saber quién da seguimiento | Al reasignar la atención |
+| Estado de relación | Distinguir cliente activo/inactivo | Cuando deja de ser vigente |
+
+`[I][TO-BE]` No se propone exigir DNI/RUC para registrar un primer interés o elaborar necesariamente una cotización, porque la práctica actual de MIGAL no respalda que sea un requisito universal.
+
+### 3.2. Contactos relacionados
+
+Una cuenta puede tener más de un contacto:
+
+```mermaid
+flowchart LR
+    A[Cuenta / cliente responsable]
+    A --> B[Dueño de obra]
+    A --> C[Maestro de obra]
+    A --> D[Persona que recibe]
+    A --> E[Otro contacto autorizado]
+    A --> F[Obra / dirección relacionada]
+```
+
+Información mínima propuesta para el contacto:
+
+| Información | Propósito |
+|---|---|
+| Nombre | Identificar al interlocutor |
+| Rol | Distinguir dueño, maestro, receptor u otro |
+| Teléfono | Comunicación operativa |
+| Canal preferido | Evitar depender de recordar cómo contactarlo |
+| Cuenta relacionada | Mantener contexto de quién representa |
+| Estado del contacto | No usar referencias que ya no sean vigentes |
+
+## 4. Obra y direcciones
+
+`[E][AS-IS]` Una dirección de obra puede recibirse como texto por WhatsApp, ubicación compartida, referencia verbal o quedar conocida por repetición y memoria. `[FN-02]`
+
+`[TO-BE]` Se propone conservar la dirección como información reutilizable asociada al cliente y, cuando corresponda, a una obra concreta.
+
+Información mínima:
+
+- nombre o referencia de la obra;
+- dirección textual;
+- ubicación compartida o referencia complementaria;
+- distrito;
+- indicaciones relevantes para llegar;
+- estado de la dirección: activa/inactiva.
+
+`[I][TO-BE]` Una misma cuenta puede necesitar varias direcciones, porque un cliente puede tener más de una obra o destino de entrega.
+
+## 5. Canales y fuente comercial
+
+### 5.1. Canales reales identificados
+
+- `[E][AS-IS]` Presencial / mostrador. `[FN-01]`
+- `[E][AS-IS]` WhatsApp. `[FN-01][FN-02]`
+- `[E][AS-IS]` Llamadas telefónicas. `[FN-01][FN-02]`
+- `[E][AS-IS]` Recomendación o referido, especialmente mediante maestros de obra y clientes conocidos. `[FN-01][FN-02]`
+
+### 5.2. Campañas
+
+`[E][AS-IS]` MIGAL no desarrolla actualmente campañas directas y sistemáticas sobre una base de contactos. Actividades como aniversarios o chocolatadas pueden difundirse mediante estados de WhatsApp; determinadas campañas de Progresol se comunican mediante material físico en el establecimiento. `[FN-02]`
+
+Por ello:
+
+- **canal** indica por dónde se produjo la interacción;
+- **fuente** indica cómo llegó el cliente (por ejemplo, referido por maestro);
+- **campaña** solo se registra cuando exista una campaña identificable.
+
+No se propone inventar campañas para llenar el CRM.
+
+## 6. Seguimiento comercial
+
+`[E][AS-IS]` Actualmente no existe un mecanismo uniforme para recordar qué cotizaciones requieren seguimiento. `[FN-02]`
+
+`[TO-BE]` Cada oportunidad o cotización abierta puede registrar una **próxima acción**, una fecha y un responsable.
+
+Ejemplos:
+
+- escribir para confirmar si revisó la cotización;
+- llamar para conocer si continúa interesado;
+- verificar una nueva referencia de precio;
+- confirmar si el dueño de obra aprobó la propuesta.
+
+No se fija una frecuencia artificial como “cada 48 horas”; la acción debe responder al contexto de la oportunidad.
+
+## 7. Uso operativo y uso promocional del contacto
+
+`[TO-BE]` Se propone diferenciar dos finalidades:
+
+- **Uso operativo:** responder consultas, cotizar, coordinar, hacer seguimiento de una solicitud y recuperar contexto de una relación existente.
+- **Uso promocional:** enviar campañas, ofertas o mensajes de marketing no solicitados.
+
+`[I]` Dado que MIGAL no realiza actualmente marketing directo sistemático, no corresponde asumir que disponer del teléfono del cliente equivale a autorización para campañas promocionales.
+
+El tratamiento detallado se encuentra en `datos/privacidad/tratamiento-datos.md`.
+
+## 8. Límites
+
+- `[ND]` No existe una política formal documentada de retención de información de contactos.
+- `[ND]` No se ha definido un procedimiento formal de consentimiento promocional.
+- `[TO-BE]` La ficha CRM propuesta debe validarse con los propietarios antes de considerarse una política del negocio.
+- El alcance de PC2 no incluye diseño técnico de tablas, APIs ni sincronización CRM–ERP.
+
+## 9. Fuentes relacionadas
+
+- `[FN-01]` Monografía SI704V de MIGAL, 15/10/2026.
+- `[FN-02]` Aclaraciones de campo registradas por Brenda con base en la operación familiar de MIGAL, 16/10/2026.
+- `[FC-01]` Sesión 6 GE703 · CRM, marketing y ventas.
+- `[FD-01]` Catálogos docentes GE703 S6, usados como referencia conceptual; sus datos son sintéticos.
