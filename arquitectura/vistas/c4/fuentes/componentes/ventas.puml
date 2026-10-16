@@ -11,9 +11,14 @@ Person(alm, "Operario de Almacén", "Prepara mercadería y valida guías de sali
 System_Ext(whatsapp, "WhatsApp", "Canal principal de pedidos remotos")
 System_Ext(keyfacil, "KeyFacil", "Plataforma para emisión de comprobantes SUNAT")
 
+' v2.1 (PC2): la cotización nace en el CRM (detalle en componentes/crm.puml)
+Container_Boundary(crm_app, "CRM (Contenedor Python · crm + sale_crm)") {
+    Component(crm_lead, "Modelo: crm.lead", "ORM Python", "Oportunidad con cuenta, contactos (dueño y maestro de obra), fuente y probabilidad")
+}
+
 ' Contenedores Comerciales
 Container_Boundary(sales_app, "Módulos Comerciales (Contenedor Python)") {
-    Component(sale_order, "Modelo: sale.order", "ORM Python", "Cabecera del Pedido de Venta. Transiciona de Presupuesto a Confirmado")
+    Component(sale_order, "Modelo: sale.order", "ORM Python", "Cotización (borrador/enviada) ligada a la oportunidad; al confirmarse pasa a Pedido de Venta")
     Component(action_confirm, "Servicio: action_confirm()", "Método Python", "Lógica central. Aprueba la venta y orquesta las conexiones internas")
     Component(pos_session, "Modelo: pos.session", "ORM Python", "Agrupa transacciones rápidas de mostrador hasta el cierre de caja")
 }
@@ -31,7 +36,9 @@ Container_Boundary(acc_app, "Contabilidad Terceros (Contenedor Python)") {
 ' Flujo de Pedidos (WhatsApp)
 Rel(whatsapp, prop, "1. Envía pedido y voucher", "Mensaje")
 Rel(prop, sale_order, "2. Transcribe orden remota", "App Web")
-Rel(sale_order, action_confirm, "3. Ejecuta confirmación")
+Rel(crm_lead, sale_order, "Crea cotización desde la oportunidad (sale_crm)")
+Rel(sale_order, crm_lead, "Cotización aceptada: oportunidad Ganada")
+Rel(sale_order, action_confirm, "3. Ejecuta confirmación (frontera CRM → ERP)")
 
 ' Flujo de Punto de Venta (Físico)
 Rel(prop, pos_session, "Venta y cobro en mostrador", "App Web")
