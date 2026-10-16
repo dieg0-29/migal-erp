@@ -4,7 +4,7 @@
 **Incremento:** PC2 v2.1  
 **Responsable:** Diego Alonso Pinedo Aponte (P6)  
 **Alcance:** CRM previo al pedido confirmado (hasta la diapositiva 12 de la sesión 6)  
-**Datos:** simulados `[SIM]`, tomados del [catálogo sintético CRM](../../datos/pruebas/MIGAL_PC2_Catalogos_CRM_sinteticosxlsx.xlsx); no ejecutados en Odoo.
+**Datos:** simulados `[SIM]`, tomados del [catálogo sintético CRM](../../datos/pruebas/catalogos-crm-sinteticos-v2.xlsx); no ejecutados en Odoo.
 
 ## 1. Propósito
 
