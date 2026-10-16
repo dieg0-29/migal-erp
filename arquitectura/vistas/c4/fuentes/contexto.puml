@@ -1,20 +1,22 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+' v2.1 (PC2): se agrega la gestión comercial CRM dentro de Odoo 18 Community (ADR-001, ADR-002, ADR-004)
+title Diagrama de Contexto (Nivel 1) - Ferre & Inversiones MIGAL · v2.1 (PC2)
 
-title Diagrama de Contexto (Nivel 1) - Ferre & Inversiones MIGAL
+Person(cliente, "Cliente / Dueño de obra", "Consulta, recibe cotizaciones y decide la compra; suele ser quien paga")
+Person(maestro, "Maestro de obra", "Refiere clientes, envía listas de materiales y coordina en obra")
+Person(prop, "Propietarios", "Atienden, cotizan, deciden descuentos, promesas y condición de comprobante")
+Person(trab, "Trabajadores", "Atienden mostrador, registran interacciones y preparan mercadería")
 
-Person(cliente, "Cliente", "Solicita productos vía canales externos")
-Person(prop, "Propietarios", "Registran ventas y gestionan compras")
-Person(alm, "Personal de Almacén", "Visualiza órdenes y prepara mercadería")
+System_Ext(whatsapp, "WhatsApp / Teléfono", "Canales de consulta, envío de listas y cotizaciones")
+System(odoo, "Odoo 18 Community", "CRM: relación comercial, lead, oportunidad y cotización\nERP: pedido confirmado, inventario y contabilidad básica")
+System_Ext(keyfacil, "KeyFacil", "Emisión del comprobante electrónico (SUNAT); operado por los propietarios")
 
-System_Ext(whatsapp, "WhatsApp", "Canal de comunicación para ventas informales")
-System(odoo, "ERP Odoo 18", "Centraliza inventario, ventas internas y contabilidad básica")
-System_Ext(keyfacil, "KeyFacil", "Plataforma SUNAT para facturación electrónica")
-
-Rel(cliente, whatsapp, "Realiza pedidos y envía pagos", "Mensaje")
-Rel(prop, whatsapp, "Revisa pedidos", "App Móvil")
-Rel(prop, odoo, "Registra ventas y controla stock", "App Web")
-Rel(alm, odoo, "Verifica salidas de almacén", "App Web")
-Rel(prop, keyfacil, "Digita datos para facturación", "App Web")
-Rel(keyfacil, cliente, "Emite comprobante fiscal", "PDF")
+Rel(cliente, whatsapp, "Consulta precios y disponibilidad", "Mensaje / llamada")
+Rel(maestro, whatsapp, "Envía lista de materiales / refiere clientes", "Mensaje")
+Rel(cliente, prop, "Visita la tienda", "Presencial")
+Rel(prop, whatsapp, "Responde y envía cotización (PDF)", "App móvil")
+Rel(prop, odoo, "Registra oportunidad, cotiza y aprueba excepciones", "Navegador")
+Rel(trab, odoo, "Registra leads e interacciones; consulta stock", "Navegador")
+Rel(prop, keyfacil, "Emite boleta/factura (fuera de alcance PC2)", "App web")
 @enduml
