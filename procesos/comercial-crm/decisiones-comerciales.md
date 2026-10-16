@@ -133,7 +133,7 @@ En el TO-BE pueden definirse responsabilidades funcionales, pero deben mapearse 
 
 ## 8. Catálogo Central de Reglas de Negocio Previas al Pedido (D02 — Matriz RN)
 
-> Matriz asociada en formato Excel: [`reglas-negocio.xlsx`](reglas-negocio.xlsx)
+> Matriz asociada en formato Excel: [`reglas_negocio.xlsx`](reglas_negocio.xlsx)
 
 Este catálogo unifica las directrices operativas que gobiernan el Escenario A (`marketing → cotización`) en Ferre & Inversiones MIGAL antes de la generación del pedido[cite: 15].
 
