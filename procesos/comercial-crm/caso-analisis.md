@@ -8,7 +8,7 @@
 
 ## 1. Propósito
 
-Presentar, en el formato que exige la rúbrica, un **escenario normal** y una **excepción prioritaria** del tramo comercial de MIGAL. Para cada uno se identifica la decisión, el responsable principal, la evidencia esperada, el impacto para el cliente y la respuesta propuesta.
+Presentar, en el formato que exige la rúbrica, un escenario normal y una excepción prioritaria del tramo comercial de MIGAL. Para cada uno se identifica la decisión, el responsable principal, la evidencia esperada, el impacto para el cliente y la respuesta propuesta.
 
 Los dos casos usan registros existentes del catálogo sintético, para que cualquier revisor pueda comprobar cada dato por su identificador:
 
@@ -19,7 +19,7 @@ Los dos casos usan registros existentes del catálogo sintético, para que cualq
 
 ## 2. Contexto común del negocio
 
-- `[E][AS-IS]` En las ventas de obra intervienen tres actores: MIGAL, el **maestro de obra** y el **dueño de la obra**. El maestro trae al cliente, prepara la lista de materiales y recomienda productos; el dueño revisa precios, autoriza y paga. `[FN-01][FN-02]`
+- `[E][AS-IS]` En las ventas de obra intervienen tres actores: MIGAL, el maestro de obra y el dueño de la obra. El maestro trae al cliente, prepara la lista de materiales y recomienda productos; el dueño revisa precios, autoriza y paga. `[FN-01][FN-02]`
 - `[E][AS-IS]` Las consultas llegan por mostrador, WhatsApp, llamadas y referidos de maestros. `[FN-01]`
 - `[E][AS-IS]` No existe vigencia fija formal de la cotización: si el cliente no ha pagado y cambia el costo, el precio puede actualizarse. `[FN-01][FN-02]`
 - `[E][AS-IS]` No existe un porcentaje máximo formal de descuento; ambos propietarios pueden autorizar ajustes. `[FN-01][FN-02]`
@@ -81,7 +81,7 @@ La suma no incluye impuestos, flete ni descuentos y no se presenta como total fi
 
 - Afecta directamente al margen en los productos donde MIGAL tiene menos holgura (cemento y fierro). `[E][FN-01]`
 - Hoy depende del criterio de los propietarios y no deja rastro de qué se concedió ni por qué. `[E][FN-02]`
-- Permite sustentar la decisión de **descuento excepcional** que exige la rúbrica sin inventar una política porcentual.
+- Permite sustentar la decisión de descuento excepcional que exige la rúbrica sin inventar una política porcentual.
 
 ### 4.2. Datos
 
