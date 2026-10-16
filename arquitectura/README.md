@@ -11,6 +11,7 @@ arquitectura/
 ├── decisiones/
 ├── vistas/
 ├── integraciones/
+├── seguridad/
 └── versiones/
 ```
 
@@ -23,6 +24,13 @@ Reúne la información que sustenta las decisiones de arquitectura:
 - comparación de alternativas ERP;
 - adecuación arquitectónica;
 - riesgos y controles relacionados con la implementación.
+
+### `seguridad/`
+
+Contiene el modelo de autorización y segregación de funciones D09, junto con su matriz de permisos en formato Excel:
+
+- [`d09-autorizacion-y-segregacion.md`](seguridad/d09-autorizacion-y-segregacion.md)
+- [`d09-matriz-permisos.xlsx`](seguridad/d09-matriz-permisos.xlsx)
 
 ### `decisiones/`
 
