@@ -2,6 +2,19 @@
 
 Este archivo resume los **cambios relevantes del proyecto acumulativo**. No reemplaza el historial de Git ni registra cada commit: documenta cambios que afectan la estructura del repositorio, el alcance, las decisiones, los procesos, los datos, las pruebas o la evidencia del proyecto.
 
+## 2026-10-16 — Incorporación de los artefactos D09 y D10 de PC2
+
+### Añadido
+
+- D09: modelo de autorización y segregación de funciones en Markdown y matriz de permisos Excel.
+- D10: plan de trazabilidad y auditoría en Markdown y matriz Excel conservada en su formato original.
+- Índices de seguridad y trazabilidad, enlaces en los README de arquitectura, datos y repositorio, y esta entrada de changelog.
+
+### Observaciones
+
+- Los documentos se recibieron como los adjuntos oficiales más recientes y pueden estar sujetos a cambios.
+- Los casos de auditoría consignados en D10 permanecen por ejecutar.
+
 ## 2026-10-16 — Reorganización y preparación hasta el Examen Parcial
 
 ### Añadido
