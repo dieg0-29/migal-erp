@@ -59,6 +59,10 @@ Registra reglas necesarias para que los datos sean utilizables y confiables, por
 
 Documenta los identificadores y relaciones necesarios para reconstruir el recorrido de una operación entre procesos y sistemas.
 
+- [`README.md`](trazabilidad/README.md): índice del área.
+- [`d10-plan-trazabilidad-auditoria.md`](trazabilidad/d10-plan-trazabilidad-auditoria.md): plan D10 convertido desde el documento Word.
+- [`d10-matriz-trazabilidad.xlsx`](trazabilidad/d10-matriz-trazabilidad.xlsx): matriz D10 en su formato original.
+
 ### `privacidad/`
 
 Registra criterios de tratamiento y protección de información sensible.
