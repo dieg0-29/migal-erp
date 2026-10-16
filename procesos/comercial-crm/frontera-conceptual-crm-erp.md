@@ -2,9 +2,8 @@
 
 ## 1. Metadatos
 
-- **Proyecto:** Ferre & Inversiones MIGAL
-- **Documento:** Frontera CRMRP
-- **Versión:** 2.0
+- **Documento:** Frontera CRM-ERP
+- **Versión:** 1.0
 - **Fecha:** 16/10/2026
 - **Estado:** Propuesta para revisión
 - **Autor:** Gabriel Gibson Martínez Arista
