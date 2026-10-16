@@ -1,6 +1,6 @@
 # Aporte al flujo: lead, oportunidad y cotización
 
-> **Nota de integración:** este documento desarrolla el aporte del bloque de Brenda al escenario comercial. Debe consolidarse con el responsable del flujo general para evitar dos versiones paralelas.
+> **Nota de integración:** este documento detalla los atributos comerciales de las etapas `ETP-01` a `ETP-03` y complementa el flujo general y diagrama BPMN documentados en [`escenario-crm.md`](escenario-crm.md).
 
 ## 1. Propósito
 

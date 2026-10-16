@@ -2,6 +2,14 @@
 
 Este archivo resume los **cambios relevantes del proyecto acumulativo**. No reemplaza el historial de Git ni registra cada commit: documenta cambios que afectan la estructura del repositorio, el alcance, las decisiones, los procesos, los datos, las pruebas o la evidencia del proyecto.
 
+## 2026-10-16 — Incorporación de los artefactos D01 y D02 del escenario comercial CRM (PC2)
+
+### Añadido
+
+- D01: flujo comercial desde captación hasta cotización (`ETP-01` a `ETP-03`) y reglas de salto en `procesos/comercial-crm/escenario-crm.md`.
+- Diagrama BPMN del proceso comercial separado en `procesos/comercial-crm/fuentes/` (`.bpm`) y `procesos/comercial-crm/render/` (`.png`).
+- D02: catálogo de reglas de negocio (`RN-01` a `RN-06`), excepciones (`EXC-01`, `EXC-02`) y matriz de trazabilidad integrados en `procesos/comercial-crm/decisiones-comerciales.md` junto con su libro Excel `procesos/comercial-crm/d02-reglas-negocio.xlsx`.
+
 ## 2026-10-16 — Incorporación de los artefactos D09 y D10 de PC2
 
 ### Añadido
