@@ -4,7 +4,7 @@ Esta carpeta reúne los artefactos que representan **lo que se construye, config
 
 Mientras `arquitectura/` explica el diseño, `producto/` contiene los elementos de implementación o configuración que materializan ese diseño.
 
-## Estructura prevista hasta el Examen Parcial
+## Estructura prevista
 
 ```text
 producto/
