@@ -54,9 +54,9 @@ R-TEC no tiene acceso a objetos de negocio; solo consulta trazas para diagnósti
 
 | Control | Segregación establecida | Iniciador | Aprobador | Evidencia mínima | Vínculo |
 |---|---|---|---|---|---|
-| SOD-01 · Precio | El iniciador no aprueba su propia excepción de precio. | R-ATN o R-PRO | Otro R-PRO | Cotización, valores previo y aprobado, motivo, usuario y fecha | [EXC-01](../../procesos/comercial-crm/decisiones-comerciales.md) |
+| SOD-01 · Precio | El iniciador no aprueba su propia excepción de precio. | R-ATN o R-PRO | Otro R-PRO | Cotización, valores previo y aprobado, motivo, usuario y fecha | [EXC-01](../../procesos/catalogo-reglas.md) |
 | SOD-02 · Comprobante | La anulación la autoriza un propietario distinto del emisor. | R-FAC | Otro R-PRO | Comprobante original, motivo, decisión y nota o reversión | — |
-| SOD-03 · Inventario | Almacén reporta la diferencia; el propietario autoriza; regulariza quien no hizo el conteo. | R-ALM | R-PRO | Conteo, diferencia, movimiento y autorización | [EXC-02](../../procesos/comercial-crm/decisiones-comerciales.md) |
+| SOD-03 · Inventario | Almacén reporta la diferencia; el propietario autoriza; regulariza quien no hizo el conteo. | R-ALM | R-PRO | Conteo, diferencia, movimiento y autorización | [EXC-02](../../procesos/catalogo-reglas.md) |
 | SOD-04 · Crédito | La aprobación de nuevas condiciones de crédito se separa del registro del pedido. | R-ATN o R-FAC | R-PRO | Cliente, condición, fundamento, responsable y vigencia | — |
 | SOD-05 · Pedido | Los cambios materiales posteriores a la aceptación requieren decisión y nueva evidencia. | R-ATN | R-PRO | Versión anterior y posterior, causa y aceptación | [INT-01](../integraciones/INT-01-CRM-ERP.md), F-02 |
 | SOD-06 · Accesos | Quien solicita una elevación de privilegios no la valida. | R-PRO | Otro R-PRO | Solicitud, aprobación y grupos antes y después | — |

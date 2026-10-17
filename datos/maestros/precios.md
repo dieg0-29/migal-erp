@@ -27,7 +27,7 @@ Definiciones completas en el [diccionario de datos](../diccionario-datos.md).
 ## 4. Reglas de calidad aplicables
 
 * DQ-05 precio interpretable, DQ-06 cambio de precio reconstruible y DQ-07 versión no sobrescrita ([reglas de calidad](../reglas-calidad.md)).
-* RN-03 precios de lista vigente, RN-04 versionado y EXC-01 excepción de descuento ([decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md)).
+* RN-03 precios de lista vigente, RN-04 versionado y EXC-01 excepción de descuento ([catálogo de reglas](../../procesos/catalogo-reglas.md)).
 
 ## 5. Mantenimiento
 
@@ -53,4 +53,4 @@ En `COT-SIM-002-V02` la barra de fierro (`PRD-SIM-002`) tiene precio de referenc
 |---|---|---|---|
 | 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial con la plantilla de entidad |
 
-Referencias: [lead, oportunidad y cotización](../../procesos/comercial-crm/lead-oportunidad-cotizacion.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [flujo comercial](../../procesos/comercial-crm/flujo-comercial.md), [fuentes](../../fuentes/fuentes-negocio.md).

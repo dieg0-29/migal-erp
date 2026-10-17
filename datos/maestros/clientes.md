@@ -27,7 +27,7 @@ Un teléfono compartido no prueba que dos fichas sean la misma persona. Las defi
 ## 4. Reglas de calidad aplicables
 
 * DQ-01 identificadores únicos, DQ-02 relaciones existentes, DQ-03 cuenta y contacto coherentes y DQ-11 minimización ([reglas de calidad](../reglas-calidad.md)).
-* RN-01 control de duplicados ([decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md)).
+* RN-01 control de duplicados ([catálogo de reglas](../../procesos/catalogo-reglas.md)).
 * Uso operativo frente a promocional: ver [tratamiento de datos](../tratamiento-datos.md).
 
 ## 5. Mantenimiento

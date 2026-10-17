@@ -60,7 +60,7 @@ El período de conservación y los procedimientos de archivo se establecerán po
 
 ## Relación RN, EV, CT, CP y antecedentes
 
-La siguiente tabla relaciona las reglas y controles del [catálogo de decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md) con los eventos de [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), los casos de prueba y las trazas.
+La siguiente tabla relaciona las reglas y controles del [catálogo de reglas](../../procesos/catalogo-reglas.md) con los eventos de [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), los casos de prueba y las trazas.
 
 | Regla (RN/EXC) | Evento (INT) | Control (CT/SOD) | Caso CP | Traza TR | Respaldo documental | Criterio del control propuesto | Nivel de verificación |
 |---|---|---|---|---|---|---|---|
