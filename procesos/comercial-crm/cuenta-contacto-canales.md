@@ -2,7 +2,6 @@
 
 **Proyecto:** Ferre & Inversiones MIGAL  
 **Curso:** GE703 · Sistemas Integrados Empresariales  
-**Incremento:** PC2 v2.1  
 **Alcance:** contexto CRM previo al pedido confirmado
 
 ## 1. Propósito
@@ -163,7 +162,7 @@ La diferencia entre uso operativo y promocional, y la regla de no inferir consen
 - `[ND]` No existe una política formal documentada de retención de información de contactos.
 - `[ND]` No se ha definido un procedimiento formal de consentimiento promocional.
 - `[TO-BE]` La ficha CRM propuesta debe validarse con los propietarios antes de considerarse una política del negocio.
-- El alcance de PC2 no incluye diseño técnico de tablas, APIs ni sincronización CRM–ERP.
+- No se diseñan tablas, APIs ni sincronización técnica CRM–ERP; los campos están en el [diccionario de datos](../../datos/diccionario-datos.md).
 
 ## 9. Fuentes relacionadas
 
