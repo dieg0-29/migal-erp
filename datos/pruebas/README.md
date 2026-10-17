@@ -1,39 +1,41 @@
-# Datos de prueba CRM
+# Datos de prueba
 
-**Archivo recibido:** [catalogos-crm-sinteticos.xlsx](catalogos-crm-sinteticos.xlsx). Se renombró según la convención del repositorio y se conserva su contenido para no romper referencias ni alterar evidencia de origen.
+## Catálogo sintético CRM
 
-## Naturaleza y alcance
-
-Libro académico con nombres, referencias e importes sintéticos. Representa conceptos CRM previos al pedido, no una base productiva ni plantilla lista para importar a Odoo. Cuenta/contacto, obra, productos de referencia, oportunidad y cotización permiten ilustrar seguimiento y decisiones. Los resultados comerciales registrados pueden representar desenlaces posteriores, no ejecución probada en PC2.
-
-## Contenido
+[catalogos-crm-sinteticos.xlsx](catalogos-crm-sinteticos.xlsx) contiene nombres, documentos, teléfonos, direcciones e importes **ficticios** `[SIM]` para ilustrar el proceso comercial antes del pedido. No es una base real ni una plantilla para importar a Odoo. Todos los casos de prueba del repositorio usan sus identificadores.
 
 | Hojas | Uso |
 |---|---|
-| LEEME, Resumen | Convenciones y conteos del caso |
-| Diccionario_CRM, Catalogos_Apoyo | Definiciones y vocabularios propuestos |
-| Clientes, Contactos, Direcciones_Obra | Contexto de relación comercial |
-| Productos_Referencia | Materiales/unidades ficticios |
+| LEEME, Resumen | Convenciones y conteos |
+| Catalogos_Apoyo | Vocabularios controlados |
+| Clientes, Contactos, Direcciones_Obra | Relación comercial |
+| Productos_Referencia | Materiales y unidades |
 | Oportunidades | Necesidad, madurez, seguimiento y desenlace |
-| Cotizaciones, Cotizaciones_Detalle | Versiones, líneas y valores SIM |
+| Cotizaciones, Cotizaciones_Detalle | Versiones, líneas y precios |
 | Decisiones_Comerciales | Motivos, responsables y condiciones |
-| Trazabilidad_Fuentes | Procedencia conceptual y referencias del negocio |
+| Trazabilidad_Fuentes | Procedencia de las afirmaciones |
 
-## Uso reproducible
+Las definiciones de campos están en el [diccionario de datos](../diccionario/diccionario-datos.md), no en el libro.
 
-1. Conservar el libro original y trabajar sobre una copia si se autorizan cambios.
+## Casos que lo usan
+
+| Caso | Identificadores |
+|---|---|
+| [Caso normal](../../procesos/comercial-crm/caso-normal.md) (CP-01) | `CLI-SIM-001`, `CON-SIM-002`, `DIR-SIM-001`, `OPP-SIM-001`, `COT-SIM-001-V01` |
+| [Caso de excepción](../../procesos/comercial-crm/caso-excepcion.md) (CP-02) | `CLI-SIM-002`, `CON-SIM-004`, `OPP-SIM-002`, `COT-SIM-002-V01` y `V02`, `DEC-SIM-001` |
+
+Para pasos posteriores a la aceptación se usan los prefijos `PED-SIM`, `ENT-SIM`, `CPE-SIM` y `PAG-SIM` del [registro de identificadores](../trazabilidad/identificadores-y-linaje.md); aún no tienen filas en el libro.
+
+## Uso
+
+1. Trabajar sobre una copia si se van a cambiar datos.
 2. Elegir un caso por ID, no por posición de fila.
 3. Resolver cuenta, contacto, dirección, oportunidad, cotización y líneas.
-4. Revisar las [reglas de calidad](../calidad/reglas-calidad.md) y registrar esperado/obtenido.
-5. Guardar evidencia sin datos privados; no afirmar importación o ejecución por abrir el archivo.
+4. Aplicar las [reglas de calidad](../calidad/reglas-calidad.md) y registrar esperado y obtenido.
+5. Guardar evidencia sin datos privados; abrir el archivo no equivale a importar ni ejecutar.
 
-El [caso normal](../../procesos/comercial-crm/caso-normal.md) utiliza CLI-SIM-001/OPP-SIM-001/COT-SIM-001-V01. La negociación de competencia del libro está en COT-SIM-002-V02. El caso de excepción Markdown recibido usa otra variante y debe conciliarse o declararse independiente.
+## Limitaciones
 
-## Limitaciones pendientes
-
-- El formato `S/ #,##0.00` debe corregirse a `"S/" #,##0.00` y verificarse visualmente en Excel; los valores recibidos son numéricos.
-- No existe hoja de interacciones ni correlación técnica; no simular su presencia.
-- Separar canal y fuente al consolidar el modelo; `origen` mezcla conceptos.
-- Las fechas, precios y resultados no describen operaciones reales.
-
-La validación de este paquete comprueba documentación y referencias, no recalcula ni altera el libro. Véanse [diccionario](../diccionario/diccionario-datos.md) y [fuentes](../../fuentes/fuentes-negocio.md).
+* No hay hoja de interacciones; no se simula su presencia.
+* La columna `origen` mezcla canal, fuente y campaña (ver pendientes del diccionario).
+* Fechas, precios y resultados no describen operaciones reales.

@@ -1,7 +1,12 @@
 # Tratamiento de datos comerciales
 
-**Proyecto:** Ferre & Inversiones MIGAL  
-**Alcance:** contexto comercial CRM de PC2 v2.1
+## Metadatos
+
+* **Fecha:** 17/10/2026
+* **Versión:** 0.1
+* **Autores:** Brenda Mirano
+* **Custodio:** R-PRO
+* **Alcance:** contexto comercial del CRM
 
 ## 1. Propósito
 
@@ -83,7 +88,7 @@ Los casos y Excel del proyecto deben usar:
 
 `[TO-BE]` Quien atiende o mantiene la relación comercial debe actualizar el contexto cuando recibe información nueva relevante.
 
-No se propone una sincronización automática ni un control técnico específico en PC2.
+No se propone una sincronización automática ni un control técnico específico en esta etapa.
 
 ## 8. Vacíos
 
@@ -93,3 +98,9 @@ No se propone una sincronización automática ni un control técnico específico
 - `[ND]` Reglas completas de conservación de conversaciones.
 
 Estos puntos deben validarse antes de una implementación productiva.
+
+## 9. Historial de cambios
+
+| Versión | Fecha | Autor | Cambio |
+|---|---|---|---|
+| 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial |

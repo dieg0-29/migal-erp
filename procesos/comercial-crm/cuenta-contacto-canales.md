@@ -156,14 +156,7 @@ No se fija una frecuencia artificial como “cada 48 horas”; la acción debe r
 
 ## 7. Uso operativo y uso promocional del contacto
 
-`[TO-BE]` Se propone diferenciar dos finalidades:
-
-- **Uso operativo:** responder consultas, cotizar, coordinar, hacer seguimiento de una solicitud y recuperar contexto de una relación existente.
-- **Uso promocional:** enviar campañas, ofertas o mensajes de marketing no solicitados.
-
-`[I]` Dado que MIGAL no realiza actualmente marketing directo sistemático, no corresponde asumir que disponer del teléfono del cliente equivale a autorización para campañas promocionales.
-
-El tratamiento detallado se encuentra en `datos/privacidad/tratamiento-datos.md`.
+La diferencia entre uso operativo y promocional, y la regla de no inferir consentimiento por tener el teléfono del cliente, están en [tratamiento de datos](../../datos/privacidad/tratamiento-datos.md#4-uso-operativo-vs-promocional).
 
 ## 8. Límites
 

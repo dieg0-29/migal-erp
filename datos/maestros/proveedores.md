@@ -1,31 +1,54 @@
-# Maestro conceptual de proveedores
+# Proveedores
 
-**Estado:** preparación para P2P futuro. No hay catálogo de proveedores reales autorizado en esta copia.
+## 1. Metadatos
 
-## Propósito y campos
+* **Fecha:** 17/10/2026
+* **Versión:** 0.1
+* **Autores:** Brenda Mirano
+* **Sistema dueño:** ERP (abastecimiento)
+* **Custodio:** R-PRO
 
-Identificar a quién se solicita reposición y relacionar compra, recepción y obligación de pago sin depender de nombres ambiguos o conversaciones aisladas.
+## 2. Propósito
 
-| Campo propuesto | Finalidad | Condición |
+Identificar a quién se solicita reposición y relacionar compra, recepción y obligación de pago sin depender de nombres ambiguos o conversaciones aisladas. Prepara el proceso P2P; no presupone el módulo de Compras ni solicitudes de presupuesto automáticas.
+
+## 3. Campos
+
+| Campo | Uso | Obligatorio |
 |---|---|---|
-| id_proveedor | Relacionar documentos de abastecimiento | Único y estable |
-| nombre_razon_social | Reconocer contraparte | Requerido para compra formal |
-| identificacion_fiscal | Comprobar documento cuando proceda | Validar en etapa correspondiente |
-| contacto/canal operativo | Consultar disponibilidad y coordinar | Solo datos necesarios |
-| productos/categorias | Orientar búsqueda | No garantiza stock del proveedor |
-| condiciones_acordadas | Precio, entrega y pago de una operación | Conservar documento y fecha; no inventar plazos |
-| estado | Evitar uso de ficha obsoleta | Activo/inactivo propuestos |
+| id_proveedor | Relacionar documentos de abastecimiento | Sí |
+| nombre_razon_social | Reconocer a la contraparte | Para compra formal |
+| identificacion_fiscal | Comprobar documento cuando proceda | Según la etapa |
+| contacto y canal operativo | Consultar disponibilidad y coordinar | Solo datos necesarios |
+| productos o categorías | Orientar la búsqueda | No garantiza stock del proveedor |
+| condiciones_acordadas | Precio, entrega y pago de una operación | Con documento y fecha |
+| estado | Evitar fichas obsoletas | Sí |
 
-## Gobierno y calidad
+## 4. Reglas de calidad aplicables
 
-Propietarios validan relación comercial y condiciones; quien registra recepción consulta la referencia necesaria sin modificar condiciones económicas. Buscar duplicados antes de alta. No utilizar el nombre del proveedor como clave única. Cambios de datos de pago requieren comprobación independiente y registro del cambio; no publicar cuentas ni datos privados en ejemplos académicos.
+* DQ-01 identificadores únicos y DQ-11 minimización ([reglas de calidad](../calidad/reglas-calidad.md)).
+* El nombre del proveedor no se usa como clave única.
 
-## Relación con el proceso
+## 5. Mantenimiento
 
-Una necesidad de reposición puede compararse entre proveedores. La elección y autorización originan una referencia de compra; recepción documenta cantidades reales y diferencias; Administración coteja documento y pago. Este diseño no presupone módulo Compras ni RFQ automática.
+| Acción | Perfil | Condición |
+|---|---|---|
+| Alta y condiciones | R-PRO | Buscar duplicados antes del alta |
+| Consulta en recepción | R-ALM | Sin modificar condiciones económicas |
+| Cambio de datos de pago | R-PRO | Comprobación independiente y registro del cambio |
 
-## Pendientes
+## 6. Ejemplo `[SIM]`
 
-Validar catálogo autorizado, criterios de selección, disponibilidad, unidades, documentos utilizados y condiciones de pago. Si se necesita un caso académico, usar identificadores PROV-SIM con datos ficticios claramente separados. No hay registros PROV-SIM incorporados al Excel CRM existente.
+No hay proveedores en el catálogo sintético. Si se necesita un caso, se usará el prefijo `PROV-SIM` con datos ficticios.
 
-Referencias: [P2P](../../procesos/p2p/flujo.md), [diccionario](../diccionario/diccionario-datos.md), [privacidad](../privacidad/tratamiento-datos.md), [fuentes](../../fuentes/fuentes-negocio.md).
+## 7. Pendientes
+
+* Catálogo autorizado, criterios de selección, unidades, documentos y condiciones de pago.
+
+## 8. Historial de cambios
+
+| Versión | Fecha | Autor | Cambio |
+|---|---|---|---|
+| 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial con la plantilla de entidad |
+
+Referencias: [flujo P2P](../../procesos/p2p/flujo.md), [fuentes](../../fuentes/fuentes-negocio.md).
