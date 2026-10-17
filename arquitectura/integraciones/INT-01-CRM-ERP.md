@@ -35,15 +35,15 @@ En este documento, "evento" significa un suceso del proceso de negocio, no un me
 |---|---|---|---|---|---|---|---|
 | EV-01 | Campaña iniciada | Iniciativa identificable de MIGAL o de un proveedor (p. ej. material de Progresol, actividad comunitaria, fidelización navideña) | R-PRO | CRM | CRM | Solo se registran campañas identificables; no se inventan campañas | Nombre, objetivo, periodo, responsable |
 | EV-02 | Consulta recibida | Contacto del cliente o maestro de obra por mostrador, WhatsApp o teléfono | R-ATN | Canal de atención | CRM | La campaña se registra solo si causó la consulta | Canal, fuente (referido maestro, referido cliente, cliente frecuente, directo), campaña si aplica, necesidad inicial |
-| EV-03 | Lead registrado | EV-02 | R-ATN | CRM | CRM | [RN-01](../../procesos/comercial-crm/decisiones-comerciales.md): no duplicar leads por celular o nombre; no se exige DNI/RUC | Nombre o alias, teléfono, persona que contactó, cliente responsable y maestro de obra si se conocen, responsable de seguimiento |
+| EV-03 | Lead registrado | EV-02 | R-ATN | CRM | CRM | [RN-01](../../procesos/catalogo-reglas.md): no duplicar leads por celular o nombre; no se exige DNI/RUC | Nombre o alias, teléfono, persona que contactó, cliente responsable y maestro de obra si se conocen, responsable de seguimiento |
 | EV-04 | Lead descartado | Contacto inválido | R-ATN | CRM | CRM | Se archiva sin crear cuenta de cliente | Motivo de descarte |
-| EV-05 | Oportunidad calificada | Necesidad concreta, roles y cuenta/contacto identificados | R-ATN | CRM | CRM | [RN-02](../../procesos/comercial-crm/decisiones-comerciales.md): toda oportunidad tiene una próxima acción | Cuenta y contacto, rol (dueño o maestro de obra), obra y dirección, probabilidad (baja, media, alta), referencia competitiva, próxima acción, fecha y responsable |
-| EV-06 | Cotización elaborada | Oportunidad calificada que solicita precios | R-ATN | CRM | CRM | [RN-03](../../procesos/comercial-crm/decisiones-comerciales.md): precios de la lista vigente, sujetos a actualización hasta la confirmación o pago. [RN-06](../../procesos/comercial-crm/decisiones-comerciales.md): registrar comprobante previsto | Productos, unidades, cantidades, precio de referencia, versión, comprobante previsto (boleta, factura, por definir) |
-| EV-07 | Disponibilidad prometida | Cliente consulta disponibilidad o fecha de entrega | R-ATN | CRM | CRM | [RN-05](../../procesos/comercial-crm/decisiones-comerciales.md): solo personal autorizado confirma disponibilidad de materiales críticos | Producto, cantidad, fecha o condición prometida, responsable que confirmó, fundamento |
-| EV-08 | Excepción de precio solicitada | Cliente o maestro presenta un precio menor de la competencia | R-ATN | CRM | CRM | [EXC-01](../../procesos/comercial-crm/decisiones-comerciales.md): la decisión recae en los propietarios | Línea afectada, cantidad, precio de la competencia, competidor si se conoce |
+| EV-05 | Oportunidad calificada | Necesidad concreta, roles y cuenta/contacto identificados | R-ATN | CRM | CRM | [RN-02](../../procesos/catalogo-reglas.md): toda oportunidad tiene una próxima acción | Cuenta y contacto, rol (dueño o maestro de obra), obra y dirección, probabilidad (baja, media, alta), referencia competitiva, próxima acción, fecha y responsable |
+| EV-06 | Cotización elaborada | Oportunidad calificada que solicita precios | R-ATN | CRM | CRM | [RN-03](../../procesos/catalogo-reglas.md): precios de la lista vigente, sujetos a actualización hasta la confirmación o pago. [RN-06](../../procesos/catalogo-reglas.md): registrar comprobante previsto | Productos, unidades, cantidades, precio de referencia, versión, comprobante previsto (boleta, factura, por definir) |
+| EV-07 | Disponibilidad prometida | Cliente consulta disponibilidad o fecha de entrega | R-ATN | CRM | CRM | [RN-05](../../procesos/catalogo-reglas.md): solo personal autorizado confirma disponibilidad de materiales críticos | Producto, cantidad, fecha o condición prometida, responsable que confirmó, fundamento |
+| EV-08 | Excepción de precio solicitada | Cliente o maestro presenta un precio menor de la competencia | R-ATN | CRM | CRM | [EXC-01](../../procesos/catalogo-reglas.md): la decisión recae en los propietarios | Línea afectada, cantidad, precio de la competencia, competidor si se conoce |
 | EV-09 | Excepción de precio resuelta | EV-08 | R-PRO | CRM | CRM | No existe un porcentaje máximo formal; considera cantidad, relación con el cliente, mezcla de productos y reparto | Precio de referencia, precio ofrecido, diferencia, motivo, autorizador, fecha |
-| EV-10 | Cotización versionada | Cambio de cantidades, productos o precios tras enviar la proforma | R-ATN | CRM | CRM | [RN-04](../../procesos/comercial-crm/decisiones-comerciales.md): se crea una nueva versión sin eliminar la anterior | Versión anterior, versión nueva, motivo del cambio |
-| EV-11 | Cotización aceptada | Respuesta del cliente | R-ATN | CRM | ERP | [RN-08](../../procesos/comercial-crm/decisiones-comerciales.md): paso al ERP solo con identidad suficiente, oferta identificable y aceptación registrada | Versión aceptada, quién aceptó, fecha, condiciones acordadas, DNI/RUC si el comprobante lo requiere |
+| EV-10 | Cotización versionada | Cambio de cantidades, productos o precios tras enviar la proforma | R-ATN | CRM | CRM | [RN-04](../../procesos/catalogo-reglas.md): se crea una nueva versión sin eliminar la anterior | Versión anterior, versión nueva, motivo del cambio |
+| EV-11 | Cotización aceptada | Respuesta del cliente | R-ATN | CRM | ERP | [RN-08](../../procesos/catalogo-reglas.md): paso al ERP solo con identidad suficiente, oferta identificable y aceptación registrada | Versión aceptada, quién aceptó, fecha, condiciones acordadas, DNI/RUC si el comprobante lo requiere |
 | EV-12 | Oportunidad cerrada sin venta total | Resultado de la cotización | R-ATN | CRM | CRM | El motivo es obligatorio si se pierde | Resultado (ganada parcial o perdida), motivo de no adjudicación, competidor si se conoce |
 | EV-13 | Campaña cerrada | Fin del periodo de la campaña | R-PRO | CRM | CRM | — | Fecha de fin, leads atribuidos, resultado |
 
@@ -62,7 +62,7 @@ En este documento, "evento" significa un suceso del proceso de negocio, no un me
 ### F-02: CRM a ERP
 
 * **Eventos activadores:** EV-11
-* **Descripción:** La cotización aceptada deja de ser un compromiso solo comercial y pasa al ERP como pedido, según la [frontera conceptual CRM–ERP](../../procesos/comercial-crm/frontera-conceptual-crm-erp.md), donde se gestionan disponibilidad, reserva, entrega, comprobante y cobro.
+* **Descripción:** La cotización aceptada deja de ser un compromiso solo comercial y pasa al ERP como pedido, donde se gestionan disponibilidad, reserva, entrega, comprobante y cobro.
 * **Mecanismo actual:** Estándar del sistema (Odoo Community) — por validar
 * **Validaciones requeridas:**
   * Debe conocerse a quién se atribuye la operación y quién es el contacto responsable.
@@ -80,13 +80,15 @@ En este documento, "evento" significa un suceso del proceso de negocio, no un me
 * No se exige DNI/RUC para registrar un lead ni para cotizar; se solicita solo cuando la operación o el comprobante lo requieren.
 * No se afirma que Odoo bloquee automáticamente descuentos, precios o faltantes sin una prueba en la instancia concreta.
 * El inventario está distribuido en tres puntos físicos: Tienda, Almacén 1 y Almacén 2.
+* El CRM conserva la identidad y el contexto del cliente, la cotización con sus versiones, las promesas comunicadas y la aceptación. El ERP conserva el pedido, la reserva, la entrega, la referencia del comprobante y el cobro. El CRM no afirma que algo esté reservado, entregado o cobrado; el ERP no pierde la versión aceptada ni sus condiciones.
+* La información crece con el compromiso: para una consulta o cotización no se exigen DNI/RUC, datos fiscales completos, reserva de stock, promesas de entrega sin confirmación ni capturas de cada interacción; tampoco se duplica en el ERP lo que ya tiene referencia en el CRM.
 
 ## 7. Riesgos
 
 | ID | Riesgo | Impacto | Mitigación |
 |---|---|---|---|
-| R-01 | Contactos duplicados por atención multicanal | Medio | Búsqueda previa obligatoria ([RN-01](../../procesos/comercial-crm/decisiones-comerciales.md)) |
-| R-02 | Promesas de disponibilidad basadas en stock registrado distinto del físico | Alto | Confirmación por personal autorizado ([RN-05](../../procesos/comercial-crm/decisiones-comerciales.md), [EXC-02](../../procesos/comercial-crm/decisiones-comerciales.md)) |
+| R-01 | Contactos duplicados por atención multicanal | Medio | Búsqueda previa obligatoria ([RN-01](../../procesos/catalogo-reglas.md)) |
+| R-02 | Promesas de disponibilidad basadas en stock registrado distinto del físico | Alto | Confirmación por personal autorizado ([RN-05](../../procesos/catalogo-reglas.md), [EXC-02](../../procesos/catalogo-reglas.md)) |
 | R-03 | Suponer controles automáticos que Odoo no aplica | Alto | Probar en la instancia antes de declararlos |
 
 ## 8. Pendientes de validación

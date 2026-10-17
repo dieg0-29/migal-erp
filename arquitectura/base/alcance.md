@@ -47,7 +47,7 @@ Organizar los procesos, datos, aplicaciones y controles de Ferre & Inversiones M
 
 ## 4. Límites de la solución
 
-* El CRM conserva el contexto y el compromiso comercial; el ERP gestiona la ejecución desde el pedido confirmado ([frontera conceptual CRM–ERP](../../procesos/comercial-crm/frontera-conceptual-crm-erp.md)).
+* El CRM conserva el contexto y el compromiso comercial; el ERP gestiona la ejecución desde el pedido confirmado ([INT-01](../integraciones/INT-01-CRM-ERP.md)).
 * No se desarrollan APIs, conectores ni contratos técnicos de mensajes entre sistemas.
 * La representación lógica de Tienda, Almacén 1 y Almacén 2 requiere una decisión.
 * La necesidad de un complemento contable debe precisarse al revisar [ADR-003](../decisiones/ADR-003-contabilidad.md).
@@ -61,4 +61,4 @@ Los cambios que produce cada sistema incorporado sobre la arquitectura existente
 * [Contexto de la empresa](contexto-empresa.md)
 * [Fuentes de negocio](../../fuentes/fuentes-negocio.md)
 * [Supuestos y vacíos](../../fuentes/supuestos-y-vacios.md)
-* [Escenario CRM](../../procesos/comercial-crm/escenario-crm.md)
+* [Flujo comercial](../../procesos/comercial-crm/flujo-comercial.md)
