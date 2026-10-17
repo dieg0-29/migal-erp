@@ -20,4 +20,4 @@ La tasa de conversión total/parcial puede prepararse cuando exista criterio de 
 
 ## Evidencia de revisión
 
-Conservar rango/caso, fórmula, fecha de corte, exclusiones, resultado y decisión tomada. Revisión con Procesos/Producto pendiente. Referencias: [SIPOC](sipoc.md), [calidad](../../datos/calidad/reglas-calidad.md), [catálogo SIM](../../datos/pruebas/README.md).
+Conservar rango/caso, fórmula, fecha de corte, exclusiones, resultado y decisión tomada. Revisión con Procesos/Producto pendiente. Referencias: [SIPOC](sipoc.md), [calidad](../../datos/reglas-calidad.md), [catálogo SIM](../../datos/pruebas/README.md).

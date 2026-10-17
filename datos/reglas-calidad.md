@@ -9,7 +9,7 @@
 
 ## 2. Propósito
 
-Definir las comprobaciones que hacen confiables los datos. Son controles propuestos, no restricciones instaladas en Odoo. Los códigos DQ son propios de este documento y no reemplazan las reglas RN ni los controles CT de las [decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md).
+Definir las comprobaciones que hacen confiables los datos. Son controles propuestos, no restricciones instaladas en Odoo. Los códigos DQ son propios de este documento y no reemplazan las reglas RN ni los controles CT de las [decisiones comerciales](../procesos/comercial-crm/decisiones-comerciales.md).
 
 ## 3. Reglas
 
@@ -47,4 +47,4 @@ Para cada revisión se registra regla, archivo, hoja, rango o ID, dato observado
 |---|---|---|---|
 | 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial con responsables por perfil |
 
-Referencias: [diccionario](../diccionario/diccionario-datos.md), [plan de trazabilidad](../trazabilidad/plan-trazabilidad-auditoria.md), [privacidad](../privacidad/tratamiento-datos.md).
+Referencias: [diccionario](diccionario-datos.md), [plan de trazabilidad](trazabilidad/plan-trazabilidad-auditoria.md), [privacidad](tratamiento-datos.md).

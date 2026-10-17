@@ -26,7 +26,7 @@ Identificar a quién se solicita reposición y relacionar compra, recepción y o
 
 ## 4. Reglas de calidad aplicables
 
-* DQ-01 identificadores únicos y DQ-11 minimización ([reglas de calidad](../calidad/reglas-calidad.md)).
+* DQ-01 identificadores únicos y DQ-11 minimización ([reglas de calidad](../reglas-calidad.md)).
 * El nombre del proveedor no se usa como clave única.
 
 ## 5. Mantenimiento

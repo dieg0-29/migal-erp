@@ -24,11 +24,11 @@ Identificar cada material con una unidad clara para cotizar sin ambigüedad. Sto
 | estado | Activo o inactivo; conserva referencias históricas | Sí |
 | nota / origen | Indica si es `[SIM]` o su procedencia | Sí |
 
-Definiciones completas en el [diccionario de datos](../diccionario/diccionario-datos.md).
+Definiciones completas en el [diccionario de datos](../diccionario-datos.md).
 
 ## 4. Reglas de calidad aplicables
 
-* DQ-01 identificadores únicos y DQ-04 cantidad y unidad interpretables ([reglas de calidad](../calidad/reglas-calidad.md)).
+* DQ-01 identificadores únicos y DQ-04 cantidad y unidad interpretables ([reglas de calidad](../reglas-calidad.md)).
 * No convertir automáticamente bolsa, unidad, rollo, galón o m3 sin una equivalencia validada.
 
 ## 5. Mantenimiento

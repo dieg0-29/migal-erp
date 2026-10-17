@@ -16,7 +16,7 @@
 
 ## 3. Campos
 
-> Solo nombre, uso y obligatoriedad. La definición completa de cada campo vive en el diccionario de datos (`../diccionario/diccionario-datos.md`).
+> Solo nombre, uso y obligatoriedad. La definición completa de cada campo vive en el diccionario de datos (`../diccionario-datos.md`).
 
 | Campo | Uso | Obligatorio |
 |---|---|---|
@@ -24,7 +24,7 @@
 
 ## 4. Reglas de calidad aplicables
 
-> Cita las reglas del catálogo de calidad (`../calidad/reglas-calidad.md`); no las redefinas aquí.
+> Cita las reglas del catálogo de calidad (`../reglas-calidad.md`); no las redefinas aquí.
 
 * DQ-XX:
 

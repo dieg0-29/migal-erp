@@ -144,7 +144,7 @@ Por tanto:
 - [SIPOC — Order to Cash](../../procesos/o2c/sipoc.md)
 - [INT-01: CRM y ERP](../../arquitectura/integraciones/INT-01-CRM-ERP.md)
 - [Plan de trazabilidad y auditoría](../../datos/trazabilidad/plan-trazabilidad-auditoria.md)
-- [Datos transaccionales](../../datos/transaccionales/datos-transaccionales.md)
+- [Datos transaccionales](../../datos/diccionario-datos.md#5-objetos-transaccionales)
 - [Mapa de procesos de nivel 1](../../procesos/mapa-nivel-1/mapa-procesos.md)
 - [Caso normal CRM](../../procesos/comercial-crm/caso-normal.md)
 - [Facturación y referencia externa](../../procesos/comercial-crm/facturacion.md)

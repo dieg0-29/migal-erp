@@ -21,4 +21,4 @@ No sumar cantidades de bolsa, unidad y m3 para un único porcentaje de recepció
 
 Cada indicador debe acompañarse de fuentes, exclusiones, causa de desvío y acción con responsable. Una meta futura requiere acuerdo de propietarios y línea base; este documento no presenta resultados simulados como medición real.
 
-Referencias: [SIPOC](sipoc.md), [eventos](eventos-controles.md), [reglas](reglas.md), [diccionario](../../datos/diccionario/diccionario-datos.md).
+Referencias: [SIPOC](sipoc.md), [eventos](eventos-controles.md), [reglas](reglas.md), [diccionario](../../datos/diccionario-datos.md).

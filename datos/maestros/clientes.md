@@ -22,13 +22,13 @@ La **cuenta** representa al cliente responsable de la relación comercial; el **
 | Contacto | id_contacto, id_cliente, nombre, rol, medio operativo, estado | Relación explícita con la cuenta | Al relacionar el contacto |
 | Dirección / obra | id_direccion, id_cliente, referencia de obra, ubicación, estado | Contexto de la obra; varias por cuenta | Cuando exista una obra o entrega |
 
-Un teléfono compartido no prueba que dos fichas sean la misma persona. Las definiciones están en el [diccionario de datos](../diccionario/diccionario-datos.md).
+Un teléfono compartido no prueba que dos fichas sean la misma persona. Las definiciones están en el [diccionario de datos](../diccionario-datos.md).
 
 ## 4. Reglas de calidad aplicables
 
-* DQ-01 identificadores únicos, DQ-02 relaciones existentes, DQ-03 cuenta y contacto coherentes y DQ-11 minimización ([reglas de calidad](../calidad/reglas-calidad.md)).
+* DQ-01 identificadores únicos, DQ-02 relaciones existentes, DQ-03 cuenta y contacto coherentes y DQ-11 minimización ([reglas de calidad](../reglas-calidad.md)).
 * RN-01 control de duplicados ([decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md)).
-* Uso operativo frente a promocional: ver [tratamiento de datos](../privacidad/tratamiento-datos.md).
+* Uso operativo frente a promocional: ver [tratamiento de datos](../tratamiento-datos.md).
 
 ## 5. Mantenimiento
 

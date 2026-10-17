@@ -13,12 +13,12 @@ Este diccionario es la única fuente de definiciones de campos del proyecto. Las
 
 ## 3. Convenciones
 
-* Un ID es texto estable; no representa la posición de una fila. Los prefijos están en el [registro de identificadores](../trazabilidad/identificadores-y-linaje.md).
+* Un ID es texto estable; no representa la posición de una fila. Los prefijos están en el [registro de identificadores](trazabilidad/identificadores-y-linaje.md).
 * La fecha y hora de un evento incluye zona horaria o contexto.
 * Los importes conservan moneda y unidad de precio.
 * La obligatoriedad depende del evento, no de una ficha universal.
 * Los datos `[SIM]` nunca sustituyen datos autorizados de la operación.
-* El responsable se indica con el perfil del [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md).
+* El responsable se indica con el perfil del [modelo de autorización](../arquitectura/seguridad/modelo-autorizacion.md).
 
 ## 4. Campos
 
@@ -37,7 +37,7 @@ Este diccionario es la única fuente de definiciones de campos del proyecto. Las
 | Oportunidad.id_oportunidad | Identidad comercial; texto | Al calificar el interés | R-ATN |
 | Oportunidad.canal | Medio de la interacción: Presencial, WhatsApp, Teléfono | En cada interacción | R-ATN |
 | Oportunidad.fuente | Procedencia: Referido maestro, Referido cliente, Cliente frecuente, Directo | Al conocerla | R-ATN |
-| Oportunidad.campana | Campaña que causó la consulta: `CAM-01` a `CAM-04` o vacío ([catálogo de campañas](../../procesos/comercial-crm/cuenta-contacto-canales.md#53-catálogo-de-campañas)) | Solo si la causó | R-ATN |
+| Oportunidad.campana | Campaña que causó la consulta: `CAM-01` a `CAM-04` o vacío ([catálogo de campañas](../procesos/comercial-crm/cuenta-contacto-canales.md#53-catálogo-de-campañas)) | Solo si la causó | R-ATN |
 | Oportunidad.necesidad / responsable | Qué se busca y quién da seguimiento | Mientras esté abierta | R-ATN |
 | Oportunidad.probabilidad | Baja, Media o Alta | Si se usa la escala | R-ATN |
 | Oportunidad.proxima_accion / fecha | Acción y momento previsto | Oportunidad abierta (RN-02) | R-ATN |
@@ -53,27 +53,38 @@ Este diccionario es la única fuente de definiciones de campos del proyecto. Las
 | Interacción.id_interaccion / referencia | Comunicación vinculada a cuenta u oportunidad | Cuando sustenta seguimiento o aceptación | R-ATN |
 | Correlación.id_correlacion | Agrupa referencias de una operación entre sistemas | Solo si existe una interfaz externa (TR-13) | R-PRO |
 
-## 5. Campos de eventos posteriores (ERP)
+## 5. Objetos transaccionales
 
-| Objeto | Datos mínimos | Regla |
-|---|---|---|
-| Pedido | Cotización aceptada, cantidades, condiciones y estado | RN-08 |
-| Entrega | Documento, ubicación, cantidad real y pendiente | RN-10 |
-| Comprobante | Emisor externo, tipo, serie y número, importe | RN-11 |
-| Pago | Soporte verificado, monto, aplicación y saldo | RN-12 |
-| Proveedor | Identidad y referencia de compra | Ver [proveedores](../maestros/proveedores.md) |
+Objetos que nacen y cambian durante cada operación. Los eventos que crean cada uno están en [INT-01](../arquitectura/integraciones/INT-01-CRM-ERP.md). No hay extractos operativos reales en el repositorio.
 
-Los campos concretos se detallarán y probarán al configurar cada módulo del ERP.
+| Objeto | Origen / vínculo | Datos mínimos | Sistema | Regla |
+|---|---|---|---|---|
+| Consulta o interacción | Canal y contacto | Necesidad, fecha, responsable y referencia de comunicación | CRM | — |
+| Oportunidad | Cuenta y contacto | Necesidad, madurez, competencia, acción y estado | CRM | RN-02 |
+| Cotización y versión | Oportunidad | Fecha, líneas, precios, condiciones y versión | CRM | RN-03, RN-04 |
+| Decisión comercial | Cotización o necesidad | Motivo, decisor, momento y condición | CRM | EXC-01 |
+| Pedido | Versión aceptada | Cantidades, condiciones acordadas, soporte y estado | ERP | RN-08 |
+| Recepción, entrega o ajuste | Compra o pedido; ubicación | Documento, cantidad real, pendiente, actor, fecha y diferencias | ERP | RN-09, RN-10 |
+| Comprobante | Referencia de KeyFacil y pedido | Tipo, serie y número, importe y conciliación | KeyFacil / ERP | RN-11 |
+| Pago | Comprobante | Soporte verificado, monto, aplicación y saldo | ERP | RN-12 |
+| Caso posventa | Pedido de origen | Solicitud, decisión, ejecución y cierre | ERP | RN-13 |
+
+Reglas de conservación:
+
+* Cada objeto conserva su identificador y el enlace al anterior; el número de factura no se usa como ID de toda la operación ([registro de identificadores](trazabilidad/identificadores-y-linaje.md)).
+* Una corrección relevante conserva valor anterior, posterior, motivo y actor.
+* Los campos concretos de los objetos del ERP se detallarán y probarán al configurar cada módulo.
 
 ## 6. Pendientes
 
 * El catálogo sintético usa la columna `origen`, que mezcla canal, fuente y campaña. Al ampliar el catálogo se separará en los tres campos de este diccionario.
 * Mapeo de cada campo a Odoo.
+* Política de retención de datos transaccionales; no se fijan plazos arbitrarios.
 
 ## 7. Historial de cambios
 
 | Versión | Fecha | Autor | Cambio |
 |---|---|---|---|
-| 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial; el diccionario pasa a ser la única fuente de definiciones |
+| 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial; el diccionario pasa a ser la única fuente de definiciones e incorpora los objetos transaccionales |
 
-Referencias: [catálogo sintético](../pruebas/README.md), [clientes](../maestros/clientes.md), [precios](../maestros/precios.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [catálogo sintético](pruebas/README.md), [clientes](maestros/clientes.md), [precios](maestros/precios.md), [fuentes](../fuentes/fuentes-negocio.md).

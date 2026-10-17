@@ -22,11 +22,11 @@ Distinguir el precio de lista del precio realmente ofrecido y conservar por qué
 | Ajuste | Diferencia entre referencia y ofrecido | Motivo, autorizador y fecha |
 | Condición de vigencia | Circunstancia que obliga a revisar el precio | Texto comunicado y versión aplicable |
 
-Definiciones completas en el [diccionario de datos](../diccionario/diccionario-datos.md).
+Definiciones completas en el [diccionario de datos](../diccionario-datos.md).
 
 ## 4. Reglas de calidad aplicables
 
-* DQ-05 precio interpretable, DQ-06 cambio de precio reconstruible y DQ-07 versión no sobrescrita ([reglas de calidad](../calidad/reglas-calidad.md)).
+* DQ-05 precio interpretable, DQ-06 cambio de precio reconstruible y DQ-07 versión no sobrescrita ([reglas de calidad](../reglas-calidad.md)).
 * RN-03 precios de lista vigente, RN-04 versionado y EXC-01 excepción de descuento ([decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md)).
 
 ## 5. Mantenimiento

@@ -15,7 +15,7 @@
 | Decisiones_Comerciales | Motivos, responsables y condiciones |
 | Trazabilidad_Fuentes | Procedencia de las afirmaciones |
 
-Las definiciones de campos están en el [diccionario de datos](../diccionario/diccionario-datos.md), no en el libro.
+Las definiciones de campos están en el [diccionario de datos](../diccionario-datos.md), no en el libro.
 
 ## Casos que lo usan
 
@@ -31,7 +31,7 @@ Para pasos posteriores a la aceptación se usan los prefijos `PED-SIM`, `ENT-SIM
 1. Trabajar sobre una copia si se van a cambiar datos.
 2. Elegir un caso por ID, no por posición de fila.
 3. Resolver cuenta, contacto, dirección, oportunidad, cotización y líneas.
-4. Aplicar las [reglas de calidad](../calidad/reglas-calidad.md) y registrar esperado y obtenido.
+4. Aplicar las [reglas de calidad](../reglas-calidad.md) y registrar esperado y obtenido.
 5. Guardar evidencia sin datos privados; abrir el archivo no equivale a importar ni ejecutar.
 
 ## Limitaciones

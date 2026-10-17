@@ -77,11 +77,7 @@ migal-erp/
 │
 ├── datos/
 │   ├── maestros/
-│   ├── transaccionales/
-│   ├── diccionario/
-│   ├── calidad/
 │   ├── trazabilidad/
-│   ├── privacidad/
 │   └── pruebas/
 ├── producto/
 ├── pruebas/

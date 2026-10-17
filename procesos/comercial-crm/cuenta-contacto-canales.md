@@ -136,7 +136,7 @@ No se propone inventar campañas para llenar el CRM.
 
 - La campaña se registra solo cuando **causó** la consulta, no cuando solo la **favoreció**. Ejemplo: un maestro que recibió una canasta navideña (`CAM-03`) trae en enero a un cliente nuevo → fuente: *Referido maestro*; campaña: vacía. La canasta fortaleció la relación, pero no originó la consulta.
 - Si un cliente dice que llegó por el material de Progresol en tienda, se registra `CAM-01`.
-- El envío de mensajes promocionales por una campaña requiere consentimiento promocional (ver sección 7 y [`tratamiento-datos.md`](../../datos/privacidad/tratamiento-datos.md)).
+- El envío de mensajes promocionales por una campaña requiere consentimiento promocional (ver sección 7 y [`tratamiento-datos.md`](../../datos/tratamiento-datos.md)).
 - `[ND]` No existe control del presupuesto ni del retorno de las campañas; registrar la campaña es el primer paso para medirlo.
 
 ## 6. Seguimiento comercial
@@ -156,7 +156,7 @@ No se fija una frecuencia artificial como “cada 48 horas”; la acción debe r
 
 ## 7. Uso operativo y uso promocional del contacto
 
-La diferencia entre uso operativo y promocional, y la regla de no inferir consentimiento por tener el teléfono del cliente, están en [tratamiento de datos](../../datos/privacidad/tratamiento-datos.md#4-uso-operativo-vs-promocional).
+La diferencia entre uso operativo y promocional, y la regla de no inferir consentimiento por tener el teléfono del cliente, están en [tratamiento de datos](../../datos/tratamiento-datos.md#4-uso-operativo-vs-promocional).
 
 ## 8. Límites
 
