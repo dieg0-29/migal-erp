@@ -8,7 +8,7 @@ El contexto recibido describe reposición basada en conocimiento de los propieta
 
 ## Actores y precondiciones
 
-Propietarios autorizan proveedor, cantidades y condiciones; personal operativo registra mercadería recibida; la función administrativa verifica documentos, pagos y saldos. No son nuevos departamentos. Deben identificarse productos/unidades y proveedor, necesidad y responsable; faltantes se registran antes de comprometer la compra.
+R-PRO autoriza proveedor, cantidades y condiciones; R-ALM registra la mercadería recibida; R-FAC verifica documentos, pagos y saldos. No son nuevos departamentos. Deben identificarse productos/unidades y proveedor, necesidad y responsable; faltantes se registran antes de comprometer la compra.
 
 ## Flujo principal TO-BE
 

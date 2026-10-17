@@ -38,7 +38,7 @@ El flujo propuesto mantiene un registro único de movimientos por ubicación (Ti
 |---|---|---|---|---|---|
 | 1 | Recepción | Contar la mercadería recibida y registrar la cantidad real en la ubicación de destino | R-ALM | RN-19 | Documento de entrada con cantidad real, daños y ubicación |
 | 2 | Salida por pedido | Preparar y despachar desde la ubicación reservada; registrar lo entregado y lo pendiente | R-ALM | RN-09, RN-10 | Documento de salida vinculado al pedido |
-| 3 | Salida por punto de venta | El stock de la Tienda se descuenta en el momento de cada venta | Sistema | RN-10 | Movimiento por venta `[S]` por validar en la instancia |
+| 3 | Salida por punto de venta | El sistema descuenta automáticamente el stock de la Tienda en el momento de cada venta | Sistema | RN-10 | Movimiento por venta `[S]` por validar en la instancia |
 | 4 | Transferencia | Mover mercadería entre Tienda, Almacén 1 y Almacén 2 | R-ALM | RN-09 | Documento de transferencia con origen y destino |
 | 5 | Conteo y ajuste | Contar, reportar la diferencia y regularizar solo con autorización de un propietario | R-ALM / R-PRO | RN-21, SOD-03 | Conteo, diferencia, motivo, autorización y movimiento de ajuste |
 

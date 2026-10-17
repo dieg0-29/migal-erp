@@ -57,7 +57,7 @@ Detalle de los pasos 1 y 2: [pedido](pedido.md). Detalle de los pasos 5 y 6: [fa
 | Paso | Actividad | Actor | Sistema | Regla | Evidencia |
 |---|---|---|---|---|---|
 | 1 | Registrar los productos y el cobro en el punto de venta | R-ATN | ERP (Punto de Venta) | RN-12 | Ticket interno y pago |
-| 2 | El stock de la Tienda se descuenta en el momento de la venta | Sistema | ERP (Inventario) | RN-10 | Movimiento de salida por venta `[S]` por validar en la instancia |
+| 2 | El sistema descuenta automáticamente el stock de la Tienda en el momento de la venta, sin intervención de almacén | Sistema | ERP (Inventario) | RN-10 | Movimiento de salida por venta `[S]` por validar en la instancia |
 | 3 | Emitir el comprobante en KeyFacil y registrar su referencia | R-PRO / R-FAC | KeyFacil / ERP | RN-11 | Referencia conciliada con la venta |
 | 4 | Al cerrar la sesión, conciliar el efectivo y los pagos con las ventas del turno | R-FAC | ERP (Punto de Venta) | RN-12 | Cierre de sesión con diferencias explicadas |
 
