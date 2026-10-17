@@ -4,7 +4,7 @@ Esta carpeta conserva **snapshots de los hitos académicos presentados durante e
 
 La documentación viva y vigente del proyecto se mantiene en `arquitectura/`, `procesos/`, `datos/`, `producto/`, `pruebas/` y `fuentes/`. Esta carpeta no debe convertirse en una segunda fuente de verdad.
 
-## Estructura hasta el Examen Parcial
+## Estructura
 
 ```text
 entregas/

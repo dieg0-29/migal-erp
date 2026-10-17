@@ -22,14 +22,9 @@ Las decisiones y sus fundamentos se documentan en:
 - [`arquitectura/decisiones/`](arquitectura/decisiones/)
 - [`arquitectura/vistas/`](arquitectura/vistas/)
 
-## Alcance hasta el Examen Parcial
+## Alcance actual
 
-Hasta el parcial, el repositorio cubre cuatro incrementos principales:
-
-1. **Arquitectura ERP base:** contexto empresarial, comparación de alternativas, decisiones arquitectónicas y vistas C4.
-2. **Macroprocesos:** Order to Cash (O2C), Procure to Pay (P2P) y su relación con inventario.
-3. **Gestión comercial y CRM:** cuenta, contacto, canal, lead, oportunidad, cotización y decisiones comerciales.
-4. **Integración parcial:** consolidación de los incrementos anteriores para el Examen Parcial.
+La solución parte de un ERP base y le integra progresivamente otros sistemas empresariales; hoy incluye el ERP y el CRM. El detalle está en el [alcance](arquitectura/base/alcance.md) y en el [registro de versiones](arquitectura/versiones/README.md).
 
 El proyecto continúa evolucionando durante el curso. La presencia de un artefacto en el repositorio puede representar análisis, diseño, propuesta, configuración, prueba o evidencia; no implica necesariamente una implementación productiva.
 
@@ -45,12 +40,12 @@ El proyecto continúa evolucionando durante el curso. La presencia de un artefac
 | Fuentes | [`fuentes/`](fuentes/) | Bibliografía, uso de IA, licencias y evidencia |
 | Seguridad y autorización | [`arquitectura/seguridad/`](arquitectura/seguridad/) | Modelo de autorización: permisos y segregación de funciones |
 | Datos | [`datos/`](datos/) | Maestros, calidad, trazabilidad y datos de prueba |
-| Pruebas | `pruebas/` | Casos, resultados, evidencias e incidencias |
-| Entregas | `entregas/` | Snapshots de PC1, avances, PC2 y EP |
+| Pruebas | [`pruebas/`](pruebas/) | Casos de prueba y criterios de aceptación |
+| Entregas | [`entregas/`](entregas/) | Archivos presentados en cada evaluación del curso |
 
 El `README.md` funciona como punto de entrada. La información detallada debe mantenerse en los documentos de cada área para evitar duplicidad y conservar una sola fuente de verdad por tema.
 
-## Estructura del repositorio hasta el parcial
+## Estructura del repositorio
 
 ```text
 migal-erp/
