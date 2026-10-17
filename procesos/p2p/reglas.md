@@ -1,6 +1,6 @@
 # Reglas funcionales — P2P
 
-**Estado:** propuestas de diseño; validación con propietarios pendiente. Namespace `P2P-R-*` independiente de RN-P2 del plan de trazabilidad, cuyos códigos corresponden a extensión comercial y no se reinterpretan como compras.
+**Estado:** propuestas de diseño; validación con propietarios pendiente. Namespace `P2P-R-*` independiente de las reglas RN del [catálogo de decisiones comerciales](../comercial-crm/decisiones-comerciales.md).
 
 | ID | Regla | Responsable funcional | Evidencia y tratamiento |
 |---|---|---|---|

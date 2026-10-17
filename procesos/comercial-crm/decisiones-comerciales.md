@@ -131,11 +131,11 @@ En el TO-BE pueden definirse responsabilidades funcionales, pero deben mapearse 
 
 ---
 
-## 8. Catálogo Central de Reglas de Negocio Previas al Pedido (Matriz RN)
+## 8. Catálogo de reglas de negocio (Matriz RN)
 
-> Matriz asociada en formato Excel: [`reglas-negocio.xlsx`](reglas-negocio.xlsx)
+Este catálogo es la única numeración de reglas (RN) y controles (CT) del repositorio. Los demás documentos, incluida la [matriz de trazabilidad](../../datos/trazabilidad/matriz-trazabilidad.xlsx), citan estos códigos.
 
-Este catálogo unifica las directrices operativas que gobiernan el Escenario A (`marketing → cotización`) en Ferre & Inversiones MIGAL antes de la generación del pedido.
+### 8.1. Reglas previas al pedido (CRM)
 
 | ID | Regla de Negocio | Etapa | Motivo de negocio (Por qué) | Sistema (Validador) | Control (CT) | ¿Qué pasa si se viola? (Consecuencia) | Responsable / Rol |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -145,6 +145,22 @@ Este catálogo unifica las directrices operativas que gobiernan el Escenario A (
 | **RN-04** | **Versionado de Cotizaciones:** Si el cliente solicita cambios en cantidades o productos tras recibir una proforma, se crea una nueva "versión" de la cotización, sin sobrescribir ni eliminar la original. | ETP-03: Propuesta | Mantener un historial auditable de la negociación para entender qué productos descartó el cliente. | ERP/CRM | CT-04 | Imposibilidad de eliminar cotizaciones enviadas; solo se permite "Clonar/Versionar". | Vendedor |
 | **RN-05** | **Promesa de Disponibilidad:** Solo el personal autorizado (Ventas/Propietario) puede confirmar al cliente la disponibilidad física de un material crítico (ej. Cemento) basándose en la consulta del sistema y condiciones operativas. | ETP-03: Propuesta | Evitar que asistentes o personal no autorizado prometan despachos imposibles de cumplir. | CRM/ERP | CT-05 | Restricción de compromiso de entrega según el rol del usuario. | Vendedor / Propietario |
 | **RN-06** | **Condición de Facturación Prevista:** Antes de emitir la cotización, se debe consultar si la eventual compra requerirá Boleta o Factura (aunque no se exija RUC en ese instante). | ETP-03: Propuesta | Preparar administrativamente el cierre del pedido y anticipar si se tratará de una cuenta empresa o persona natural. | CRM | CT-06 | Campo "Tipo de Comprobante Esperado" registrado como `Boleta`, `Factura` o `Por Definir`. | Vendedor |
+
+### 8.2. Reglas desde la aceptación (ERP)
+
+Estas reglas aplican cuando la cotización aceptada pasa al ERP ([INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), F-02). Su validación depende de pruebas en la instancia de Odoo.
+
+| ID | Regla de Negocio | Etapa | Motivo de negocio (Por qué) | Sistema (Validador) | Control (CT) | ¿Qué pasa si se viola? (Consecuencia) | Responsable / Rol |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **RN-07** | **Identificación según la operación:** El cliente se identifica con los datos que exija la operación (entrega, comprobante) y se conserva el origen de cada dato. | Pedido | Evitar exigir datos innecesarios y, a la vez, emitir comprobantes con identidad correcta. | CRM/ERP | CT-07 | Pedido o comprobante con identidad incompleta o sin origen trazable. | R-ATN / R-PRO |
+| **RN-08** | **Aceptación vinculada:** El pedido solo se crea desde una cotización aceptada, conservando la versión aceptada. | Pedido | Asegurar que lo ejecutado coincide con lo acordado. | ERP | CT-08 | Pedido sin aceptación o con condiciones distintas a las cotizadas. | R-ATN / R-PRO |
+| **RN-09** | **Reserva por ubicación:** El pedido se relaciona con la disponibilidad y reserva de cada punto físico (Tienda, Almacén 1, Almacén 2). | Reserva | Evitar comprometer stock inexistente o de otra ubicación. | ERP | CT-09 | Promesas incumplidas y descuadre entre ubicaciones. | R-ALM / R-PRO |
+| **RN-10** | **Entrega real:** Se registran las cantidades realmente entregadas y las diferencias físicas. | Entrega | Mantener visible lo pendiente y la exactitud del inventario. | ERP | CT-10 | Saldos pendientes ocultos e inventario inexacto. | R-ALM |
+| **RN-11** | **Conciliación con KeyFacil:** La referencia del comprobante emitido en KeyFacil se concilia con el pedido y sus importes. | Comprobante | Evitar doble emisión o diferencias entre lo vendido y lo facturado. | ERP / KeyFacil | CT-11 | Descuadres fiscales y comprobantes sin operación de origen. | R-FAC |
+| **RN-12** | **Cobro documentado:** Cada cobro se registra con soporte verificable y saldo resultante. | Cobro | Conocer lo pendiente por cobrar. | ERP | CT-12 | Saldos incorrectos y cobros sin respaldo. | R-FAC |
+| **RN-13** | **Posventa vinculada:** Todo caso de posventa se relaciona con el pedido de origen. | Posventa | Resolver reclamos con el contexto de la venta. | ERP | CT-13 | Devoluciones o notas sin sustento. | R-ATN / R-PRO |
+| **RN-14** | **Cierre verificado:** El pedido se cierra solo con entrega, cobro e incidencias resueltos. | Cierre | Evitar cierres con pendientes. | ERP | CT-14 | Operaciones cerradas con saldos o entregas pendientes. | R-PRO |
+| **RN-15** | **Decisión de crédito:** Toda condición de crédito nueva o modificada requiere decisión expresa de un propietario. | Pedido | Evitar financiación no autorizada. | ERP | CT-15 | Ventas a crédito sin respaldo (ver SOD-04). | R-PRO |
 
 ---
 
@@ -165,6 +181,7 @@ Este catálogo unifica las directrices operativas que gobiernan el Escenario A (
 | `RN-03` a `RN-06` | Nace en el [escenario CRM](escenario-crm.md) y en este documento | [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md) / [Plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md) (`TR-03`) / [Caso normal](caso-normal.md) (`CP-01`) |
 | `EXC-01` | Excepción Comercial ([`caso-excepcion.md`](caso-excepcion.md)) | [Modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) (`SOD-01`) / [Plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md) (`TR-04`) / [Caso de excepción](caso-excepcion.md) (`CP-02`) |
 | `EXC-02` | Excepción Operativa | [Modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) (`SOD-03`) / [Caso de excepción](caso-excepcion.md) (`CP-02`) |
+| `RN-07` a `RN-15` | Nace en la frontera CRM a ERP ([INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md)) | [Plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md) (`TR-05` a `TR-11`) |
 
 ---
 
