@@ -279,5 +279,7 @@ Cada código pertenece a un solo documento dueño. Antes de crear un código nue
 | R-xxx, PR-nn.nn, SOD-nn | Perfiles, permisos y segregación | [Modelo de autorización](arquitectura/seguridad/modelo-autorizacion.md) |
 | INT-nn, EV-nn, F-nn | Integraciones, sus eventos y fronteras | [Integraciones](arquitectura/integraciones/INT-01-CRM-ERP.md); fuera del documento se citan como `INT-01/EV-03` |
 | O2C-K, P2P-K, P2P-E/C | Indicadores y eventos de los macroprocesos | [Indicadores O2C](procesos/o2c/indicadores.md), [P2P](procesos/p2p/eventos-controles.md) |
+| AC-nn, CV-nn | Criterios de aceptación de la rúbrica | [Criterios de aceptación](pruebas/criterios-aceptacion/criterios-crm.md) |
+| RSK-nn | Riesgos | [Registro de riesgos](arquitectura/base/riesgos-y-controles.md) |
 | ADR-nnn, VER-nn, CA-nn | Decisiones, versiones y ajustes de arquitectura | [Decisiones](arquitectura/decisiones/), [versiones](arquitectura/versiones/README.md) |
 | CLI, CON, DIR, PRD, OPP, COT, DEC, PED, ENT, CPE, PAG, PROV | Identificadores de entidad (con `-SIM` en datos de prueba) | [Registro de identificadores](datos/trazabilidad/identificadores-y-linaje.md) |

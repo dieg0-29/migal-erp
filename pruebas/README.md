@@ -4,21 +4,20 @@ Esta carpeta reúne los artefactos que permiten **validar que los procesos, deci
 
 El objetivo no es acumular capturas, sino conservar evidencia suficiente para que otra persona pueda entender qué se probó, con qué datos, cuál era el resultado esperado y qué ocurrió.
 
-## Estructura prevista
+## Estructura
 
 ```text
 pruebas/
 ├── README.md
-├── casos/
-├── resultados/
-├── evidencias/
-├── incidencias/
+├── casos/                 # CP-nn y plantilla-caso.md
 └── criterios-aceptacion/
 ```
 
+Las carpetas `resultados/`, `evidencias/` e `incidencias/` se crean cuando se ejecute el primer caso en Odoo.
+
 ### `casos/`
 
-Describe escenarios de prueba.
+Describe escenarios de prueba con la [plantilla de caso](casos/plantilla-caso.md): [CP-01](casos/CP-01-caso-normal.md) (caso normal) y [CP-02](casos/CP-02-caso-excepcion.md) (excepción de precio).
 
 Cada caso debería incluir, cuando corresponda:
 
