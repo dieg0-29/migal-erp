@@ -25,7 +25,7 @@ Los dos casos usan registros existentes del catálogo sintético, para que cualq
 - `[E][AS-IS]` No existe un porcentaje máximo formal de descuento; ambos propietarios pueden autorizar ajustes. `[FN-01][FN-02]`
 - `[E][AS-IS]` En cemento y fierro el margen es menor y el precio está condicionado por el mercado. `[FN-01]`
 
-Las reglas aplicadas provienen del [catálogo RN/EXC](decisiones-comerciales.md#8-catálogo-central-de-reglas-de-negocio-previas-al-pedido-d02--matriz-rn): `RN-02` (próxima acción obligatoria), `RN-03` (precio de lista sujeto a actualización), `RN-04` (versionado de cotizaciones), `RN-05` (promesa de disponibilidad), `RN-06` (condición de facturación prevista) y `EXC-01` (igualar competencia).
+Las reglas aplicadas provienen del [catálogo RN/EXC](decisiones-comerciales.md#8-catálogo-de-reglas-de-negocio-matriz-rn): `RN-02` (próxima acción obligatoria), `RN-03` (precio de lista sujeto a actualización), `RN-04` (versionado de cotizaciones), `RN-05` (promesa de disponibilidad), `RN-06` (condición de facturación prevista) y `EXC-01` (igualar competencia).
 
 ## 3. Escenario normal — Lista de obra referida por maestro
 
@@ -35,23 +35,23 @@ El caso distingue los tres conceptos de origen: canal (WhatsApp), fuente (referi
 
 | Objeto CRM | Valor del catálogo | Rol en el caso |
 |---|---|---|
-| Cuenta | `CLI-SIM-001 · Cliente Obra Alfa` (Obra) | Responsable económico |
-| Contacto decisor | `CON-SIM-001 · Responsable` | Dueño de obra: aprueba y paga |
-| Contacto operativo | `CON-SIM-002 · Maestro` | Maestro de obra: envía la lista |
-| Dirección | `DIR-SIM-001 · Obra Alfa` (San Martín de Porres) | Contexto de destino, no orden de entrega |
+| Cuenta | `CLI-SIM-001 · Rosa Elena Huamán Salcedo` (Obra) | Responsable económico |
+| Contacto decisor | `CON-SIM-001 · Rosa Elena Huamán Salcedo` | Dueño de obra: aprueba y paga |
+| Contacto operativo | `CON-SIM-002 · Luis Fernando Salcedo Poma` | Maestro de obra: envía la lista |
+| Dirección | `DIR-SIM-001 · Ampliación tercer piso — familia Huamán` (San Martín de Porres) | Contexto de destino, no orden de entrega |
 | Fuente | Referido maestro | `[E]` |
 | Canal | WhatsApp | `[SIM]` supuesto del recorrido |
 | Campaña | Ninguna: el cliente llegó por referencia del maestro, no por una iniciativa de MIGAL | Ver [catálogo de campañas](cuenta-contacto-canales.md#53-catálogo-de-campañas) |
-| Oportunidad | `OPP-SIM-001 · Lista completa para obra` · probabilidad **Alta** · responsable **Propietaria** | Resultado: **Abierta** |
+| Oportunidad | `OPP-SIM-001 · Materiales para tercer piso` · probabilidad **Alta** · responsable **Propietaria** | Resultado: **Abierta** |
 | Cotización | `COT-SIM-001-V01` · estado *En revisión* · comprobante previsto *Por definir* | — |
 | Próxima acción | Confirmar aprobación del responsable · 17/10/2026 · Propietaria | `RN-02` |
 
 | Línea | Producto | Cantidad | Precio de referencia | Precio ofrecido | Importe |
 |---|---|---:|---:|---:|---:|
-| 1 | `PRD-SIM-001` Cemento | 100 bolsas | S/ 30.00 | S/ 30.00 | S/ 3,000.00 |
-| 2 | `PRD-SIM-002` Fierro | 40 unidades | S/ 40.00 | S/ 40.00 | S/ 1,600.00 |
+| 1 | `PRD-SIM-001` Cemento | 100 bolsas | S/ 31.00 | S/ 31.00 | S/ 3,100.00 |
+| 2 | `PRD-SIM-002` Fierro | 40 unidades | S/ 40.50 | S/ 40.50 | S/ 1,620.00 |
 | 3 | `PRD-SIM-003` Tubería PVC | 20 unidades | S/ 20.00 | S/ 20.00 | S/ 400.00 |
-| | | | | **Suma de líneas** | **S/ 5,000.00** |
+| | | | | **Suma de líneas** | **S/ 5,120.00** |
 
 La suma no incluye impuestos, flete ni descuentos y no se presenta como total fiscal.
 
@@ -90,9 +90,9 @@ La suma no incluye impuestos, flete ni descuentos y no se presenta como total fi
 
 | Objeto CRM | Valor del catálogo |
 |---|---|
-| Cuenta | `CLI-SIM-002 · Cliente Obra Beta` (Obra) |
-| Contacto decisor | `CON-SIM-003 · Responsable Beta` (dueño de obra) |
-| Contacto operativo | `CON-SIM-004 · Maestro Beta` (maestro de obra) |
+| Cuenta | `CLI-SIM-002 · Julio César Rojas Cárdenas` (Obra) |
+| Contacto decisor | `CON-SIM-003 · Julio César Rojas Cárdenas` (dueño de obra) |
+| Contacto operativo | `CON-SIM-004 · Víctor Hugo Palomino Chacón` (maestro de obra) |
 | Canal / fuente / campaña | WhatsApp / no registrada `[ND]` / ninguna |
 | Oportunidad | `OPP-SIM-002 · Cemento y fierro para avance de obra` · probabilidad **Alta** · competencia **Sí** · responsable **Dueño** |
 | Decisión | `DEC-SIM-001` · Descuento · *Cliente comunica mejor precio de competencia* · **Ajuste autorizado** · Dueño · 16/10/2026 |
@@ -100,11 +100,11 @@ La suma no incluye impuestos, flete ni descuentos y no se presenta como total fi
 
 | Línea | Producto | Cant. | V01 (referencia) | V02 (ofrecido) | Motivo V02 | Autorizó | Resultado de línea |
 |---|---|---:|---:|---:|---|---|---|
-| 1 | `PRD-SIM-001` Cemento | 80 | S/ 30.20 | S/ 30.00 | Volumen | Dueño | Adjudicada |
+| 1 | `PRD-SIM-001` Cemento | 80 | S/ 31.20 | S/ 31.00 | Volumen | Dueño | Adjudicada |
 | 2 | `PRD-SIM-002` Fierro | 60 | S/ 40.50 | S/ 40.10 | Competencia | Dueño | No adjudicada |
-| | **Suma** | | **S/ 4,846.00** | **S/ 4,806.00** | | | |
+| | **Suma** | | **S/ 4,926.00** | **S/ 4,886.00** | | | |
 
-Beneficio concedido en V02: S/ 16.00 en cemento y S/ 24.00 en fierro (S/ 40.00 en total). Importe adjudicado a MIGAL: S/ 2,400.00 (cemento).
+Beneficio concedido en V02: S/ 16.00 en cemento y S/ 24.00 en fierro (S/ 40.00 en total). Importe adjudicado a MIGAL: S/ 2,480.00 (cemento).
 
 ### 4.3. Punto de ramificación respecto del caso normal
 
@@ -156,7 +156,7 @@ La frontera se ubica en la confirmación de la cotización, según [ADR-004](../
 
 - El caso no prueba pedido, reserva de inventario, entrega, emisión de comprobante ni cobro.
 - No se ejecutó en una instancia de Odoo; los estados y modelos son conceptuales.
-- [`caso-excepcion.md`](caso-excepcion.md) presenta una variante ilustrativa (S/ 40.00 → S/ 39.70 sobre `OPP-SIM-001`) que no figura en el catálogo. Debe conciliarse con este documento o declararse como variante.
+- [`caso-excepcion.md`](caso-excepcion.md) desarrolla la misma excepción (`OPP-SIM-002`, `COT-SIM-002-V02`, `DEC-SIM-001`).
 
 ## Fuentes
 

@@ -16,13 +16,13 @@ Todos los nombres, cantidades y valores de este caso son **simulados**.
 
 | Elemento | Valor simulado |
 |---|---|
-| Cuenta | `CLI-SIM-001 · Cliente Obra Norte` |
-| Contacto operativo | `CON-SIM-002 · Maestro de obra demo` |
-| Oportunidad | `OPP-SIM-001 · Materiales para obra` |
-| Producto afectado | `PRD-SIM-002 · Fierro de construcción` |
-| Cantidad | 40 unidades |
-| Precio de referencia MIGAL | S/ 40.00 por unidad `[SIM]` |
-| Referencia comunicada de competencia | S/ 39.50 por unidad `[SIM]` |
+| Cuenta | `CLI-SIM-002 · Julio César Rojas Cárdenas` |
+| Contacto operativo | `CON-SIM-004 · Víctor Hugo Palomino Chacón` (maestro de obra) |
+| Oportunidad | `OPP-SIM-002 · Cemento y fierro para columnas` |
+| Producto afectado | `PRD-SIM-002 · Barra corrugada de acero 1/2 pulg x 9 m` |
+| Cantidad | 60 unidades |
+| Precio de referencia MIGAL | S/ 40.50 por unidad `[SIM]` |
+| Referencia comunicada de competencia | Otra ferretería mejora el precio; importe no registrado `[ND]` |
 | Solicitud | Mejorar el precio para mantener esa línea en MIGAL |
 
 Los importes no representan precios reales de MIGAL.
@@ -47,13 +47,13 @@ Los importes no representan precios reales de MIGAL.
 
 ### Variante A — Ajuste autorizado
 
-El propietario autoriza un precio de S/ 39.70 `[SIM]`.
+El dueño autoriza un precio de S/ 40.10 `[SIM]` (decisión `DEC-SIM-001`, 16/10/2026).
 
 Se genera una nueva versión:
 
 ```text
-COT-SIM-001-V01 → precio original
-COT-SIM-001-V02 → precio revisado y autorizado
+COT-SIM-002-V01 → precio original
+COT-SIM-002-V02 → precio revisado y autorizado
 ```
 
 Evidencia esperada:
