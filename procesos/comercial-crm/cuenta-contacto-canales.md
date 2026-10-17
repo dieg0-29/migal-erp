@@ -2,7 +2,6 @@
 
 **Proyecto:** Ferre & Inversiones MIGAL  
 **Curso:** GE703 · Sistemas Integrados Empresariales  
-**Incremento:** PC2 v2.1  
 **Alcance:** contexto CRM previo al pedido confirmado
 
 ## 1. Propósito
@@ -136,7 +135,7 @@ No se propone inventar campañas para llenar el CRM.
 
 - La campaña se registra solo cuando **causó** la consulta, no cuando solo la **favoreció**. Ejemplo: un maestro que recibió una canasta navideña (`CAM-03`) trae en enero a un cliente nuevo → fuente: *Referido maestro*; campaña: vacía. La canasta fortaleció la relación, pero no originó la consulta.
 - Si un cliente dice que llegó por el material de Progresol en tienda, se registra `CAM-01`.
-- El envío de mensajes promocionales por una campaña requiere consentimiento promocional (ver sección 7 y [`tratamiento-datos.md`](../../datos/privacidad/tratamiento-datos.md)).
+- El envío de mensajes promocionales por una campaña requiere consentimiento promocional (ver sección 7 y [`tratamiento-datos.md`](../../datos/tratamiento-datos.md)).
 - `[ND]` No existe control del presupuesto ni del retorno de las campañas; registrar la campaña es el primer paso para medirlo.
 
 ## 6. Seguimiento comercial
@@ -156,21 +155,14 @@ No se fija una frecuencia artificial como “cada 48 horas”; la acción debe r
 
 ## 7. Uso operativo y uso promocional del contacto
 
-`[TO-BE]` Se propone diferenciar dos finalidades:
-
-- **Uso operativo:** responder consultas, cotizar, coordinar, hacer seguimiento de una solicitud y recuperar contexto de una relación existente.
-- **Uso promocional:** enviar campañas, ofertas o mensajes de marketing no solicitados.
-
-`[I]` Dado que MIGAL no realiza actualmente marketing directo sistemático, no corresponde asumir que disponer del teléfono del cliente equivale a autorización para campañas promocionales.
-
-El tratamiento detallado se encuentra en `datos/privacidad/tratamiento-datos.md`.
+La diferencia entre uso operativo y promocional, y la regla de no inferir consentimiento por tener el teléfono del cliente, están en [tratamiento de datos](../../datos/tratamiento-datos.md#4-uso-operativo-vs-promocional).
 
 ## 8. Límites
 
 - `[ND]` No existe una política formal documentada de retención de información de contactos.
 - `[ND]` No se ha definido un procedimiento formal de consentimiento promocional.
 - `[TO-BE]` La ficha CRM propuesta debe validarse con los propietarios antes de considerarse una política del negocio.
-- El alcance de PC2 no incluye diseño técnico de tablas, APIs ni sincronización CRM–ERP.
+- No se diseñan tablas, APIs ni sincronización técnica CRM–ERP; los campos están en el [diccionario de datos](../../datos/diccionario-datos.md).
 
 ## 9. Fuentes relacionadas
 

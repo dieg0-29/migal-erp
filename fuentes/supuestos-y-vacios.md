@@ -1,4 +1,4 @@
-# Supuestos, vacíos, propuestas y límites — PC2 MIGAL
+# Supuestos, vacíos, propuestas y límites — MIGAL
 
 ## 1. Clasificación
 
@@ -47,7 +47,7 @@
 | Política de acceso a una futura ficha CRM | `[ND]` | Definir con responsables reales |
 | Umbral de descuento resoluble por trabajadores | `[ND]` | No inventar porcentaje |
 | Criterio cuantitativo de probabilidad de compra | `[ND]` | Usar escala cualitativa propuesta |
-| Criterio formal para otorgar crédito | `[ND]` en PC2 | Fuera del núcleo del incremento actual |
+| Criterio formal para otorgar crédito | `[ND]` | Decisión pendiente; ver RN-15 en el [catálogo de reglas](../procesos/catalogo-reglas.md) |
 | Tarifa/cobertura fija de reparto | `[E]` No existe formalmente | Tratar caso a caso |
 | Regla única de cálculo de precio | `[E]` No existe | No diseñar fórmula universal |
 
@@ -63,21 +63,9 @@ Los siguientes elementos aparecieron en avances anteriores, pero **no deben mant
 - considerar una cotización no aceptada como pedido;
 - tratar una compra parcial como oportunidad totalmente perdida.
 
-## 6. Fuera de alcance de PC2 v2.1
+## 6. Alcance
 
-No se desarrolla en este incremento:
-
-- contrato técnico CRM–ERP;
-- payloads, APIs o eventos de integración;
-- creación y ejecución del pedido;
-- reserva de inventario;
-- facturación ejecutada;
-- entrega;
-- pagos/cobranza;
-- posventa;
-- agente comercial.
-
-Los catálogos docentes de Pedido, Inventario, Entrega, Factura y Pago se conservan únicamente como contexto para comprender la frontera futura.
+Lo incluido y excluido por sistema está en el [alcance de la solución](../arquitectura/base/alcance.md). Ningún comportamiento de Odoo se da por hecho sin un caso de prueba ejecutado.
 
 ## 7. Infraestructura actualizada
 

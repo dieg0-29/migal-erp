@@ -22,15 +22,14 @@ Reúne la información que sustenta las decisiones de arquitectura:
 - contexto de la empresa;
 - alcance de la solución;
 - comparación de alternativas ERP;
-- adecuación arquitectónica;
 - riesgos y controles relacionados con la implementación.
 
 ### `seguridad/`
 
-Contiene el modelo de autorización y segregación de funciones D09, junto con su matriz de permisos en formato Excel:
+Contiene el modelo de autorización y segregación de funciones, junto con su matriz de permisos en formato Excel:
 
-- [`d09-autorizacion-y-segregacion.md`](seguridad/d09-autorizacion-y-segregacion.md)
-- [`d09-matriz-permisos.xlsx`](seguridad/d09-matriz-permisos.xlsx)
+- [`modelo-autorizacion.md`](seguridad/modelo-autorizacion.md)
+- [`matriz-permisos.xlsx`](seguridad/matriz-permisos.xlsx)
 
 ### `decisiones/`
 
@@ -61,7 +60,7 @@ Cuando se actualiza una fuente, debe regenerarse también el render correspondie
 
 ### `integraciones/`
 
-Documentará las fronteras e integraciones entre sistemas cuando formen parte del alcance vigente. Hasta el parcial, la integración de mayor interés es la relación entre CRM y ERP.
+Documenta las fronteras de información entre sistemas con la [plantilla de integración](integraciones/plantilla-integracion.md): un documento INT por cada sistema que se integra, empezando por [INT-01](integraciones/INT-01-CRM-ERP.md) (CRM y ERP).
 
 No debe adelantarse una integración técnica cuando el incremento evaluado solo requiera una distinción conceptual.
 

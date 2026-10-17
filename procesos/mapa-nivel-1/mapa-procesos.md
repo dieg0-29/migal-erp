@@ -7,14 +7,14 @@
 | Grupo | Proceso funcional | Entrada → salida | Responsabilidad funcional |
 |---|---|---|---|
 | Dirección | Planificación comercial y decisiones del negocio | Necesidades/resultados → prioridades y condiciones | Propietarios |
-| Core | Gestión comercial CRM | Consulta → propuesta y seguimiento | Atención / propietarios |
-| Core | Order to Cash | Necesidad comercial → entrega, cobro y cierre/excepción | Atención, almacén y propietarios según función |
+| Core | Gestión comercial CRM | Consulta → propuesta y seguimiento | R-ATN / R-PRO |
+| Core | Order to Cash | Necesidad comercial → entrega, cobro y cierre/excepción | R-ATN, R-ALM, R-PRO y R-FAC |
 | Core | Procure to Pay | Necesidad de reposición → recepción y pago conciliado | Propietarios, almacén y administración funcional |
 | Core compartido | Gestión de inventario | Recepciones, salidas y conteos → existencias y diferencias trazables | Personal operativo / propietarios |
 | Soporte | Registro económico y conciliación | Operaciones/comprobantes → saldos y conciliaciones | Propietarios y apoyo contable según función validada |
 | Soporte | Datos, accesos y continuidad | Necesidades de información/acceso → registros confiables y servicio recuperable | Propietarios; soporte técnico por definir |
 
-La agrupación es analítica. Una misma persona puede ejecutar varias funciones; D09 propone controles sobre operaciones incompatibles. Inventario conecta ventas y abastecimiento, pero no reemplaza P2P. CRM es el tramo comercial de entrada a O2C, no un segundo proceso de venta desconectado.
+La agrupación es analítica. Una misma persona puede ejecutar varias funciones; el [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) propone controles sobre operaciones incompatibles. Inventario conecta ventas y abastecimiento, pero no reemplaza P2P. CRM es el tramo comercial de entrada a O2C, no un segundo proceso de venta desconectado.
 
 ```mermaid
 flowchart LR
@@ -28,9 +28,16 @@ flowchart LR
     D --> I[Conciliación y cierre]
 ```
 
-## Corte académico y coordinación
+## Documentos por proceso
 
-PC2 analiza consulta, cuenta/contacto, oportunidad, cotización y decisiones previas al pedido. O2C completo, P2P, inventario y cierre económico son diseño acumulativo/futuro sujeto a requisitos EP. Este mapa no prueba integración técnica ni exige instalar Compras.
+| Proceso | Documentos |
+|---|---|
+| Gestión comercial CRM | [Flujo comercial](../comercial-crm/flujo-comercial.md) |
+| Order to Cash | [SIPOC](../o2c/sipoc.md), [flujo](../o2c/flujo.md), [pedido](../o2c/pedido.md), [facturación](../o2c/facturacion.md) |
+| Procure to Pay | [SIPOC](../p2p/sipoc.md), [flujo](../p2p/flujo.md) |
+| Gestión de inventario | [Flujo](../inventario/flujo.md) |
+
+Las reglas de todos los procesos están en el [catálogo de reglas](../catalogo-reglas.md).
 
 ## Puntos de control compartidos
 
@@ -41,4 +48,4 @@ PC2 analiza consulta, cuenta/contacto, oportunidad, cotización y decisiones pre
 
 ## Pendientes de validación
 
-Revisar con Procesos la clasificación, puntos de inicio/fin y tareas reales; mapear funciones a personas; confirmar requisitos EP. Véanse [O2C](../o2c/sipoc.md), [P2P](../p2p/sipoc.md), [inventario](../inventario/flujo.md) y [alcance](../../arquitectura/base/alcance.md).
+Revisar con los propietarios la clasificación, los puntos de inicio y fin y las tareas reales, y asignar cada perfil a personas. Véanse [O2C](../o2c/sipoc.md), [P2P](../p2p/sipoc.md), [inventario](../inventario/flujo.md) y [alcance](../../arquitectura/base/alcance.md).

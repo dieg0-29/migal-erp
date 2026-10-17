@@ -262,3 +262,24 @@ chore/reorganizar-repositorio
 ```
 
 No mezclar una migración estructural grande con cambios funcionales o con el desarrollo de un entregable específico. Esto permite revisar por separado qué archivos se movieron y qué contenido realmente cambió.
+
+## 13. Códigos e identificadores
+
+Cada código pertenece a un solo documento dueño. Antes de crear un código nuevo, verificar que el prefijo no esté en uso y registrarlo en esta tabla. Al renombrar o eliminar un código, actualizar todos los documentos que lo citan.
+
+| Código | Significado | Documento dueño |
+|---|---|---|
+| RN-nn, CT-nn | Reglas de negocio de todos los procesos y sus controles | [Catálogo de reglas](procesos/catalogo-reglas.md) |
+| EXC-nn | Excepciones | [Catálogo de reglas](procesos/catalogo-reglas.md) |
+| CAM-nn | Campañas | [Cuenta, contacto y canales](procesos/comercial-crm/cuenta-contacto-canales.md) |
+| ETP-nn | Etapas del flujo comercial | [Flujo comercial](procesos/comercial-crm/flujo-comercial.md) |
+| DQ-nn | Reglas de calidad de datos | [Reglas de calidad](datos/reglas-calidad.md) |
+| TR-nn | Trazas de auditoría | [Plan de trazabilidad](datos/trazabilidad/plan-trazabilidad-auditoria.md) |
+| CP-nn | Casos de prueba | [Caso normal](pruebas/casos/CP-01-caso-normal.md) (CP-01), [caso de excepción](pruebas/casos/CP-02-caso-excepcion.md) (CP-02) |
+| R-xxx, PR-nn.nn, SOD-nn | Perfiles, permisos y segregación | [Modelo de autorización](arquitectura/seguridad/modelo-autorizacion.md) |
+| INT-nn, EV-nn, F-nn | Integraciones, sus eventos y fronteras | [Integraciones](arquitectura/integraciones/INT-01-CRM-ERP.md); fuera del documento se citan como `INT-01/EV-03` |
+| O2C-K, P2P-K, P2P-E/C | Indicadores y eventos de los macroprocesos | [Indicadores O2C](procesos/o2c/indicadores.md), [P2P](procesos/p2p/eventos-controles.md) |
+| AC-nn, CV-nn | Criterios de aceptación de la rúbrica | [Criterios de aceptación](pruebas/criterios-aceptacion/criterios-crm.md) |
+| RSK-nn | Riesgos | [Registro de riesgos](arquitectura/base/riesgos-y-controles.md) |
+| ADR-nnn, VER-nn, CA-nn | Decisiones, versiones y ajustes de arquitectura | [Decisiones](arquitectura/decisiones/), [versiones](arquitectura/versiones/README.md) |
+| CLI, CON, DIR, PRD, OPP, COT, DEC, PED, ENT, CPE, PAG, PROV | Identificadores de entidad (con `-SIM` en datos de prueba) | [Registro de identificadores](datos/trazabilidad/identificadores-y-linaje.md) |

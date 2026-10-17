@@ -4,7 +4,7 @@
 
 - **Fecha:** 25/09/2026
 - **Estado:** Propuesto
-- **Autores:** Luis Nuñez
+- **Autores:** Luis Núñez
 
 ## 2. Contexto y Problema
 
@@ -30,7 +30,7 @@ Ante esta necesidad se evaluaron **StarSoft, Odoo y Microsoft Dynamics 365**, co
 | **Odoo** | ERP modular y extensible, con funcionalidades para ventas, inventario e integración. |
 | **Dynamics 365** | ERP empresarial integrado al ecosistema Microsoft, con capacidades para finanzas, ventas, compras, inventario y analítica. |
 
-La comparación detallada se encuentra en `arquitectura/comparacion-erp.md`.
+La comparación detallada se encuentra en [comparación de ERP](../base/comparacion-erp.md).
 
 ## 5. Decisión
 
@@ -56,7 +56,7 @@ Otro aspecto considerado es su capacidad de extensión mediante módulos y aplic
 
 Por lo tanto, considerando el tamaño de la empresa, la ausencia de personal TI dedicado, la necesidad de una implementación gradual, la centralización de ventas e inventario y la posibilidad de ampliar el sistema mediante módulos y desarrollos propios, se seleccionó Odoo como la plataforma ERP sobre la cual se desarrollará la solución.
 
-La evidencia y comparación utilizada para esta decisión se encuentra documentada en `arquitectura/comparacion-erp.md`.
+La evidencia y comparación utilizada para esta decisión se encuentra documentada en [comparación de ERP](../base/comparacion-erp.md).
 
 ## 7. Consecuencias (Trade-offs)
 
@@ -65,7 +65,7 @@ La evidencia y comparación utilizada para esta decisión se encuentra documenta
 
 ## Fuentes
 
-- `arquitectura/comparacion-erp.md`
+- [comparación de ERP](../base/comparacion-erp.md)
 - [1] Odoo. Documentación oficial de Odoo 18:\
   https://www.odoo.com/documentation/18.0/
 

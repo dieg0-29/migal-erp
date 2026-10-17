@@ -8,7 +8,7 @@ Este documento registra de dónde provienen las afirmaciones utilizadas para des
 |---|---|---:|---|---|
 | `FN-01` | *Monografía 1 - Grupo 1 - SI704V · Ferre & Inversiones MIGAL* | 15/10/2026 | Operación, actores, canales, precios, cotizaciones, reparto, clientes de obra, responsabilidades | Documento elaborado por el equipo a partir de información recolectada |
 | `FN-02` | Aclaraciones de campo registradas por Brenda sobre la operación familiar de MIGAL | 16/10/2026 | Contactos, dueño/maestro, seguimiento, competencia, descuentos, cotización, facturación, direcciones e infraestructura actual | Deben conservarse como notas de levantamiento del proyecto |
-| `FN-03` | `arquitectura/base/contexto-empresa.md` del repositorio PC1 | PC1 | Contexto inicial, sistemas utilizados y problemática | Revisar consistencia con información más reciente antes de citar como versión definitiva |
+| `FN-03` | [Contexto de la empresa](../arquitectura/base/contexto-empresa.md) | 25/09/2026 | Contexto inicial, sistemas utilizados y problemática | Revisar consistencia con información más reciente antes de citar como versión definitiva |
 
 ## 2. Evidencia relevante extraída
 
@@ -36,7 +36,7 @@ Este documento registra de dónde provienen las afirmaciones utilizadas para des
 | ID | Fuente | Uso |
 |---|---|---|
 | `FC-01` | GE703 · Sesión 6 · CRM, marketing y ventas | Conceptos de cuenta, contacto, interacción, oportunidad, cotización y frontera conceptual CRM–ERP |
-| `FC-02` | PC2 · Instrucciones y rúbrica v2.1 | Alcance evaluable y criterios de la entrega |
+| `FC-02` | GE703 · Instrucciones y rúbrica de evaluación v2.1 | Criterios de las entregas del curso |
 | `FD-01` | Catálogos GE703 S6 y `Modelo_CRM_ERP_Maestro.xlsx` | Referencia conceptual de objetos y atributos CRM–ERP |
 
 ## 4. Regla de uso de los catálogos docentes

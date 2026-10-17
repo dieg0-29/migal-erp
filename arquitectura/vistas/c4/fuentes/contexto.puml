@@ -1,7 +1,6 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-' v2.1 (PC2): se agrega la gestión comercial CRM dentro de Odoo 18 Community (ADR-001, ADR-002, ADR-004)
-title Diagrama de Contexto (Nivel 1) - Ferre & Inversiones MIGAL · v2.1 (PC2)
+title Diagrama de Contexto (Nivel 1) - Ferre & Inversiones MIGAL
 
 Person(cliente, "Cliente / Dueño de obra", "Consulta, recibe cotizaciones y decide la compra; suele ser quien paga")
 Person(maestro, "Maestro de obra", "Refiere clientes, envía listas de materiales y coordina en obra")
@@ -18,5 +17,5 @@ Rel(cliente, prop, "Visita la tienda", "Presencial")
 Rel(prop, whatsapp, "Responde y envía cotización (PDF)", "App móvil")
 Rel(prop, odoo, "Registra oportunidad, cotiza y aprueba excepciones", "Navegador")
 Rel(trab, odoo, "Registra leads e interacciones; consulta stock", "Navegador")
-Rel(prop, keyfacil, "Emite boleta/factura (fuera de alcance PC2)", "App web")
+Rel(prop, keyfacil, "Emite boleta o factura y registra la referencia en Odoo", "App web")
 @enduml

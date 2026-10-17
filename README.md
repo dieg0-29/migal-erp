@@ -22,14 +22,9 @@ Las decisiones y sus fundamentos se documentan en:
 - [`arquitectura/decisiones/`](arquitectura/decisiones/)
 - [`arquitectura/vistas/`](arquitectura/vistas/)
 
-## Alcance hasta el Examen Parcial
+## Alcance actual
 
-Hasta el parcial, el repositorio cubre cuatro incrementos principales:
-
-1. **Arquitectura ERP base:** contexto empresarial, comparación de alternativas, decisiones arquitectónicas y vistas C4.
-2. **Macroprocesos:** Order to Cash (O2C), Procure to Pay (P2P) y su relación con inventario.
-3. **Gestión comercial y CRM:** cuenta, contacto, canal, lead, oportunidad, cotización y decisiones comerciales.
-4. **Integración parcial:** consolidación de los incrementos anteriores para el Examen Parcial.
+La solución parte de un ERP base y le integra progresivamente otros sistemas empresariales; hoy incluye el ERP y el CRM. El detalle está en el [alcance](arquitectura/base/alcance.md) y en el [registro de versiones](arquitectura/versiones/README.md).
 
 El proyecto continúa evolucionando durante el curso. La presencia de un artefacto en el repositorio puede representar análisis, diseño, propuesta, configuración, prueba o evidencia; no implica necesariamente una implementación productiva.
 
@@ -43,14 +38,14 @@ El proyecto continúa evolucionando durante el curso. La presencia de un artefac
 | Procesos | [`procesos/`](procesos/) | O2C, P2P, inventario y comercial/CRM |
 | Producto | [`producto/`](producto/) | Backlog y artefactos de implementación |
 | Fuentes | [`fuentes/`](fuentes/) | Bibliografía, uso de IA, licencias y evidencia |
-| Seguridad y autorización | [`arquitectura/seguridad/`](arquitectura/seguridad/) | Modelo D09 de permisos y segregación de funciones |
+| Seguridad y autorización | [`arquitectura/seguridad/`](arquitectura/seguridad/) | Modelo de autorización: permisos y segregación de funciones |
 | Datos | [`datos/`](datos/) | Maestros, calidad, trazabilidad y datos de prueba |
-| Pruebas | `pruebas/` | Casos, resultados, evidencias e incidencias |
-| Entregas | `entregas/` | Snapshots de PC1, avances, PC2 y EP |
+| Pruebas | [`pruebas/`](pruebas/) | Casos de prueba y criterios de aceptación |
+| Entregas | [`entregas/`](entregas/) | Archivos presentados en cada evaluación del curso |
 
 El `README.md` funciona como punto de entrada. La información detallada debe mantenerse en los documentos de cada área para evitar duplicidad y conservar una sola fuente de verdad por tema.
 
-## Estructura del repositorio hasta el parcial
+## Estructura del repositorio
 
 ```text
 migal-erp/
@@ -77,11 +72,7 @@ migal-erp/
 │
 ├── datos/
 │   ├── maestros/
-│   ├── transaccionales/
-│   ├── diccionario/
-│   ├── calidad/
 │   ├── trazabilidad/
-│   ├── privacidad/
 │   └── pruebas/
 ├── producto/
 ├── pruebas/
@@ -140,12 +131,12 @@ Los cambios relevantes en la evolución del proyecto se registran en:
 
 | Integrante | Rol de trabajo |
 |---|---|
-| Alejandro César Flores Marcos | Facilitación |
-| Brenda Nicole Mirano Flores | Producto |
-| César Emmerson Joaquín Palomino | Procesos |
-| Diego Alonso Pinedo Aponte | Arquitectura |
-| Gabriel Gibson Martínez Arista | Datos |
-| Luis Rodrigo Núñez Príncipe | Validación |
+| Alejandro Flores | Facilitación |
+| Brenda Mirano | Producto |
+| César Joaquín | Procesos |
+| Diego Pinedo | Arquitectura |
+| Gabriel Martínez | Datos |
+| Luis Núñez | Validación |
 
 Los roles organizan el trabajo, pero las contribuciones deben quedar verificables mediante commits, Pull Requests, revisiones, modelos, fuentes, pruebas o validaciones.
 

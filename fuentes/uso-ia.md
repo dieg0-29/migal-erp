@@ -4,7 +4,7 @@
 
 **Caso de estudio:** Ferre & Inversiones MIGAL
 
-**Alcance:** PC2, escenario CRM anterior al pedido confirmado
+**Alcance:** documentación del proyecto
 
 ## Declaración de uso
 
@@ -21,6 +21,7 @@ Estas herramientas cumplen una función de **asistencia**: no constituyen una fu
 | Revisión de redacción y organización documental | ChatGPT; Gemini | Apoyo en claridad, cohesión, estructuración y reformulación; el texto incorporado debe mantener el significado de las fuentes del proyecto. |
 | Alineación de arquitectura y caso de análisis | Claude | Apoyo para contrastar los entregables con la rúbrica, actualizar las vistas C4 con el CRM, plantear el caso de análisis y retirar marcas de citas; el contenido se revisó contra el catálogo sintético, los ADR y las fuentes FN-01/FN-02. Aporte de Diego Pinedo. |
 | Conversión y preparación de documentos D09 y D10 | ChatGPT | Transformación de Word a Markdown y organización de tablas y referencias, registrada en la declaración versionada y en el [PR #18](https://github.com/dieg0-29/migal-erp/pull/18). Estos artefactos corresponden a continuidad documental, no al alcance funcional evaluable de PC2. |
+| Reorganización y alineación del repositorio | Claude | Análisis de redundancias y contradicciones, propuesta de plantillas (integración, versión, entidad, proceso), consolidación de catálogos y reescritura de documentos para alinearlos con las decisiones del equipo. Cada cambio fue revisado y aprobado por Diego Pinedo antes de integrarse |
 
 La preparación de este registro y de los documentos de licencias y criterios de aceptación también recibió asistencia de ChatGPT. El contenido se organizó a partir de la rúbrica suministrada y del inventario de ramas y archivos del repositorio; su publicación requiere revisión de los responsables académicos.
 

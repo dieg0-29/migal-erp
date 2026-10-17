@@ -4,13 +4,13 @@
 
 | Evento | Control propuesto | Responsable funcional | Evidencia |
 |---|---|---|---|
-| P2P-E-01 Necesidad registrada | P2P-C-01: producto/unidad/cantidad y causa identificables | Solicitante/propietario | Solicitud y fecha |
-| P2P-E-02 Compra decidida | P2P-C-02: oferta y autorización coherentes | Propietario | Proveedor, condiciones y decisión |
-| P2P-E-03 Recepción contada | P2P-C-03: cotejar real frente a esperado | Operación | Documento, cantidad, ubicación y diferencias |
-| P2P-E-04 Diferencia resuelta | P2P-C-04: conservar decisión sin borrar conteo | Propietario/operación | Pendiente, reclamo, devolución o regularización |
-| P2P-E-05 Obligación revisada | P2P-C-05: cotejar compra–recepción–documento | Función administrativa | Importes, referencias y discrepancia |
-| P2P-E-06 Pago aplicado | P2P-C-06: soporte y no duplicación | Propietario | Monto, medio, fecha y aplicación |
-| P2P-E-07 Cierre revisado | P2P-C-07: saldos físicos/económicos explicados | Propietario | Conciliación y motivo de cierre |
+| P2P-E-01 Necesidad registrada | P2P-C-01: producto/unidad/cantidad y causa identificables | R-ALM / R-PRO | Solicitud y fecha |
+| P2P-E-02 Compra decidida | P2P-C-02: oferta y autorización coherentes | R-PRO | Proveedor, condiciones y decisión |
+| P2P-E-03 Recepción contada | P2P-C-03: cotejar real frente a esperado | R-ALM | Documento, cantidad, ubicación y diferencias |
+| P2P-E-04 Diferencia resuelta | P2P-C-04: conservar decisión sin borrar conteo | R-PRO / R-ALM | Pendiente, reclamo, devolución o regularización |
+| P2P-E-05 Obligación revisada | P2P-C-05: cotejar compra–recepción–documento | R-FAC | Importes, referencias y discrepancia |
+| P2P-E-06 Pago aplicado | P2P-C-06: soporte y no duplicación | R-PRO | Monto, medio, fecha y aplicación |
+| P2P-E-07 Cierre revisado | P2P-C-07: saldos físicos/económicos explicados | R-PRO | Conciliación y motivo de cierre |
 
 ## Excepciones y evidencia
 
@@ -23,6 +23,6 @@ Una recepción parcial genera pendiente de cantidad, no ajuste para hacerla coin
 - Discrepancia: importe distinto; documentar decisión antes de regularización/cierre.
 - Duplicidad: mismo soporte de pago presentado dos veces; revisar aplicación existente.
 
-Resultado obtenido y evidencia: pendientes. No se reutilizan los CP-01/02 de D10 para casos nuevos sin acuerdo con Luis. Las pruebas técnicas de configuración se definen después de elegir mecanismo de registro.
+Resultado obtenido y evidencia: pendientes. Los casos nuevos se numeran a partir de CP-03 en `pruebas/casos/`. Las pruebas técnicas de configuración se definen después de elegir mecanismo de registro.
 
-Referencias: [reglas](reglas.md), [flujo](flujo.md), [identificadores](../../datos/trazabilidad/identificadores-y-linaje.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [reglas](../catalogo-reglas.md), [flujo](flujo.md), [identificadores](../../datos/trazabilidad/identificadores-y-linaje.md), [fuentes](../../fuentes/fuentes-negocio.md).

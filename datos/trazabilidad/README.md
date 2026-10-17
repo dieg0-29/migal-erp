@@ -1,7 +1,7 @@
 # Trazabilidad y auditoría
 
-Esta carpeta reúne el entregable D10 de trazabilidad y auditoría para PC2. El contenido representa un modelo propuesto; los casos de auditoría listados permanecen por ejecutar.
+Esta carpeta reúne lo necesario para reconstruir una operación desde su origen: responsables, decisiones, documentos, movimientos y resultados entre el CRM, el ERP y KeyFacil. Los casos de auditoría listados permanecen por ejecutar.
 
-- [D10 — Plan de trazabilidad y auditoría](d10-plan-trazabilidad-auditoria.md)
-- [D10 — Matriz de trazabilidad (Excel)](d10-matriz-trazabilidad.xlsx)
-- [Identificadores y linaje](identificadores-y-linaje.md)
+- [Registro de identificadores y linaje](identificadores-y-linaje.md): prefijos de identificadores de entidad y linaje de una operación.
+- [Plan de trazabilidad y auditoría](plan-trazabilidad-auditoria.md): trazas TR-01 a TR-13 y procedimiento de auditoría.
+- [Matriz de trazabilidad (Excel)](matriz-trazabilidad.xlsx): relación entre reglas, eventos, controles, casos y trazas.

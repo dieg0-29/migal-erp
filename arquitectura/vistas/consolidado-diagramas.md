@@ -22,19 +22,19 @@ Expone la infraestructura técnica subyacente. Se visualiza el cliente web, la b
 
 Profundiza en los contenedores específicos para revelar los componentes internos (modelos ORM y controladores lógicos) que ejecutan los flujos de negocio principales.
 
-### 3.1. Flujo Integral de Ventas
+### 3.1. Order to Cash
 
-Representa la orquestación técnica dentro de los módulos comerciales. Muestra cómo la transición de estado de un pedido desencadena automáticamente operaciones en el inventario y en la contabilidad general, y cómo se gestiona el flujo alternativo de quiebre de stock.
+Muestra la confirmación del pedido desde la cotización aceptada (frontera CRM a ERP, [INT-01](../integraciones/INT-01-CRM-ERP.md)), la entrega por ubicación, la venta de mostrador con descuento automático de stock y el registro de la referencia del comprobante emitido en KeyFacil. Odoo no emite comprobantes fiscales ([ADR-004](../decisiones/ADR-004-odoo-community-fronteras-crm-erp.md)). Flujo detallado: [O2C](../../procesos/o2c/flujo.md).
 
 ![componentes-ventas](c4/render/componentes/ventas.png)
 
-### 3.2. Gestión de Inventario Centralizada
+### 3.2. Gestión de inventario
 
-Ilustra cómo el sistema centraliza los movimientos de mercadería provenientes de recepciones manuales, ventas mayoristas y consolidaciones de mostrador (POS), garantizando la integridad de los datos físicos y su correspondiente valoración financiera.
+Muestra recepciones, entregas, transferencias y ajustes por ubicación (Tienda, Almacén 1 y Almacén 2). Los ajustes requieren autorización de un propietario (SOD-03) y la valoración contable automática queda por validar. Flujo detallado: [inventario](../../procesos/inventario/flujo.md).
 
 ![componentes-inventario](c4/render/componentes/inventario.png)
 
-### 3.3. Escenario CRM previo al pedido (PC2)
+### 3.3. Escenario CRM previo al pedido
 
 Muestra el recorrido comercial dentro del CRM de Odoo 18 Community: lead, calificación, actividades, cotización y motivos de pérdida. El método `action_confirm()` marca la frontera conceptual: hasta la cotización el CRM conserva el contexto comercial; desde la confirmación, el ERP compromete y ejecuta (ver ADR-004).
 
