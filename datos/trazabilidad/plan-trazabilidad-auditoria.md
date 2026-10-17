@@ -22,7 +22,7 @@ La historia del negocio conserva canal, responsable, etapas y decisiones que afe
 
 Cada evento TR incluye identificador, tipo, referencia del objeto, usuario o servicio, rol, fecha y hora con zona, acción y resultado. Para cambios críticos se conserva el valor anterior y posterior, el motivo, el correlation_id y la evidencia asociada. Cuando exista una interfaz externa con reintentos, se agregan idempotency_key y número de intento, sin almacenar credenciales ni datos personales innecesarios.
 
-La cadena de referencia ilustrativa es lead → oportunidad → COT-2026-0042 → SO-2026-0042 → F001-004512 → posventa, con correlación CORR-2026-0042. Los identificadores corresponden a un caso sintético; la auditoría debe cotejar en cada entorno las referencias y transiciones que realmente produce Odoo y su relación con KeyFacil.
+La cadena de referencia ilustrativa es `OPP-SIM-001` → `COT-SIM-001-V01` → `PED-SIM-001` → `ENT-SIM-001` → `CPE-SIM-001` → `PAG-SIM-001` → posventa, con los prefijos del [registro de identificadores](identificadores-y-linaje.md). Los identificadores corresponden a un caso sintético; la auditoría debe cotejar en cada entorno las referencias y transiciones que realmente produce Odoo y su relación con KeyFacil.
 
 ## Catálogo de eventos y controles de captura
 
@@ -54,16 +54,9 @@ El modelo preserva la atribución individual, el acceso mínimo por rol, la expo
 
 ## Acceso, custodia y minimización de información
 
-| Perfil ([modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md)) | Detalle permitido | Límite |
-| --- | --- | --- |
-| Atención comercial · PR-02 | Historial de operaciones propias o asignadas. | Sin acceso general a información fiscal o crediticia. |
-| Propietario · PR-04 | Decisiones, aprobaciones y revisión global. | Exportación extraordinaria justificada y registrada. |
-| Almacén · PR-05 | Reserva, entrada y salida física requeridas. | Sin lectura de crédito ni negociaciones ajenas. |
-| Facturación · PR-06 | Comprobantes, pagos y conciliación a cargo. | Sin datos comerciales innecesarios. |
-| Técnico · PR-07 | Metadatos, incidencias y cambios de permisos. | Sin edición ordinaria de negocio o eliminación de evidencia. |
-| Servicio · PR-08 | Eventos técnicos mínimos de interfaz, si existe. | Sin acceso interactivo o borrado de registros. |
+El acceso al rastro sigue los perfiles y reglas PR del [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md): cada perfil consulta solo las operaciones a su cargo, R-PRO supervisa decisiones y exportaciones, y ninguna cuenta edita ni borra evidencia.
 
-El acceso al rastro depende de la función: atención comercial consulta los casos a su cargo; propietarios supervisan las decisiones; almacén revisa movimientos necesarios; facturación coteja comprobantes y cobros; soporte técnico accede a metadatos operativos. El período de conservación y los procedimientos de archivo se establecerán por clase de registro, conforme a la política aprobada por los responsables.
+El período de conservación y los procedimientos de archivo se establecerán por clase de registro, conforme a la política aprobada por los responsables.
 
 ## Relación RN, EV, CT, CP y antecedentes
 
