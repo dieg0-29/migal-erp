@@ -2,6 +2,26 @@
 
 Este archivo resume los **cambios relevantes del proyecto acumulativo**. No reemplaza el historial de Git ni registra cada commit: documenta cambios que afectan la estructura del repositorio, el alcance, las decisiones, los procesos, los datos, las pruebas o la evidencia del proyecto.
 
+
+## 2026-10-17 — Reorganización y alineación de la documentación
+
+### Añadido
+
+- Plantillas de integración, versión, entidad de datos, proceso y caso de prueba.
+- INT-01 (CRM y ERP), registro de versiones VER-01 y VER-02, catálogo único de reglas (RN-01 a RN-25), registro de riesgos (RSK-nn) y espacios de códigos en `CONTRIBUTING.md`.
+- Casos de prueba CP-01 y CP-02 en `pruebas/casos/`.
+
+### Cambiado
+
+- Flujos O2C, inventario y P2P alineados con KeyFacil como emisor, la exclusión de Compras, el descuento automático del POS y los perfiles del modelo de autorización.
+- Vistas C4 de ventas e inventario, backlog y contexto de la empresa alineados con las mismas decisiones.
+- `datos/` estandarizado: diccionario como fuente única, caso de ejemplo unificado en el catálogo sintético y responsables por perfil.
+- Se retiran las referencias a evaluaciones en la documentación viva y los códigos D01 a D12.
+
+### Eliminado
+
+- Documentos fusionados o redundantes: escenario CRM, análisis de situación, frontera conceptual, casos en `comercial-crm/`, reglas O2C/P2P, eventos O2C, adecuación arquitectónica y registros de evolución anteriores.
+
 ## 2026-10-16 — Incorporación de los artefactos D01 y D02 del escenario comercial CRM (PC2)
 
 ### Añadido
