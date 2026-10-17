@@ -4,7 +4,7 @@
 
 ## Contexto y alcance
 
-El contexto recibido describe reposición basada en conocimiento de los propietarios y control manual de inventario. El modelo TO-BE propone una referencia común para decisión de compra, recepción y pago. La operación puede comenzar con registro manual controlado; no se presupone RFQ automática al confirmar ventas. PC2 CRM no ejecuta este proceso; su exigencia concreta para EP debe cotejarse con la rúbrica.
+El contexto recibido describe reposición basada en conocimiento de los propietarios y control manual de inventario. El modelo TO-BE propone una referencia común para decisión de compra, recepción y pago. La operación puede comenzar con registro manual controlado; no se presupone RFQ automática al confirmar ventas.
 
 ## Actores y precondiciones
 
@@ -42,4 +42,4 @@ La historia debe permitir vincular necesidad → decisión → compra → recepc
 
 ## Relación con otros artefactos
 
-[SIPOC](sipoc.md), [reglas](reglas.md), [eventos/controles](eventos-controles.md), [indicadores](indicadores.md), [proveedores](../../datos/maestros/proveedores.md). El flujo anterior de inventario admite recepción manual y O2C menciona compras automáticas: debe resolverse la discrepancia en la decisión arquitectónica de abastecimiento. Fuentes: [FN-01/FN-02](../../fuentes/fuentes-negocio.md) y [supuestos](../../fuentes/supuestos-y-vacios.md).
+[SIPOC](sipoc.md), [reglas RN-16 a RN-25](../catalogo-reglas.md), [eventos/controles](eventos-controles.md), [indicadores](indicadores.md), [proveedores](../../datos/maestros/proveedores.md). El abastecimiento se realiza sin el módulo de Compras y sin solicitudes automáticas (ver [VER-02](../../arquitectura/versiones/VER-02-crm.md), CA-04). Fuentes: [FN-01/FN-02](../../fuentes/fuentes-negocio.md) y [supuestos](../../fuentes/supuestos-y-vacios.md).

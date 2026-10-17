@@ -1,52 +1,91 @@
-# Flujo Principal: Gestion de Ventas
+# Flujo Order to Cash: del pedido al cobro
 
-**Objetivo y Contexto:**
-El objetivo de este flujo de trabajo es la gestion integral del ciclo de ventas de la ferreteria, haciendo uso de los modulos de "Punto de Venta", y "Ventas" que ofrece Odoo, estos a su vez estaran conectados al modulo de "Contabilidad" desarrollado por terceros para la version de Odoo Comunity.
+## 1. Metadatos
 
-El flujo actual (AS-IS) cuenta con problemas como
-1. Falta de integracion de procesos (con Contabilidad)
-2. Silos de informacion
-3. Desconexion con inventarios
+* **Fecha:** 17/10/2026
+* **Versión:** 0.1
+* **Autores:** César Joaquín
+* **Sistema:** ERP (Odoo 18 Community: Ventas, Punto de Venta, Inventario y contabilidad básica) y KeyFacil (externo)
 
-La intencion de este flujo es aprovecharlas funciones de Odoo Community para implementar un flujo "TO-BE" que permita la integración con contabilidad, la propagacion automatica de informacion (entre Ventas, Almacén y Compras), eliminar reprocesos manuales, asegurando que los procesos subsecuentes fluyan naturalmente desde la confirmación de la venta.
+## 2. Propósito
 
----
+`[E][AS-IS]` Las ventas se registran en notas y en la memoria de los propietarios, el stock no se descuenta al vender y la facturación en KeyFacil no queda vinculada a la operación. `[FN-01][FN-02]`
 
-# Especificación del Caso de Uso: Flujo de Ventas
+El flujo propuesto ejecuta en el ERP lo que se acordó con el cliente: confirma el pedido, prepara y entrega la mercadería desde la ubicación correcta, registra la referencia del comprobante emitido en KeyFacil y el cobro, y cierra la operación sin pendientes ocultos.
 
-| 1.- Caso de Uso del Sistema | Gestión Integral de Ventas |
-| :--- | :--- |
-| **2.- Descripción del caso de uso** | Permite registrar y gestionar las ventas a través de dos canales: ventas rápidas de mostrador (Punto de Venta) y ventas mayoristas (Módulo Ventas). El flujo abarca desde la selección de productos y validación de stock, hasta la entrega de la mercancía y la generación automática de los apuntes contables en el módulo de contabilidad de terceros. |
-| **3.- Actor(es)** | - **Cajero / Vendedor de Mostrador:** Gestiona ventas rápidas y cobros directos.<br>- **Ejecutivo de Ventas:** Gestiona presupuestos y pedidos mayoristas.<br>- **Operario de Almacén:** Despacha la mercancía de pedidos corporativos.<br>- **Sistema (Odoo + Contabilidad):** Ejecuta automatizaciones de stock e integracion de actividades. |
-| **4.- Precondiciones** | - Los productos, precios e impuestos deben estar configurados en el sistema.<br>- El módulo de Contabilidad de terceros debe estar instalado y con los diarios contables (ventas, caja/bancos) mapeados correctamente.<br>- Las sesiones del Punto de Venta deben estar configuradas y abiertas por el cajero. |
-| **5.- Postcondiciones** | - El inventario físico se reduce automáticamente en la cantidad despachada/vendida.<br>- Se generan automáticamente las facturas o boletas correspondientes.<br>- El sistema crea los apuntes contables (cuentas por cobrar, ingresos, caja) reflejando la transacción en la contabilidad general sin intervención manual. |
+## 3. Inicio y fin
 
-| 6.- Pasos (Flujo de Eventos: Módulo Ventas Mayoristas) | | |
-| :--- | :--- | :--- |
-| **Nro** | **Acción del Actor** | **Respuesta del Sistema** |
-| 1 | El **Ejecutivo de Ventas** ingresa al módulo de Ventas, crea un "Presupuesto", asigna al cliente y agrega los productos. | El sistema calcula precios e impuestos, verificando en tiempo real la disponibilidad de inventario (alertando visualmente si no hay stock). |
-| 2 | El **Ejecutivo de Ventas** hace clic en "Confirmar". | El sistema transiciona el Presupuesto a "Pedido de Venta" y genera automáticamente una "Guia de Salida" en el módulo de Inventario. |
-| 3 | El **Operario de Almacén** revisa las órdenes de entrega, prepara la mercancía y hace clic en "Validar" la guia. | El sistema descuenta el stock físico del Kardex y marca el Pedido de Venta como listo para facturar. |
-| 4 | El **Ejecutivo de Ventas** abre el Pedido de Venta y hace clic en "Crear Factura". | El sistema genera una factura borrador heredando toda la información del pedido y de la guia entregada. |
-| 5 | El actor revisa la factura y hace clic en "Confirmar". | El sistema asigna un número correlativo legal a la factura y **genera automáticamente los registros contables** en el módulo de Contabilidad de terceros (Ingresos, Impuestos y Cuentas por Cobrar). |
+* **Inicio:** cotización aceptada en el CRM ([INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), F-02), o venta de mostrador en el punto de venta.
+* **Fin:** entrega y cobro conciliados, o excepción cerrada con motivo.
 
-| 6.1.- Flujo Alternativo 1: Ventas Rápidas (Punto de Venta / Mostrador) |
-| :--- |
-| **Paso 1:** El **Cajero** abre sesión en el "Punto de Venta" (POS).<br>**Paso 2:** El Cajero escanea o selecciona los productos en la interfaz. El sistema descuenta lógicamente el stock.<br>**Paso 3:** El Cajero selecciona el método de pago (Efectivo, Tarjeta) y valida la transacción.<br>**Respuesta del Sistema:** El sistema emite el ticket/comprobante, realiza la salida de inventario de forma instantánea y, al cerrar la sesión del POS, **consolida y publica automáticamente los registros contables** de todas las ventas del turno en el diario correspondiente. |
+La etapa comercial previa (consulta, oportunidad y cotización) está en el [flujo comercial](../comercial-crm/flujo-comercial.md).
 
-| 6.2.- Flujo Alternativo 2: Quiebre de Stock (MTO) en Ventas Corporativas |
-| :--- |
-| **Paso 2.1:** Al confirmar el Pedido de Venta, el sistema detecta falta de stock de un artículo configurado bajo pedido (Make To Order).<br>**Respuesta del Sistema:** Odoo genera la Guia de Salida en estado "Esperando" y, de forma paralela y automática, crea una Solicitud de Presupuesto en el módulo de Compras, rompiendo los silos de información y notificando la necesidad de abastecimiento sin requerimientos manuales. |
+## 4. Actores
 
-| 7.- Reglas de Negocio y Requerimientos Satisfechos |
-| :--- |
-| A continuación se detalla cómo el nuevo flujo "TO-BE" resuelve los problemas del escenario "AS-IS": |
+| Perfil | Participación |
+|---|---|
+| R-ATN | Confirma el pedido desde la cotización aceptada; atiende ventas de mostrador |
+| R-PRO | Decide crédito, cambios posteriores a la aceptación y faltantes; emite el comprobante en KeyFacil |
+| R-ALM | Prepara, despacha y registra cantidades realmente entregadas |
+| R-FAC | Registra la referencia del comprobante, el cobro y la conciliación (lo ejercen los propietarios) |
 
-| Problema / Requerimiento Original | Solución Implementada (Odoo TO-BE) |
-| :--- | :--- |
-| **Problema AS-IS 1:** Falta de integración de procesos (con Contabilidad) | Integración del módulo de Contabilidad de terceros. La confirmación de facturas en "Ventas" y el cierre de caja en "Punto de Venta" gatillan la creación inmediata de pólizas/asientos contables. |
-| **Problema AS-IS 2:** Silos de información | Se establece una base de datos centralizada. Ventas, Inventario, Compras y Contabilidad leen del mismo maestro de clientes, productos y facturas. |
-| **Problema AS-IS 3:** Desconexión con inventarios | Validación de stock en tiempo real al hacer la cotización. Descuento automático del Kardex al validar la guia o al cobrar en el POS. |
-| **Regla de Negocio:** No vender sin stock (Salvo MTO) | El sistema bloquea o alerta las salidas en negativo. En su defecto, activa la ruta de abastecimiento automático (MTO) conectando Ventas con Compras de manera invisible para el vendedor. |
+## 5. Entradas y salidas
 
-    MTO son las siglas de Make to Order (fabricación o reabastecimiento bajo pedido), hay casos donde la venta, sobre todo al por mayor y para obras, se realiza sin considerar el inventario ya que para estos casos se crea una orden de abastecimiento para satisfacer el pedido y se cordina el envio con el provedor.
+| Entradas | Salidas |
+|---|---|
+| Cotización aceptada (versión y condiciones) o venta de mostrador; stock por ubicación; datos fiscales si el comprobante los requiere | Pedido, entrega con cantidades reales, referencia del comprobante de KeyFacil, cobro aplicado, cierre |
+
+## 6. Flujo
+
+### 6.1. Venta con pedido (obra o mayorista)
+
+| Paso | Actividad | Actor | Sistema | Regla | Evidencia |
+|---|---|---|---|---|---|
+| 1 | Confirmar el pedido desde la versión aceptada, con la identificación que exija el comprobante | R-ATN | ERP (Ventas) | RN-07, RN-08 | Pedido vinculado a la versión aceptada |
+| 2 | Si hay condición de crédito nueva o modificada, decidirla | R-PRO | ERP | RN-15, SOD-04 | Condición, fundamento y responsable |
+| 3 | Consultar disponibilidad y reservar en la ubicación de salida (Tienda, Almacén 1 o Almacén 2) | R-ALM | ERP (Inventario) | RN-09 | Cantidad solicitada, disponible y reservada por ubicación |
+| 4 | Preparar y despachar; registrar la cantidad realmente entregada | R-ALM | ERP (Inventario) | RN-10 | Documento de salida, cantidad entregada y pendiente |
+| 5 | Emitir el comprobante en KeyFacil | R-PRO | KeyFacil | RN-11 | Comprobante emitido fuera de Odoo |
+| 6 | Registrar la referencia del comprobante y conciliar con el pedido | R-FAC | ERP | RN-11 | Referencia, importe y conciliación |
+| 7 | Registrar el cobro verificado y el saldo | R-FAC | ERP | RN-12 | Soporte, monto y saldo |
+| 8 | Cerrar con entrega, cobro e incidencias resueltos | R-PRO | ERP | RN-14 | Estado de cierre y responsable |
+
+Detalle de los pasos 1 y 2: [pedido](pedido.md). Detalle de los pasos 5 y 6: [facturación](facturacion.md).
+
+### 6.2. Venta de mostrador (punto de venta)
+
+| Paso | Actividad | Actor | Sistema | Regla | Evidencia |
+|---|---|---|---|---|---|
+| 1 | Registrar los productos y el cobro en el punto de venta | R-ATN | ERP (Punto de Venta) | RN-12 | Ticket interno y pago |
+| 2 | El stock de la Tienda se descuenta en el momento de la venta | Sistema | ERP (Inventario) | RN-10 | Movimiento de salida por venta `[S]` por validar en la instancia |
+| 3 | Emitir el comprobante en KeyFacil y registrar su referencia | R-PRO / R-FAC | KeyFacil / ERP | RN-11 | Referencia conciliada con la venta |
+| 4 | Al cerrar la sesión, conciliar el efectivo y los pagos con las ventas del turno | R-FAC | ERP (Punto de Venta) | RN-12 | Cierre de sesión con diferencias explicadas |
+
+El ticket del punto de venta es un registro interno; el comprobante fiscal lo emite KeyFacil ([ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md)).
+
+## 7. Excepciones
+
+| Situación | Tratamiento | Regla |
+|---|---|---|
+| Stock insuficiente al confirmar | R-PRO decide entre entrega parcial, sustituto o reposición manual por P2P; no se genera una compra automática | RN-09, RN-16 |
+| Entrega parcial | Se registra lo entregado y el saldo pendiente queda visible | RN-10 |
+| Cambio posterior a la aceptación | Decide R-PRO; nueva versión y aceptación si cambia lo acordado | SOD-05 |
+| Diferencia entre comprobante y pedido | Se mantiene en revisión; no se corrige la cotización para que coincida | RN-11 |
+| Pago duplicado o sin soporte | No se aplica hasta verificarlo | RN-12 |
+| Cancelación | Se revisan movimientos, comprobantes y pagos antes de cerrar; no se borra el historial | RN-14 |
+
+## 8. Indicadores
+
+[Indicadores O2C](indicadores.md): O2C-K-05 a O2C-K-07 para entrega, conciliación fiscal y cobro.
+
+## 9. Pendientes de validación
+
+* Momento real del descuento de stock del punto de venta y de los asientos contables en la instancia (ver [VER-02](../../arquitectura/versiones/VER-02-crm.md), CA-06 y CA-07).
+* Generación del documento de entrega al confirmar el pedido, reservas y entregas parciales.
+* Alcance del módulo contable de la comunidad ([ADR-003](../../arquitectura/decisiones/ADR-003-contabilidad.md)): qué registra el ERP y qué queda solo en KeyFacil.
+
+## 10. Historial de cambios
+
+| Versión | Fecha | Autor | Cambio |
+|---|---|---|---|
+| 0.1 | 17/10/2026 | César Joaquín | Versión inicial; reemplaza el caso de uso de ventas y lo alinea con KeyFacil como emisor, la exclusión de Compras y los perfiles del modelo de autorización |

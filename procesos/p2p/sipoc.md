@@ -1,6 +1,6 @@
 # SIPOC — Procure to Pay
 
-**Estado:** TO-BE propuesto, fase posterior a CRM PC2. Revisión de Procesos y requisitos EP pendiente.
+**Estado:** TO-BE propuesto; reglas RN-16 a RN-25 del [catálogo](../catalogo-reglas.md).
 
 | Proveedores de información/recursos | Entradas | Proceso | Salidas | Clientes/receptores |
 |---|---|---|---|---|
@@ -12,7 +12,7 @@
 
 ## Inicio, fin y frontera
 
-Inicio: necesidad identificada, no necesariamente un pedido de cliente. Fin: recepción y obligación conciliadas o excepción explícitamente cerrada. Inventario registra efecto físico; P2P explica autorización, condiciones y pago. La cotización comercial PC2 puede conservar una promesa condicionada, pero no ejecuta abastecimiento.
+Inicio: necesidad identificada, no necesariamente un pedido de cliente. Fin: recepción y obligación conciliadas o excepción explícitamente cerrada. Inventario registra efecto físico; P2P explica autorización, condiciones y pago. La cotización comercial puede conservar una promesa condicionada, pero no ejecuta abastecimiento.
 
 ## Control de la información
 
@@ -20,4 +20,4 @@ Conservar referencias de producto/unidad, proveedor y compra en la recepción. C
 
 ## Validación pendiente
 
-Confirmar procedimiento AS-IS, documentos disponibles, tratamiento de devoluciones y representación técnica. El modelo puede aplicarse manualmente antes de decidir el módulo Compras; no acredita automatización. Referencias: [flujo](flujo.md), [reglas](reglas.md), [fuentes del negocio](../../fuentes/fuentes-negocio.md).
+Confirmar procedimiento AS-IS, documentos disponibles, tratamiento de devoluciones y representación técnica. El modelo puede aplicarse manualmente antes de decidir el módulo Compras; no acredita automatización. Referencias: [flujo](flujo.md), [reglas](../catalogo-reglas.md), [fuentes del negocio](../../fuentes/fuentes-negocio.md).

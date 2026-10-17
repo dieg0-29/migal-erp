@@ -23,6 +23,6 @@ Una recepción parcial genera pendiente de cantidad, no ajuste para hacerla coin
 - Discrepancia: importe distinto; documentar decisión antes de regularización/cierre.
 - Duplicidad: mismo soporte de pago presentado dos veces; revisar aplicación existente.
 
-Resultado obtenido y evidencia: pendientes. No se reutilizan los CP-01/02 del plan de trazabilidad para casos nuevos sin acuerdo con Luis. Las pruebas técnicas de configuración se definen después de elegir mecanismo de registro.
+Resultado obtenido y evidencia: pendientes. Los casos nuevos se numeran a partir de CP-03 en `pruebas/casos/`. Las pruebas técnicas de configuración se definen después de elegir mecanismo de registro.
 
-Referencias: [reglas](reglas.md), [flujo](flujo.md), [identificadores](../../datos/trazabilidad/identificadores-y-linaje.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [reglas](../catalogo-reglas.md), [flujo](flujo.md), [identificadores](../../datos/trazabilidad/identificadores-y-linaje.md), [fuentes](../../fuentes/fuentes-negocio.md).

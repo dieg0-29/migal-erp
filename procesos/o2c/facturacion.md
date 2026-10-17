@@ -1,14 +1,14 @@
-# Facturación y referencia externa — Diseño futuro
+# Facturación y referencia externa
 
-**Estado:** propuesta funcional posterior a PC2; no es procedimiento tributario aprobado ni integración implementada.
+**Estado:** diseño funcional; no es procedimiento tributario aprobado ni integración implementada. Forma parte del [flujo O2C](flujo.md), pasos 5 y 6.
 
 ## Frontera
 
-En PC2 se conserva únicamente comprobante previsto e información disponible/pendiente. Según ADR-004 y las fuentes del repositorio, KeyFacil permanece como emisor externo operado por propietarios. Un documento interno de Odoo y su número no se presentan automáticamente como comprobante fiscal válido.
+Hasta la aceptación, el CRM conserva solo el comprobante previsto y la información fiscal disponible o pendiente (RN-06). Según ADR-004 y las fuentes del repositorio, KeyFacil permanece como emisor externo operado por propietarios. Un documento interno de Odoo y su número no se presentan automáticamente como comprobante fiscal válido.
 
 ## Datos y responsabilidades
 
-El propietario autorizado comprueba la operación y datos necesarios, opera KeyFacil y conserva referencia del comprobante. La función administrativa concilia importe y relación con pedido/entrega según la política validada. Atención consulta solo el estado necesario; almacén no requiere detalle fiscal/crediticio general.
+R-PRO comprueba la operación y datos necesarios, opera KeyFacil y conserva referencia del comprobante. R-FAC concilia importe y relación con pedido/entrega según la política validada. R-ATN consulta solo el estado necesario; R-ALM no requiere detalle fiscal/crediticio general.
 
 | Dato propuesto | Uso |
 |---|---|
@@ -35,4 +35,4 @@ No emitir dos veces por falta de referencia o reintento manual; buscar comproban
 
 Validar requisitos fiscales, momento de emisión, política respecto a entregas/pagos anticipados, campos de referencia y conciliación. La prueba futura deberá mostrar referencia única y diferencia resuelta con datos SIM. No se declara cumplimiento tributario ni resultado de prueba.
 
-Referencias: [decisiones comerciales](decisiones-comerciales.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md), [plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [decisiones comerciales](../comercial-crm/decisiones-comerciales.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md), [plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md), [fuentes](../../fuentes/fuentes-negocio.md).

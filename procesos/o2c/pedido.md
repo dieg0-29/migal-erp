@@ -1,6 +1,6 @@
-# Pedido de cliente — Diseño funcional futuro
+# Pedido de cliente
 
-**Estado:** propuesta para etapa posterior; fuera de ejecución PC2. No acredita configuración de Ventas ni prueba de confirmación.
+**Estado:** diseño funcional; no acredita configuración de Ventas ni prueba de confirmación. Forma parte del [flujo O2C](flujo.md), pasos 1 y 2.
 
 ## Propósito y frontera
 
@@ -8,7 +8,7 @@ Convertir una propuesta aceptada en un compromiso operativo reconstruible. Una c
 
 ## Entradas y responsables
 
-Cuenta/contacto, cotización y versión, productos/unidades/cantidades, precios y condiciones aceptadas, soporte de aceptación y datos de entrega si aplica. Atención prepara la transición; propietarios resuelven excepciones; operación recibe solo el compromiso confirmado y la información necesaria para ejecutar. No exigir datos adicionales que no correspondan a la operación.
+Cuenta/contacto, cotización y versión, productos/unidades/cantidades, precios y condiciones aceptadas, soporte de aceptación y datos de entrega si aplica. R-ATN prepara la transición; R-PRO resuelve excepciones; R-ALM recibe solo el compromiso confirmado y la información necesaria para ejecutar. No exigir datos adicionales que no correspondan a la operación.
 
 ## Flujo propuesto
 
@@ -29,4 +29,4 @@ Faltante: consultar alternativa, parcial o reposición con decisión explícita,
 
 La prueba futura debe demostrar vínculo con versión aceptada, conservación de condiciones y efecto real de confirmar en el entorno. Verificar reservas, parciales, permisos y mapeo de campos; no afirmar bloqueos nativos ni crear un objeto separado si la instancia conserva la transición en el mismo registro.
 
-Referencias: [frontera](frontera-conceptual-crm-erp.md), [O2C](../o2c/reglas.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), [catálogo de reglas](../catalogo-reglas.md) (RN-07, RN-08, RN-15), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), [fuentes](../../fuentes/fuentes-negocio.md).

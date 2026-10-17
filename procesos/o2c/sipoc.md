@@ -1,6 +1,6 @@
 # SIPOC — Order to Cash
 
-**Estado:** modelo funcional propuesto; revisión con Procesos pendiente. **Inicio:** necesidad comercial. **Fin:** entrega y cobro conciliados, o excepción cerrada explícitamente.
+**Estado:** modelo funcional propuesto. **Inicio:** necesidad comercial. **Fin:** entrega y cobro conciliados, o excepción cerrada explícitamente.
 
 ## SIPOC
 
@@ -17,16 +17,16 @@
 
 ## Responsabilidades y límites
 
-Atención conserva contexto y seguimiento; propietarios resuelven condiciones sensibles; almacén documenta operación física; emisión fiscal permanece en KeyFacil según ADR-004. Son funciones que deben mapearse a personas reales. No se presupone RFQ automática ni una factura legal originada en Odoo.
+R-ATN conserva contexto y seguimiento; R-PRO resuelve condiciones sensibles; R-ALM documenta operación física; emisión fiscal permanece en KeyFacil según ADR-004. Son funciones que deben mapearse a personas reales. No se presupone RFQ automática ni una factura legal originada en Odoo.
 
-PC2 termina en cotización y seguimiento. Las filas de aceptación/pedido en adelante son extensión futura, no prueba ejecutada. Los casos de venta rápida y obra pueden recorrer distintos pasos; no obligar a crear un lead por cada consulta rápida si no aporta seguimiento.
+La etapa comercial (filas 1 y 2) se detalla en el [flujo comercial](../comercial-crm/flujo-comercial.md); desde la aceptación, en el [flujo O2C](flujo.md). Los casos de venta rápida y obra pueden recorrer distintos pasos; no obligar a crear un lead por cada consulta rápida si no aporta seguimiento.
 
 ## Interfaces y controles
 
-Reutilizar cuenta/contacto/producto, identificar versión comunicada, conservar aceptación, separar consulta/reserva/salida y comprobar referencia fiscal/cobro. Los controles se detallan en [reglas](reglas.md) y [eventos](eventos-controles.md).
+Reutilizar cuenta/contacto/producto, identificar versión comunicada, conservar aceptación, separar consulta/reserva/salida y comprobar referencia fiscal/cobro. Los controles se detallan en [reglas](../catalogo-reglas.md) y [trazas](../../datos/trazabilidad/plan-trazabilidad-auditoria.md).
 
 ## Pendientes
 
-Validar crédito, política POS, topología, comprobación de pagos y tratamiento de entregas parciales. El [flujo PC1](flujo.md) aún contiene automatismos contradictorios; este SIPOC no acredita su corrección ni ejecución.
+Validar crédito, política POS, topología, comprobación de pagos y tratamiento de entregas parciales.
 
 Fuentes: [registro del negocio](../../fuentes/fuentes-negocio.md), [decisiones comerciales](../comercial-crm/decisiones-comerciales.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md).
