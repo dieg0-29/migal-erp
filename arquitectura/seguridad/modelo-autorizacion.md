@@ -23,7 +23,7 @@ La asignación de cada perfil corresponde a la función desempeñada y conserva 
 | Código | Perfil | Reglas en la matriz | Acceso principal y límite | Asignación en MIGAL |
 |---|---|---|---|---|
 | R-ATN | Atención comercial | PR-02 | Registrar leads, clientes, cotizaciones y aceptación documentada. No aprueba sus descuentos ni emite o anula comprobantes. | Trabajadores y propietarios |
-| R-PRO | Propietario aprobador | PR-04 | Decidir excepciones comerciales, condiciones de crédito y regularizaciones sensibles. No aprueba excepciones que inició; requiere revisión cruzada. | Propietarios |
+| R-PRO | Propietario aprobador | PR-04 | Decidir excepciones comerciales, condiciones de crédito y regularizaciones sensibles, y custodiar los datos maestros. No aprueba excepciones que inició; requiere revisión cruzada. | Propietarios |
 | R-ALM | Operación de almacén | PR-05 | Registrar recepción, preparación, despacho y diferencias físicas. No aprueba su propio ajuste de inventario ni administra precios. | Trabajadores |
 | R-FAC | Facturación y cobro | PR-06 | Registrar número fiscal, cobros y conciliación con KeyFacil. KeyFacil solo lo opera un propietario autorizado; la anulación requiere control independiente. | Propietarios |
 | R-TEC | Administración técnica | PR-07 | Administrar usuarios, módulos, grupos y continuidad técnica. Sin facultades comerciales por defecto. | **Pendiente:** MIGAL no tiene personal de TI ([ADR-002](../decisiones/ADR-002-version-y-edicion.md)) |
