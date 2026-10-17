@@ -1,55 +1,43 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 
-title Diagrama de Componentes (Nivel 3) - Gestión de Ventas
+title Diagrama de Componentes (Nivel 3) - Ventas
 
-' Actores ajustados a la realidad de MIGAL
-Person(prop, "Propietario", "Atiende WhatsApp, opera el POS y digita en KeyFacil")
-Person(alm, "Operario de Almacén", "Prepara mercadería y valida guías de salida")
+' Perfiles del modelo de autorización
+Person(atn, "Trabajadores (R-ATN)", "Confirman pedidos desde la cotización aceptada y atienden el mostrador")
+Person(prop, "Propietarios (R-PRO / R-FAC)", "Deciden crédito y faltantes; emiten el comprobante en KeyFacil y concilian")
+Person(alm, "Personal de almacén (R-ALM)", "Prepara, despacha y registra cantidades entregadas")
 
-' Sistemas Externos (Fuera del ecosistema Odoo)
-System_Ext(whatsapp, "WhatsApp", "Canal principal de pedidos remotos")
-System_Ext(keyfacil, "KeyFacil", "Plataforma para emisión de comprobantes SUNAT")
+System_Ext(keyfacil, "KeyFacil", "Emisión de boletas y facturas electrónicas (SUNAT)")
 
-' v2.1 (PC2): la cotización nace en el CRM (detalle en componentes/crm.puml)
-Container_Boundary(crm_app, "CRM (Contenedor Python · crm + sale_crm)") {
-    Component(crm_lead, "Modelo: crm.lead", "ORM Python", "Oportunidad con cuenta, contactos (dueño y maestro de obra), fuente y probabilidad")
+' La cotización nace en el CRM (detalle en componentes/crm.puml)
+Container_Boundary(crm_app, "CRM (crm + sale_crm)") {
+    Component(crm_lead, "crm.lead", "Modelo ORM", "Oportunidad con cuenta, contactos, fuente y probabilidad")
 }
 
-' Contenedores Comerciales
-Container_Boundary(sales_app, "Módulos Comerciales (Contenedor Python)") {
-    Component(sale_order, "Modelo: sale.order", "ORM Python", "Cotización (borrador/enviada) ligada a la oportunidad; al confirmarse pasa a Pedido de Venta")
-    Component(action_confirm, "Servicio: action_confirm()", "Método Python", "Lógica central. Aprueba la venta y orquesta las conexiones internas")
-    Component(pos_session, "Modelo: pos.session", "ORM Python", "Agrupa transacciones rápidas de mostrador hasta el cierre de caja")
+Container_Boundary(sales_app, "Ventas y Punto de Venta (sale, point_of_sale)") {
+    Component(sale_order, "sale.order", "Modelo ORM", "Cotización aceptada que pasa a pedido confirmado; conserva la versión aceptada")
+    Component(action_confirm, "action_confirm()", "Método", "FRONTERA CRM a ERP (INT-01, F-02): confirma el pedido")
+    Component(pos_order, "pos.order / pos.session", "Modelos ORM", "Venta de mostrador; el stock se descuenta automáticamente en cada venta")
 }
 
-' Contenedor de Inventario
-Container_Boundary(inv_app, "Módulo de Inventario (Contenedor Python)") {
-    Component(stock_picking, "Modelo: stock.picking", "ORM Python", "Guía de Salida. Caso MTO: Queda 'Esperando' hasta que el Propietario reabastezca manualmente")
+Container_Boundary(inv_app, "Inventario (stock)") {
+    Component(stock_picking, "stock.picking", "Modelo ORM", "Entrega por ubicación (Tienda, Almacén 1, Almacén 2); registra entregado y pendiente")
 }
 
-' Contenedor de Contabilidad
-Container_Boundary(acc_app, "Contabilidad Terceros (Contenedor Python)") {
-    Component(account_move, "Modelo: account.move", "ORM Python", "Asientos contables automáticos (Ingresos, Caja, CxC)")
+Container_Boundary(acc_app, "Contabilidad básica (módulo de la comunidad, ADR-003)") {
+    Component(ref_fiscal, "Referencia del comprobante y pago", "Registro interno", "Referencia de KeyFacil, cobro y saldo; no emite comprobantes. Asientos automáticos por validar (CA-07)")
 }
 
-' Flujo de Pedidos (WhatsApp)
-Rel(whatsapp, prop, "1. Envía pedido y voucher", "Mensaje")
-Rel(prop, sale_order, "2. Transcribe orden remota", "App Web")
-Rel(crm_lead, sale_order, "Crea cotización desde la oportunidad (sale_crm)")
-Rel(sale_order, crm_lead, "Cotización aceptada: oportunidad Ganada")
-Rel(sale_order, action_confirm, "3. Ejecuta confirmación (frontera CRM → ERP)")
-
-' Flujo de Punto de Venta (Físico)
-Rel(prop, pos_session, "Venta y cobro en mostrador", "App Web")
-Rel(pos_session, stock_picking, "Genera salida consolidada (al cerrar sesión)", "API Interna")
-Rel(pos_session, account_move, "Genera asiento de caja", "API Interna")
-
-' Orquestación Interna y Despacho
-Rel(action_confirm, stock_picking, "4. Crea Guía de Salida (Reserva de stock)", "API Interna")
-Rel(action_confirm, account_move, "Genera asiento de Cuentas por Cobrar/Ingreso", "API Interna")
-Rel(alm, stock_picking, "5. Prepara mercadería y valida salida", "App Web")
-
-' Desconexión Fiscal (La solución manual)
-Rel(prop, keyfacil, "6. Ingresa a emitir Boleta/Factura legal", "Transcripción Manual")
+Rel(crm_lead, sale_order, "1. Cotización desde la oportunidad (sale_crm)")
+Rel(atn, action_confirm, "2. Confirma con la versión aceptada (RN-08)", "Navegador")
+Rel(sale_order, action_confirm, "Ejecuta")
+Rel(action_confirm, stock_picking, "3. Genera la entrega y reserva por ubicación (RN-09)")
+Rel(prop, sale_order, "Decide crédito o faltante (RN-15)", "Navegador")
+Rel(alm, stock_picking, "4. Prepara y valida la entrega real (RN-10)", "Navegador")
+Rel(atn, pos_order, "Venta y cobro en mostrador", "Navegador")
+Rel(pos_order, stock_picking, "Salida automática e inmediata por venta")
+Rel(prop, keyfacil, "5. Emite boleta o factura", "Manual")
+Rel(prop, ref_fiscal, "6. Registra referencia, cobro y conciliación (RN-11, RN-12)", "Navegador")
+Rel(ref_fiscal, sale_order, "Vincula con el pedido")
 @enduml

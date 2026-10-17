@@ -1,12 +1,10 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-' v2.1 (PC2): se agregan CRM y Marketing/UTM (módulos nativos de Odoo 18 Community, licencia LGPLv3) · ADR-004
-' Frontera conceptual: CRM conserva el contexto comercial hasta la cotización; ERP compromete y ejecuta desde la confirmación.
-title Diagrama de Contenedores (Nivel 2) - Odoo 18 Community con CRM · v2.1 (PC2)
+title Diagrama de Contenedores (Nivel 2) - Odoo 18 Community
 
-Person(prop, "Propietarios", "Cotizan y deciden excepciones")
-Person(trab, "Trabajadores", "Registran leads e interacciones")
-Person(alm, "Personal de almacén", "Prepara y despacha (fuera de alcance PC2)")
+Person(prop, "Propietarios", "Deciden excepciones; emiten comprobantes en KeyFacil (R-PRO / R-FAC)")
+Person(trab, "Trabajadores", "Registran leads, cotizaciones y ventas de mostrador (R-ATN)")
+Person(alm, "Personal de almacén", "Prepara y despacha (R-ALM)")
 System_Ext(whatsapp, "WhatsApp / Teléfono", "Canal de interacción")
 System_Ext(keyfacil, "KeyFacil", "Comprobante electrónico SUNAT")
 
@@ -21,7 +19,7 @@ System_Boundary(odoo_sys, "Odoo 18 Community (instancia única)") {
 
     Boundary(erp_b, "Dominio ERP") {
         Container(sales_mod, "Ventas", "Módulos sale + sale_crm", "Cotización (borrador/enviada) ligada a la oportunidad; pedido confirmado")
-        Container(pos_mod, "Punto de Venta", "Módulo point_of_sale", "Venta rápida de mostrador (PC1)")
+        Container(pos_mod, "Punto de Venta", "Módulo point_of_sale", "Venta de mostrador")
         Container(inv_mod, "Inventario", "Módulo stock", "Stock en tienda y 2 almacenes; consulta de disponibilidad")
         Container(acc_mod, "Contabilidad básica", "Módulo comunitario Odoo Mates / OCA (ADR-003)", "Registros internos; no reemplaza a KeyFacil")
     }
@@ -38,9 +36,9 @@ Rel(crm_mod, utm_mod, "Etiqueta origen del lead")
 Rel(crm_mod, contact_mod, "Vincula cuenta y contacto")
 Rel(crm_mod, sales_mod, "Crea cotización desde la oportunidad (sale_crm)")
 Rel(sales_mod, inv_mod, "Consulta disponibilidad; reserva solo al confirmar")
-Rel(sales_mod, acc_mod, "Registro interno tras confirmar (fuera de alcance PC2)")
-Rel(pos_mod, inv_mod, "Descuenta stock (PC1)")
-Rel(prop, keyfacil, "Emite comprobante manualmente (fuera de alcance PC2)", "App web")
+Rel(sales_mod, acc_mod, "Referencia del comprobante y cobro")
+Rel(pos_mod, inv_mod, "Descuenta stock automáticamente en cada venta")
+Rel(prop, keyfacil, "Emite comprobante manualmente", "App web")
 Rel(crm_mod, db, "Lee/escribe", "SQL")
 Rel(sales_mod, db, "Lee/escribe", "SQL")
 Rel(inv_mod, db, "Lee/escribe", "SQL")

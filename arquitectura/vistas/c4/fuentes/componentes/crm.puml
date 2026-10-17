@@ -1,11 +1,10 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
 LAYOUT_TOP_DOWN()
-' v2.1 (PC2): nuevo diagrama. Escenario CRM previo al pedido (hasta la diapositiva 12, sesión 6).
-title Diagrama de Componentes (Nivel 3) - Escenario CRM previo al pedido · v2.1 (PC2)
+title Diagrama de Componentes (Nivel 3) - CRM
 
-Person(prop, "Propietarios", "Deciden descuento excepcional, promesa y condición de comprobante")
-Person(trab, "Trabajador / quien atiende", "Registra lead, interacción y próxima acción")
+Person(prop, "Propietarios (R-PRO)", "Deciden descuento excepcional, promesa y condición de comprobante")
+Person(trab, "Trabajadores (R-ATN)", "Registra lead, interacción y próxima acción")
 System_Ext(whatsapp, "WhatsApp / Teléfono / Presencial", "Canal")
 
 Container_Boundary(crm_app, "CRM (crm + utm + contacts)") {
@@ -18,9 +17,9 @@ Container_Boundary(crm_app, "CRM (crm + utm + contacts)") {
 }
 
 Container_Boundary(sale_app, "Ventas (sale + sale_crm)") {
-    Component(quote, "sale.order (estado borrador / enviado)", "Modelo ORM", "Cotización: líneas, precio, descuento, vigencia (validity_date), condición de comprobante [P]")
+    Component(quote, "sale.order (estado borrador / enviado)", "Modelo ORM", "Cotización: líneas, precio, descuento, criterio de vigencia y comprobante previsto")
     Component(pricelist, "product.pricelist", "Modelo ORM", "Precio de referencia; descuento visible por línea")
-    Component(confirm, "action_confirm()", "Método", "FRONTERA: convierte cotización en pedido; desde aquí ERP (fuera de alcance PC2)")
+    Component(confirm, "action_confirm()", "Método", "FRONTERA CRM a ERP (INT-01, F-02): convierte la cotización aceptada en pedido")
 }
 Container(stock, "Inventario (stock.quant)", "Módulo stock", "Consulta de disponibilidad por almacén")
 
