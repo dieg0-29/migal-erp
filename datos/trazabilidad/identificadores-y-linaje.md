@@ -9,7 +9,7 @@
 
 ## 2. Propósito
 
-Registrar en un solo lugar todos los prefijos de identificadores y espacios de códigos del repositorio, para que ningún código se repita con otro significado, y describir cómo se encadena una operación.
+Registrar los prefijos de los identificadores de entidad y describir cómo se encadena una operación entre el CRM, el ERP y KeyFacil.
 
 ## 3. Identificadores de entidad
 
@@ -35,19 +35,7 @@ Los prefijos son convenciones del proyecto, no secuencias garantizadas en Odoo.
 
 ## 4. Espacios de códigos
 
-| Código | Significado | Documento dueño |
-|---|---|---|
-| RN-nn, CT-nn | Reglas de negocio y sus controles | [Decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md) |
-| EXC-nn | Excepciones comerciales | [Decisiones comerciales](../../procesos/comercial-crm/decisiones-comerciales.md) |
-| CAM-nn | Campañas | [Cuenta, contacto y canales](../../procesos/comercial-crm/cuenta-contacto-canales.md) |
-| ETP-nn | Etapas del flujo comercial | [Escenario CRM](../../procesos/comercial-crm/escenario-crm.md) |
-| DQ-nn | Reglas de calidad de datos | [Reglas de calidad](../calidad/reglas-calidad.md) |
-| TR-nn | Trazas de auditoría | [Plan de trazabilidad](plan-trazabilidad-auditoria.md) |
-| CP-nn | Casos de prueba | [Caso normal](../../procesos/comercial-crm/caso-normal.md) (CP-01), [caso de excepción](../../procesos/comercial-crm/caso-excepcion.md) (CP-02) |
-| R-xxx, PR-nn.nn, SOD-nn | Perfiles, permisos y segregación | [Modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) |
-| INT-nn, EV-nn, F-nn | Integraciones, sus eventos y fronteras | [Integraciones](../../arquitectura/integraciones/INT-01-CRM-ERP.md); fuera del documento se citan como `INT-01/EV-03` |
-| O2C-R/E/C, P2P-R | Reglas, eventos y controles de los macroprocesos | [O2C](../../procesos/o2c/reglas.md), [P2P](../../procesos/p2p/reglas.md) |
-| ADR-nnn, VER-nn, CA-nn | Decisiones, versiones y ajustes de arquitectura | [Decisiones](../../arquitectura/decisiones/), [versiones](../../arquitectura/versiones/README.md) |
+Los códigos de reglas, controles, perfiles, integraciones y versiones de todo el repositorio están en la [guía de contribución](../../CONTRIBUTING.md#13-códigos-e-identificadores).
 
 ## 5. Linaje mínimo
 
@@ -72,4 +60,4 @@ Se registra objeto, acción, actor, fecha y hora con zona, valor anterior y post
 
 | Versión | Fecha | Autor | Cambio |
 |---|---|---|---|
-| 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial como registro único de identificadores y códigos |
+| 0.1 | 17/10/2026 | Brenda Mirano | Versión inicial; los espacios de códigos se trasladan a la guía de contribución |
