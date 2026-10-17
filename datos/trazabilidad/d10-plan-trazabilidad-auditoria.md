@@ -7,7 +7,7 @@ Ferre & Inversiones MIGAL  |  Escenario comercial CRM y ERP
 
 | Responsable asignado | Estado | Documento asociado |
 | --- | --- | --- |
-| Luis Rodrigo Núñez Príncipe | Modelo de trazabilidad para PC2 | [d10-matriz-trazabilidad.xlsx](d10-matriz-trazabilidad.xlsx) |
+| Luis Núñez | Modelo de trazabilidad para PC2 | [d10-matriz-trazabilidad.xlsx](d10-matriz-trazabilidad.xlsx) |
 
 Se establece un modelo de trazabilidad que permite reconstruir una operación mediante su origen, responsables, decisiones, documentos, movimientos y resultados. El identificador de correlación relaciona las etapas, mientras la cotización, el pedido, la referencia fiscal y los registros de seguimiento conservan sus identificadores propios.
 

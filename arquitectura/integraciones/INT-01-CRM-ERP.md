@@ -4,7 +4,7 @@
 
 * **Fecha:** 17/10/2026
 * **Versión:** 0.1
-* **Autores:** Gabriel Gibson Martínez Arista
+* **Autores:** Gabriel Martínez
 * **Sistemas involucrados:** CRM (atención, oportunidades y ventas), ERP (almacén, abastecimiento y contabilidad), KeyFacil (externo)
 
 ## 2. Propósito
@@ -103,4 +103,4 @@ En este documento, "evento" significa un suceso del proceso de negocio, no un me
 
 | Versión | Fecha | Autor | Cambio |
 |---|---|---|---|
-| 0.1 | 17/10/2026 | Gabriel Gibson Martínez Arista | Versión inicial |
+| 0.1 | 17/10/2026 | Gabriel Martínez | Versión inicial |

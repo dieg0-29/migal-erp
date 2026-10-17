@@ -140,12 +140,12 @@ Los cambios relevantes en la evolución del proyecto se registran en:
 
 | Integrante | Rol de trabajo |
 |---|---|
-| Alejandro César Flores Marcos | Facilitación |
-| Brenda Nicole Mirano Flores | Producto |
-| César Emmerson Joaquín Palomino | Procesos |
-| Diego Alonso Pinedo Aponte | Arquitectura |
-| Gabriel Gibson Martínez Arista | Datos |
-| Luis Rodrigo Núñez Príncipe | Validación |
+| Alejandro Flores | Facilitación |
+| Brenda Mirano | Producto |
+| César Joaquín | Procesos |
+| Diego Pinedo | Arquitectura |
+| Gabriel Martínez | Datos |
+| Luis Núñez | Validación |
 
 Los roles organizan el trabajo, pero las contribuciones deben quedar verificables mediante commits, Pull Requests, revisiones, modelos, fuentes, pruebas o validaciones.
 

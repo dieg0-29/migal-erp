@@ -2,7 +2,7 @@
 
 **Proyecto:** Ferre & Inversiones MIGAL  
 **Incremento:** PC2 v2.1  
-**Responsable:** Alejandro César Flores Marcos (P1)  
+**Responsable:** Alejandro Flores (P1)  
 **Alcance:** Flujo comercial previo al pedido confirmado (`ETP-01` a `ETP-03`)
 
 ## 1. Contexto y Canales Reales de Captación

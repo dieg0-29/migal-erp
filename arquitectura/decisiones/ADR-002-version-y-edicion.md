@@ -3,7 +3,7 @@
 ## 1. Metadatos
 * **Fecha:** 25/09/2026
 * **Estado:** Propuesto
-* **Autores:** Gabriel Martinez A.
+* **Autores:** Gabriel Martínez
 
 ## 2. Contexto y Problema
 Despues de la decision de tomar Odoo como el ERP a ser implementado nos encontramos con la necesidad de especificar la version de Odoo a usarse, para esto se tiene que considerar las funciones, integraciones y limitaciones de cada una de las versiones de Odoo comunity.

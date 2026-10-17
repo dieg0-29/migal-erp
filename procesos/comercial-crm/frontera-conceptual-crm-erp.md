@@ -6,7 +6,7 @@
 - **Versión:** 1.0
 - **Fecha:** 16/10/2026
 - **Estado:** Propuesta para revisión
-- **Autor:** Gabriel Gibson Martínez Arista
+- **Autor:** Gabriel Martínez
 - **Documento relacionado:** [ADR-004 — Adoptar Odoo Community con fronteras funcionales claras para CRM y ERP](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md)
 
 ## 2. Propósito

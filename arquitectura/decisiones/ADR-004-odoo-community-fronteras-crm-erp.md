@@ -4,7 +4,7 @@
 
 * **Fecha:** 16/10/2026
 * **Estado:** **Propuesto**
-* **Autores:** Gabriel Gibson Martínez Arista
+* **Autores:** Gabriel Martínez
 
 ## 2. Contexto y Problema
 

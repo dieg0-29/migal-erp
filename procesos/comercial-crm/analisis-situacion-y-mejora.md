@@ -3,7 +3,7 @@
 **Empresa:** Ferre & Inversiones MIGAL  
 **Curso:** GE703 — Sistemas Integrados Empresariales  
 **Evaluación:** PC2 · Incremento comercial CRM  
-**Autor:** Joaquín Palomino, César Emmerson  
+**Autor:** César Joaquín  
 **Versión:** v2.0  
 **Etiquetas:** [H] hecho con fuente · [S] supuesto · [P] propuesta del equipo · [PEND] pendiente de confirmar con MIGAL · [SIM] caso simulado
 

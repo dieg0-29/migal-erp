@@ -7,7 +7,7 @@ Ferre & Inversiones MIGAL  |  Escenario comercial CRM y ERP
 
 | Responsable asignado | Estado | Documento asociado |
 | --- | --- | --- |
-| Luis Rodrigo Núñez Príncipe | Modelo de autorización para PC2 | [d09-matriz-permisos.xlsx](d09-matriz-permisos.xlsx) |
+| Luis Núñez | Modelo de autorización para PC2 | [d09-matriz-permisos.xlsx](d09-matriz-permisos.xlsx) |
 
 Se establece un modelo de autorización orientado a preservar la integridad de las cotizaciones, pedidos, existencias, comprobantes y registros de negocio. Las responsabilidades se distribuyen en perfiles funcionales, sin suponer nuevos puestos de trabajo. MIGAL cuenta con dos propietarios y dos trabajadores; por ello, una misma persona puede realizar varias funciones, sujetas a controles sobre operaciones incompatibles.
 

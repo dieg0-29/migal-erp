@@ -4,7 +4,7 @@
 
 - **Fecha:** 25/09/2026
 - **Estado:** Propuesto
-- **Autores:** Luis Nuñez
+- **Autores:** Luis Núñez
 
 ## 2. Contexto y Problema
 
