@@ -27,10 +27,10 @@ Reúne la información que sustenta las decisiones de arquitectura:
 
 ### `seguridad/`
 
-Contiene el modelo de autorización y segregación de funciones D09, junto con su matriz de permisos en formato Excel:
+Contiene el modelo de autorización y segregación de funciones, junto con su matriz de permisos en formato Excel:
 
-- [`d09-autorizacion-y-segregacion.md`](seguridad/d09-autorizacion-y-segregacion.md)
-- [`d09-matriz-permisos.xlsx`](seguridad/d09-matriz-permisos.xlsx)
+- [`modelo-autorizacion.md`](seguridad/modelo-autorizacion.md)
+- [`matriz-permisos.xlsx`](seguridad/matriz-permisos.xlsx)
 
 ### `decisiones/`
 

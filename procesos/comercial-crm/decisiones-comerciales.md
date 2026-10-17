@@ -131,13 +131,13 @@ En el TO-BE pueden definirse responsabilidades funcionales, pero deben mapearse 
 
 ---
 
-## 8. Catálogo Central de Reglas de Negocio Previas al Pedido (D02 — Matriz RN)
+## 8. Catálogo Central de Reglas de Negocio Previas al Pedido (Matriz RN)
 
 > Matriz asociada en formato Excel: [`reglas-negocio.xlsx`](reglas-negocio.xlsx)
 
 Este catálogo unifica las directrices operativas que gobiernan el Escenario A (`marketing → cotización`) en Ferre & Inversiones MIGAL antes de la generación del pedido.
 
-| ID | Regla de Negocio | Etapa (D01/D03) | Motivo de negocio (Por qué) | Sistema (Validador) | Control (CT) | ¿Qué pasa si se viola? (Consecuencia) | Responsable / Rol |
+| ID | Regla de Negocio | Etapa | Motivo de negocio (Por qué) | Sistema (Validador) | Control (CT) | ¿Qué pasa si se viola? (Consecuencia) | Responsable / Rol |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **RN-01** | **Control de Duplicados:** Un cliente o "lead" no puede registrarse dos veces con el mismo celular o nombre clave. | ETP-01: Nuevo | Evitar bases de datos sucias y que dos vendedores atiendan al mismo cliente ofreciendo condiciones distintas. | CRM | CT-01 | Sistema advierte coincidencia y sugiere fusionar con la ficha existente. | Vendedor |
 | **RN-02** | **Próxima Acción Obligatoria:** Toda Oportunidad perfilada debe tener asignada una fecha o tarea de seguimiento. | ETP-02: Calificado | Evitar que las obras o ventas importantes "se enfríen" por olvido del vendedor. | CRM | CT-02 | El sistema marca la oportunidad en alerta de abandono tras permanecer sin seguimiento programado. | Vendedor |
@@ -148,7 +148,7 @@ Este catálogo unifica las directrices operativas que gobiernan el Escenario A (
 
 ---
 
-## 9. Catálogo de Excepciones y Tratamiento Operativo (D02 — Matriz EXC)
+## 9. Catálogo de Excepciones y Tratamiento Operativo (Matriz EXC)
 
 | ID | Excepción (Incidencia) | Tratamiento Propuesto (Cómo se resuelve) | Acción en Sistema |
 | :--- | :--- | :--- | :--- |
@@ -161,10 +161,10 @@ Este catálogo unifica las directrices operativas que gobiernan el Escenario A (
 
 | Regla / Excepción | Documento Origen / Relación | Documentos que la consumen (Trazabilidad) |
 | :--- | :--- | :--- |
-| `RN-01`, `RN-02` | Nace en `D01` ([`escenario-crm.md`](escenario-crm.md) / [`lead-oportunidad-cotizacion.md`](lead-oportunidad-cotizacion.md)) | `D06` (Controles P3) / `D10` (Trazabilidad `TR-01`, `TR-02`) |
-| `RN-03` a `RN-06` | Nace en `D01` y `D02` (`decisiones-comerciales.md`) | `D06` (Controles P3) / `D10` (`TR-03`) / `D11` (Caso de prueba `CP-01` P6) |
-| `EXC-01` | Excepción Comercial ([`caso-excepcion.md`](caso-excepcion.md)) | `D09` (Matriz de Autorización `SOD-01` P5) / `D10` (`TR-04`) / `D12` (Caso Excepción `CP-02` P6) |
-| `EXC-02` | Excepción Operativa | `D09` (`SOD-03`) / `D12` (Caso Excepción `CP-02` P6) |
+| `RN-01`, `RN-02` | Nace en el [escenario CRM](escenario-crm.md) / [lead, oportunidad y cotización](lead-oportunidad-cotizacion.md) | [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md) / [Plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md) (`TR-01`, `TR-02`) |
+| `RN-03` a `RN-06` | Nace en el [escenario CRM](escenario-crm.md) y en este documento | [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md) / [Plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md) (`TR-03`) / [Caso normal](caso-normal.md) (`CP-01`) |
+| `EXC-01` | Excepción Comercial ([`caso-excepcion.md`](caso-excepcion.md)) | [Modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) (`SOD-01`) / [Plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md) (`TR-04`) / [Caso de excepción](caso-excepcion.md) (`CP-02`) |
+| `EXC-02` | Excepción Operativa | [Modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) (`SOD-03`) / [Caso de excepción](caso-excepcion.md) (`CP-02`) |
 
 ---
 

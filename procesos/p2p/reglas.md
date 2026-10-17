@@ -1,6 +1,6 @@
 # Reglas funcionales — P2P
 
-**Estado:** propuestas de diseño; validación con propietarios pendiente. Namespace `P2P-R-*` independiente de RN-P2 de D10, cuyos códigos corresponden a extensión comercial y no se reinterpretan como compras.
+**Estado:** propuestas de diseño; validación con propietarios pendiente. Namespace `P2P-R-*` independiente de RN-P2 del plan de trazabilidad, cuyos códigos corresponden a extensión comercial y no se reinterpretan como compras.
 
 | ID | Regla | Responsable funcional | Evidencia y tratamiento |
 |---|---|---|---|
@@ -17,10 +17,10 @@
 
 ## Límites y excepciones
 
-No se presupone autorización automatizada, regla de reabastecimiento, MTO, valoración contable ni bloqueo de pago. La aprobación sensible se revisará contra D09 sin inventar nuevos puestos. Ante un anticipo autorizado, documentar la excepción al orden normal recepción–pago; anticipo no acredita recepción.
+No se presupone autorización automatizada, regla de reabastecimiento, MTO, valoración contable ni bloqueo de pago. La aprobación sensible se revisará contra el [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) sin inventar nuevos puestos. Ante un anticipo autorizado, documentar la excepción al orden normal recepción–pago; anticipo no acredita recepción.
 
 El maestro de proveedores no incluye datos reales en esta copia. Las condiciones y plazos son por operación y requieren fuente; no copiar porcentajes o políticas docentes como hechos.
 
 ## Validación
 
-Preparar un caso normal y una recepción parcial con documento discrepante; anotar esperado/obtenido y soporte. Estado: no ejecutados. Referencias: [flujo](flujo.md), [proveedores](../../datos/maestros/proveedores.md), [D09](../../arquitectura/seguridad/d09-autorizacion-y-segregacion.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Preparar un caso normal y una recepción parcial con documento discrepante; anotar esperado/obtenido y soporte. Estado: no ejecutados. Referencias: [flujo](flujo.md), [proveedores](../../datos/maestros/proveedores.md), [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md), [fuentes](../../fuentes/fuentes-negocio.md).

@@ -26,4 +26,4 @@ Los ejemplos académicos usan SIM. No subir conversaciones privadas, comprobante
 
 Una muestra es utilizable si declara alcance, origen, definición de campos, IDs, reglas, relación con caso de prueba y anonimización/simulación. Pendientes: definición física/importación, mecanismos de captura y campos adicionales por hito.
 
-Referencias: [diccionario](../diccionario/diccionario-datos.md), [linaje](../trazabilidad/identificadores-y-linaje.md), [D10](../trazabilidad/d10-plan-trazabilidad-auditoria.md), [privacidad](../privacidad/tratamiento-datos.md).
+Referencias: [diccionario](../diccionario/diccionario-datos.md), [linaje](../trazabilidad/identificadores-y-linaje.md), [plan de trazabilidad](../trazabilidad/plan-trazabilidad-auditoria.md), [privacidad](../privacidad/tratamiento-datos.md).

@@ -29,10 +29,10 @@ El propietario autorizado comprueba la operación y datos necesarios, opera KeyF
 
 ## Controles y excepciones
 
-No emitir dos veces por falta de referencia o reintento manual; buscar comprobante existente. No confundir emisión con cobro. Si hay importe o identidad discrepante, mantener revisión y documentar resolución; no corregir silenciosamente la cotización para hacerla coincidir. D09 propone revisión independiente para anulación; validar viabilidad y no asumir bloqueo técnico.
+No emitir dos veces por falta de referencia o reintento manual; buscar comprobante existente. No confundir emisión con cobro. Si hay importe o identidad discrepante, mantener revisión y documentar resolución; no corregir silenciosamente la cotización para hacerla coincidir. El [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) propone revisión independiente para anulación; validar viabilidad y no asumir bloqueo técnico.
 
 ## Pendientes y aceptación
 
 Validar requisitos fiscales, momento de emisión, política respecto a entregas/pagos anticipados, campos de referencia y conciliación. La prueba futura deberá mostrar referencia única y diferencia resuelta con datos SIM. No se declara cumplimiento tributario ni resultado de prueba.
 
-Referencias: [decisiones comerciales](decisiones-comerciales.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [D09](../../arquitectura/seguridad/d09-autorizacion-y-segregacion.md), [D10](../../datos/trazabilidad/d10-plan-trazabilidad-auditoria.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [decisiones comerciales](decisiones-comerciales.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md), [plan de trazabilidad](../../datos/trazabilidad/plan-trazabilidad-auditoria.md), [fuentes](../../fuentes/fuentes-negocio.md).

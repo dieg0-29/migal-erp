@@ -1,6 +1,6 @@
 # Reglas de calidad de datos
 
-**Estado:** controles propuestos para revisión; no resultados de pruebas ni restricciones técnicas instaladas. IDs `DQ-*` evitan reutilizar los RN/CT existentes de D10.
+**Estado:** controles propuestos para revisión; no resultados de pruebas ni restricciones técnicas instaladas. IDs `DQ-*` evitan reutilizar los RN/CT existentes del plan de trazabilidad.
 
 | ID | Regla y etapa | Comprobación | Tratamiento si falla | Función responsable |
 |---|---|---|---|---|
@@ -29,4 +29,4 @@ COT-SIM-001-V01 debe resolver OPP-SIM-001 y PRD-SIM-001/002/003; la suma de lín
 
 Estas comprobaciones no acreditan importación, controles automáticos, validez tributaria ni stock real. Para fases posteriores agregar conciliación pedido–entrega–comprobante–pago y calidad de proveedores sin reutilizar IDs ambiguos.
 
-Referencias: [diccionario](../diccionario/diccionario-datos.md), [D10](../trazabilidad/d10-plan-trazabilidad-auditoria.md), [privacidad](../privacidad/tratamiento-datos.md).
+Referencias: [diccionario](../diccionario/diccionario-datos.md), [plan de trazabilidad](../trazabilidad/plan-trazabilidad-auditoria.md), [privacidad](../privacidad/tratamiento-datos.md).

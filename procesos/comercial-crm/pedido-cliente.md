@@ -29,4 +29,4 @@ Faltante: consultar alternativa, parcial o reposición con decisión explícita,
 
 La prueba futura debe demostrar vínculo con versión aceptada, conservación de condiciones y efecto real de confirmar en el entorno. Verificar reservas, parciales, permisos y mapeo de campos; no afirmar bloqueos nativos ni crear un objeto separado si la instancia conserva la transición en el mismo registro.
 
-Referencias: [frontera](frontera-conceptual-crm-erp.md), [O2C](../o2c/reglas.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [D06](../../arquitectura/integraciones/crm-erp/futuras/d06-contrato-datos-controles-respuestas-crm-erp.md), [fuentes](../../fuentes/fuentes-negocio.md).
+Referencias: [frontera](frontera-conceptual-crm-erp.md), [O2C](../o2c/reglas.md), [ADR-004](../../arquitectura/decisiones/ADR-004-odoo-community-fronteras-crm-erp.md), [INT-01](../../arquitectura/integraciones/INT-01-CRM-ERP.md), [fuentes](../../fuentes/fuentes-negocio.md).

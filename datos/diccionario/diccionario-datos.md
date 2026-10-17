@@ -35,7 +35,7 @@ ID es texto estable; no representa posición de fila. Fecha/hora de eventos debe
 | Detalle.motivo_ajuste / autorizado_por | Razón y decisor, texto/referencia | Cuando hay excepción | Propietarios |
 | Decisión.id_decision / objeto / fecha | Identidad, alcance y momento | Decisión relevante | Quien documenta |
 | Interacción.id_interaccion / referencia | Comunicación vinculada a cuenta/oportunidad, propuesta | Cuando sustenta seguimiento/aceptación | Atención |
-| Correlación.id_correlacion | Enlace transversal de referencias, propuesta D10 | Al reconstruir caso integrado | Responsable de trazabilidad |
+| Correlación.id_correlacion | Enlace transversal de referencias, propuesta en el plan de trazabilidad | Al reconstruir caso integrado | Responsable de trazabilidad |
 
 ## Extensión posterior
 

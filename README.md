@@ -43,7 +43,7 @@ El proyecto continúa evolucionando durante el curso. La presencia de un artefac
 | Procesos | [`procesos/`](procesos/) | O2C, P2P, inventario y comercial/CRM |
 | Producto | [`producto/`](producto/) | Backlog y artefactos de implementación |
 | Fuentes | [`fuentes/`](fuentes/) | Bibliografía, uso de IA, licencias y evidencia |
-| Seguridad y autorización | [`arquitectura/seguridad/`](arquitectura/seguridad/) | Modelo D09 de permisos y segregación de funciones |
+| Seguridad y autorización | [`arquitectura/seguridad/`](arquitectura/seguridad/) | Modelo de autorización: permisos y segregación de funciones |
 | Datos | [`datos/`](datos/) | Maestros, calidad, trazabilidad y datos de prueba |
 | Pruebas | `pruebas/` | Casos, resultados, evidencias e incidencias |
 | Entregas | `entregas/` | Snapshots de PC1, avances, PC2 y EP |

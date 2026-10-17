@@ -1,4 +1,4 @@
-# D04. Análisis de la situación actual y mejora propuesta
+# Análisis de la situación actual y mejora propuesta
 
 **Empresa:** Ferre & Inversiones MIGAL  
 **Curso:** GE703 — Sistemas Integrados Empresariales  

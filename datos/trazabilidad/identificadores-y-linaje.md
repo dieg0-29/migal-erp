@@ -1,6 +1,6 @@
 # Identificadores y linaje de información
 
-**Estado:** complemento conceptual propuesto de D10; revisión con su responsable Luis pendiente. No implementa auditoría automática.
+**Estado:** complemento conceptual propuesto del plan de trazabilidad; revisión con su responsable Luis pendiente. No implementa auditoría automática.
 
 ## Identidad y relaciones
 
@@ -12,10 +12,10 @@
 | id_oportunidad | Interés comercial | Cuenta/contacto y cotizaciones |
 | numero_cotizacion + version | Familia y emisión | Una revisión no sustituye sin rastro a otra |
 | id_decision | Decisión documentada | Oferta/línea/condición afectada |
-| id_correlacion | Agrupación transversal propuesta D10 | Enlaza referencias; no reemplaza IDs propios |
+| id_correlacion | Agrupación transversal propuesta en el plan de trazabilidad | Enlaza referencias; no reemplaza IDs propios |
 | IDs de pedido/entrega/comprobante/pago | Documentos posteriores | Se incorporan solo cuando existan |
 
-El prefijo SIM distingue ejemplos de referencias de operación. Los formatos CLI-SIM/OPP-SIM/COT-SIM son convenciones académicas, no secuencias garantizadas en Odoo. D10 usa CORR-2026-0042 como otro ejemplo; no atribuirlo al catálogo CRM sin un mapeo explícito.
+El prefijo SIM distingue ejemplos de referencias de operación. Los formatos CLI-SIM/OPP-SIM/COT-SIM son convenciones académicas, no secuencias garantizadas en Odoo. El plan de trazabilidad usa CORR-2026-0042 como otro ejemplo; no atribuirlo al catálogo CRM sin un mapeo explícito.
 
 ## Linaje mínimo
 
@@ -36,8 +36,8 @@ CLI-SIM-001 → CON-SIM-002 / DIR-SIM-001 → OPP-SIM-001 → COT-SIM-001-V01 �
 
 Registrar objeto, acción, actor, fecha/hora con zona, anterior/posterior cuando corresponda, motivo y evidencia. Antes de una corrección revisar referencias dependientes; conservar motivo de consolidación o desactivación. No declarar registros inmutables si no se ha probado el mecanismo de protección. Un enlace roto se registra como incidencia, no se completa con un evento ficticio.
 
-## Aplicabilidad D10
+## Aplicabilidad del plan de trazabilidad
 
-TR-01/02/03/04 cubren captación, calificación, cotización y aprobación cuando corresponda. TR-05 mezcla aceptación y pedido: aplicar solo la parte pertinente al corte y diferir confirmación. TR-06 a TR-11 corresponden a ejecución futura; TR-12 es transversal; TR-13 solo si existe interfaz aprobada. D09/D10 conservan sus códigos; este documento no crea otra numeración de controles.
+TR-01/02/03/04 cubren captación, calificación, cotización y aprobación cuando corresponda. TR-05 mezcla aceptación y pedido: aplicar solo la parte pertinente al corte y diferir confirmación. TR-06 a TR-11 corresponden a ejecución futura; TR-12 es transversal; TR-13 solo si existe interfaz aprobada. El [modelo de autorización](../../arquitectura/seguridad/modelo-autorizacion.md) y el plan de trazabilidad conservan sus códigos; este documento no crea otra numeración de controles.
 
-Referencias: [D10](d10-plan-trazabilidad-auditoria.md), [frontera](../../procesos/comercial-crm/frontera-conceptual-crm-erp.md), [diccionario](../diccionario/diccionario-datos.md), [privacidad](../privacidad/tratamiento-datos.md).
+Referencias: [plan de trazabilidad](plan-trazabilidad-auditoria.md), [frontera](../../procesos/comercial-crm/frontera-conceptual-crm-erp.md), [diccionario](../diccionario/diccionario-datos.md), [privacidad](../privacidad/tratamiento-datos.md).

@@ -1,6 +1,6 @@
 # Datos de prueba CRM
 
-**Archivo recibido:** [catalogos-crm-sinteticos-v2.xlsx](catalogos-crm-sinteticos-v2.xlsx). Se renombró según la convención del repositorio y se conserva su contenido para no romper referencias ni alterar evidencia de origen.
+**Archivo recibido:** [catalogos-crm-sinteticos.xlsx](catalogos-crm-sinteticos.xlsx). Se renombró según la convención del repositorio y se conserva su contenido para no romper referencias ni alterar evidencia de origen.
 
 ## Naturaleza y alcance
 

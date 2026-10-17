@@ -4,7 +4,7 @@
 **Incremento:** PC2 v2.1  
 **Responsable:** Diego Pinedo
 **Alcance:** CRM previo al pedido confirmado
-**Datos:** simulados `[SIM]`, tomados del [catálogo sintético CRM](../../datos/pruebas/catalogos-crm-sinteticos-v2.xlsx); no ejecutados en Odoo.
+**Datos:** simulados `[SIM]`, tomados del [catálogo sintético CRM](../../datos/pruebas/catalogos-crm-sinteticos.xlsx); no ejecutados en Odoo.
 
 ## 1. Propósito
 
