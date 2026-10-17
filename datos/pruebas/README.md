@@ -21,8 +21,8 @@ Las definiciones de campos están en el [diccionario de datos](../diccionario-da
 
 | Caso | Identificadores |
 |---|---|
-| [Caso normal](../../procesos/comercial-crm/caso-normal.md) (CP-01) | `CLI-SIM-001`, `CON-SIM-002`, `DIR-SIM-001`, `OPP-SIM-001`, `COT-SIM-001-V01` |
-| [Caso de excepción](../../procesos/comercial-crm/caso-excepcion.md) (CP-02) | `CLI-SIM-002`, `CON-SIM-004`, `OPP-SIM-002`, `COT-SIM-002-V01` y `V02`, `DEC-SIM-001` |
+| [Caso normal](../../pruebas/casos/CP-01-caso-normal.md) (CP-01) | `CLI-SIM-001`, `CON-SIM-002`, `DIR-SIM-001`, `OPP-SIM-001`, `COT-SIM-001-V01` |
+| [Caso de excepción](../../pruebas/casos/CP-02-caso-excepcion.md) (CP-02) | `CLI-SIM-002`, `CON-SIM-004`, `OPP-SIM-002`, `COT-SIM-002-V01` y `V02`, `DEC-SIM-001` |
 
 Para pasos posteriores a la aceptación se usan los prefijos `PED-SIM`, `ENT-SIM`, `CPE-SIM` y `PAG-SIM` del [registro de identificadores](../trazabilidad/identificadores-y-linaje.md); aún no tienen filas en el libro.
 
