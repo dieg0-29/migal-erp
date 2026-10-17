@@ -91,6 +91,8 @@ En este documento, "evento" significa un suceso del proceso de negocio, no un me
 | R-02 | Promesas de disponibilidad basadas en stock registrado distinto del físico | Alto | Confirmación por personal autorizado ([RN-05](../../procesos/catalogo-reglas.md), [EXC-02](../../procesos/catalogo-reglas.md)) |
 | R-03 | Suponer controles automáticos que Odoo no aplica | Alto | Probar en la instancia antes de declararlos |
 
+Seguimiento en el [registro de riesgos](../base/riesgos-y-controles.md): R-01 es RSK-06, R-02 es RSK-02 y R-03 es RSK-07.
+
 ## 8. Pendientes de validación
 
 | ID | Pendiente | Frontera |

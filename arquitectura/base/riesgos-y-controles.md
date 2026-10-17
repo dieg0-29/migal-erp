@@ -1,11 +1,37 @@
-# Riesgos y Controles de la Implementación (Odoo V18)
+# Registro de riesgos y controles
 
-Durante la planificación de la arquitectura ERP para Ferre & Inversiones MIGAL, se han identificado los siguientes riesgos y sus respectivas medidas de control, alineados a la estructura del proyecto:
+## 1. Metadatos
 
-| Riesgo | Señal temprana | Impacto | Control | Responsable | Evidencia |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Alcance** | Dueños solicitan incluir el módulo de compras o automatizar WhatsApp durante la implementación. | Retraso en los tiempos de la primera liberación. | Reafirmar los límites definidos en el ADR 001 y priorizar solo Inventario y Ventas. | Equipo de implementación | Acta de reunión de revisión |
-| **Datos** | Diferencias visuales entre la pantalla de Odoo y la revisión física al preparar un pedido. | Pérdida de confianza en el sistema y descuadre contable (Kardex inexacto). | Realizar un inventario físico a puerta cerrada antes de la carga de `stock.quant`. | Jefe de Almacén | Reporte de ajuste de inventario validado |
-| **Integración** | Clientes reportan montos distintos o hay descuadre en caja al fin del día por uso de Keyfacil y Odoo. | Problemas tributarios, de facturación y pérdida de tiempo. | Proceso de cierre de caja diario cruzando comprobantes de Keyfacil con salidas de Odoo. | Propietario / Cajero | Reporte de cierre de caja (Z) |
-| **Adopción** | Baja cantidad de tickets generados en el POS comparado con las ventas físicas reales diarias. | El sistema ERP queda abandonado (ERP fantasma). | Retirar talonarios físicos y exigir el uso de Odoo POS como única vía de registro. | Propietarios | Reporte semanal de métricas de uso |
-| **Continuidad / seguridad** | El navegador muestra error de conexión al servidor cloud o hay cortes de luz en el local de SMP. | Imposibilidad temporal de facturar o registrar salidas de almacén. | Uso de red de datos móviles (tethering) desde las tablets o celulares de los dueños. | Personal de tienda | Documento de plan de contingencia impreso |
+* **Fecha:** 17/10/2026
+* **Versión:** 0.1
+* **Autores:** Diego Pinedo
+* **Custodio:** R-PRO
+
+## 2. Propósito
+
+Reunir en un solo lugar los riesgos de la solución y sus controles. Los documentos de integración y de procesos pueden describir riesgos propios, pero se registran aquí con un ID único para darles seguimiento.
+
+## 3. Registro
+
+| ID | Riesgo | Señal temprana | Impacto | Control | Responsable | Evidencia | Origen | Estado |
+|---|---|---|---|---|---|---|---|---|
+| RSK-01 | Ampliar el alcance durante la implementación (Compras, automatizar WhatsApp) | Los propietarios piden módulos fuera del [alcance](alcance.md) | Retraso de la puesta en marcha | Toda ampliación se decide con un ADR y se registra en [versiones](../versiones/README.md) | R-PRO | ADR o registro de versión | Implementación | Abierto |
+| RSK-02 | Stock registrado distinto del físico | Diferencias al preparar un pedido | Promesas incumplidas y pérdida de confianza en el sistema | Inventario físico antes de la carga inicial; ajustes autorizados ([SOD-03](../seguridad/modelo-autorizacion.md)); EXC-02 | R-ALM / R-PRO | Conteo y ajuste autorizado | Implementación, INT-01 | Abierto |
+| RSK-03 | Diferencias entre comprobantes de KeyFacil y ventas registradas en Odoo | Descuadre en el cierre de caja | Problemas tributarios y retrabajo | Conciliación diaria de referencias y montos ([RN-11](../../procesos/catalogo-reglas.md)) | R-FAC | Cierre de caja conciliado | Implementación, INT-01 | Abierto |
+| RSK-04 | Baja adopción: las ventas siguen en talonarios | Ventas del punto de venta menores que las ventas reales del día | El sistema queda desactualizado | Retirar progresivamente los talonarios y revisar el uso semanalmente | R-PRO | Reporte semanal de uso | Implementación | Abierto |
+| RSK-05 | Caída de conexión o de luz en la tienda | El navegador no conecta con el servidor | No se pueden registrar ventas ni salidas | Contingencia con datos móviles; procedimiento de registro posterior; decidir alojamiento y respaldo (ADR pendiente) | R-PRO | Plan de contingencia | Implementación | Abierto |
+| RSK-06 | Contactos duplicados por la atención en varios canales | Dos fichas para el mismo cliente | Condiciones distintas al mismo cliente | Búsqueda previa obligatoria ([RN-01](../../procesos/catalogo-reglas.md)) | R-ATN | Lead sin duplicados | INT-01 | Abierto |
+| RSK-07 | Suponer controles automáticos que Odoo no aplica | Se documenta un bloqueo no probado | Controles inexistentes en la práctica | Probar cada control en la instancia antes de declararlo | R-PRO | Caso de prueba ejecutado | INT-01 | Abierto |
+| RSK-08 | Sin responsable técnico (R-TEC) | Nadie gestiona usuarios, respaldos ni actualizaciones | Pérdida de datos o accesos indebidos | Asignar R-TEC o contratar soporte externo | R-PRO | Asignación documentada | [Modelo de autorización](../seguridad/modelo-autorizacion.md) | Abierto |
+| RSK-09 | Precios de lista desactualizados en productos volátiles (cemento, fierro) | Ajustes frecuentes al cotizar | Cotizar con pérdida o precios inconsistentes | Lista de precios con fecha de vigencia mantenida por R-PRO (RN-03) | R-PRO | Historial de precios | [Justificación del CRM](../../procesos/comercial-crm/justificacion-crm.md) | Abierto |
+
+## 4. Uso
+
+* Un riesgo nuevo recibe el siguiente ID (RSK-nn) y se enlaza desde el documento que lo origina.
+* El estado puede ser Abierto, Mitigado o Cerrado; un cierre necesita evidencia.
+
+## 5. Historial de cambios
+
+| Versión | Fecha | Autor | Cambio |
+|---|---|---|---|
+| 0.1 | 17/10/2026 | Diego Pinedo | Versión inicial; reúne los riesgos de implementación, de INT-01 y del CRM con perfiles del modelo de autorización |

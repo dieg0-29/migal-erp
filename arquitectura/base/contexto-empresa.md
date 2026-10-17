@@ -6,7 +6,7 @@ Ferre & Inversiones MIGAL es una ferretería familiar ubicada en San Martín de 
 
 La empresa comercializa materiales de construcción, ferretería y acabados, atendiendo tanto compras minoristas como adquisiciones de mayor volumen vinculadas a obras.
 
-Su operación es pequeña y centralizada: cuenta con dos propietarios y dos trabajadores, además de apoyo contable externo. Gran parte del conocimiento sobre precios, proveedores, descuentos, inventario y logística se concentra en los propietarios.
+Su operación es pequeña y centralizada: cuenta con dos propietarios y dos trabajadores, además de apoyo contable externo. Opera una tienda principal y dos almacenes, con dos camiones propios, un montacargas y un vehículo eléctrico para entregas pequeñas ([supuestos y vacíos](../../fuentes/supuestos-y-vacios.md), §7). Gran parte del conocimiento sobre precios, proveedores, descuentos, inventario y logística se concentra en los propietarios.
 
 ## 2. Clientes y actores comerciales
 
@@ -88,13 +88,6 @@ Actualmente no existe un mecanismo uniforme para registrar el seguimiento de una
 
 Una vez enviada la propuesta, el negocio puede quedar a la espera de que el cliente vuelva a comunicarse.
 
-Como mejora se propone registrar para cada oportunidad:
-
-- próxima acción;
-- fecha;
-- responsable;
-- motivo de pérdida o no adjudicación cuando corresponda.
-
 ## 8. Disponibilidad y promesa al cliente
 
 La posibilidad de ofrecer un producto o comprometer una entrega depende de varios factores:
@@ -109,7 +102,7 @@ La posibilidad de ofrecer un producto o comprometer una entrega depende de vario
 
 Ambos propietarios pueden tomar decisiones sobre disponibilidad, descuentos y promesas comerciales.
 
-En el escenario CRM interesa registrar **qué se prometió al cliente, quién lo confirmó y bajo qué condición**, mientras que la ejecución posterior corresponde al ámbito operativo del ERP.
+Algunos clientes de obra solicitan crédito; no existe un criterio formal para otorgarlo `[ND]`.
 
 ## 9. Sistemas y registros actuales
 
@@ -124,9 +117,9 @@ Continúan utilizándose talonarios, cuadernos y otros controles manuales.
 
 Actualmente no existe una integración automática entre estos medios.
 
-## 10. Problema principal para el escenario CRM
+## 10. Problema principal
 
-El principal problema relevante para la PC2 no es únicamente la ausencia de un ERP, sino la **fragmentación del contexto comercial y la dependencia del conocimiento de los propietarios**.
+El principal problema no es únicamente la ausencia de un ERP, sino la **fragmentación del contexto comercial y la dependencia del conocimiento de los propietarios**.
 
 Esto se refleja en:
 
@@ -137,22 +130,6 @@ Esto se refleja en:
 - información de direcciones y conversaciones dispersa;
 - dificultad para reconstruir por qué una oportunidad se ganó o perdió.
 
-## 11. Enfoque del incremento actual
+## 11. Respuesta propuesta
 
-Para la PC2 se plantea mejorar el escenario comercial previo al pedido mediante un CRM que permita conservar:
-
-- cuenta y contactos;
-- canal y fuente;
-- necesidad;
-- oportunidad;
-- probabilidad;
-- competencia;
-- cotización y versiones;
-- precio y descuento;
-- próxima acción;
-- responsable;
-- evidencia de decisiones comerciales.
-
-El alcance actual termina antes de la ejecución del pedido.
-
-La gestión de inventario, pedido, facturación, entrega, pago y posventa corresponde a etapas posteriores del proyecto.
+La solución y su alcance están en [alcance](alcance.md); la evolución por sistema incorporado, en [versiones](../versiones/README.md).
